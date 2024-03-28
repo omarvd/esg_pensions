@@ -1,0 +1,9 @@
+"0","tab_demos |> gtsave(""tab_demos.tex"")
+"
+"1","[1m[33mError[39m in `stop_if_not_gt_tbl_or_group()`:[22m
+[38;5;250m[33m![38;5;250m The `data` provided is neither a `gt_tbl` nor a `gt_group`
+  object.[39m
+Backtrace:
+[90m 1. [39m[1mgt[22m::gtsave(tab_demos, ""tab_demos.tex"")
+[90m 2. [39m[1m[94mgt:::stop_if_not_gt_tbl_or_group([39m[22mdata = data[1m[94m)[39m[22m
+"

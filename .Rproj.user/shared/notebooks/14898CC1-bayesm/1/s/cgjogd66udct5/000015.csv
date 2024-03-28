@@ -1,0 +1,21 @@
+"0",""
+"0","data = read_csv(""conjoint2.csv"")"
+"2","[1mRows: [22m[34m31728[39m [1mColumns: [22m[34m16[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): gender_equality, living_wage, salary_equality, l...
+[32mdbl[39m (9): survey_id, choice_indicator, obs_id, label, choi..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","data = as.data.frame(data)"
+"0",""
+"0","conjoint_data = data %>% "
+"0","  select(choice_indicator, survey_id, label, choice_set, pension,gender_equality, salary_equality, environmental_impact, firearms, living_wage, labor_rights, faith_morality) %>% "
+"0","  mutate(pension = -1 * pension)"
+"0","# Load data - replace with your actual data loading method"
+"0",""
+"0",""
+"0","# Ensure factors are correctly coded"
+"0","conjoint_data$choice_indicator <- as.factor(conjoint_data$choice_indicator)"
+"0",""

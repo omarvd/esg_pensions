@@ -1,0 +1,92 @@
+---
+title: "choicemodelr"
+author: "Omar Vasquez Duque"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r}
+
+
+dflogitr.test <- dflogitr %>%
+  group_by(survey_id, choice_set) %>%
+  mutate(choice_indicator = ifelse(row_number() == 1, sum(choice_indicator * label), 0)) %>%
+  ungroup()
+```
+
+```{r}
+dfmodelr =dflogitr.test %>% 
+  select(survey_id,
+         choice_set,
+         label,
+         choice_indicator,
+         price,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         no_racial_diversity,
+         no_gender_equal_pay)
+```
+
+```{r}
+# Assuming 'choice_data' is your dataset
+
+# Load the ChoiceModelR package
+library(ChoiceModelR)
+
+# Set up the xcoding vector
+# 1 for 'pension' (continuous), 0 for all other categorical attributes
+xcoding <- c(1, 0, 0, 0, 0, 0)
+
+# Structure your data according to the documentation
+# The data frame should have columns: UnitID, Set, Alt, X_1, ..., X_natts, y
+# Where UnitID = respondent ID, Set = choice_set, Alt = label, y = choice_indicator
+# And X_1, ..., X_natts are your attributes
+
+# Assuming your data is structured with these columns in this order:
+
+choice.model.data = dfmodelr
+# Rename columns to match the expected format
+names(choice.model.data) <- c("UnitID", "Set", "Alt", "y", "X_1", "X_2", "X_3", "X_4", "X_5", "X_6")
+
+# Set up the MCMC parameters
+mcmc <- list(R = 30000, use = 5000, s = 0.1)  # Example parameters, adjust based on your needs
+
+output_directory <- "~/Documents/GitHub/esg_pensions"  # Replace with your desired path
+
+# Run the choicemodelr function
+
+result <- choicemodelr(data = choice.model.data, xcoding = xcoding, mcmc = mcmc, directory = output_directory)# Continue with analysis...
+
+```
+
+
+```{r}
+# Select and rename columns
+choice.model.data <- dflogitr %>%
+  select(survey_id, choice_set, label, choice_indicator, price, firearms, fossil_fuels, may_employ_children, no_racial_diversity, no_gender_equal_pay) %>%
+  rename(UnitID = survey_id, Set = choice_set, Alt = label, y = choice_indicator, X_1 = price, X_2 = firearms, X_3 = fossil_fuels, X_4 = may_employ_children, X_5 = no_racial_diversity, X_6 = no_gender_equal_pay)
+
+# Convert categorical variables to numeric if appropriate
+choice.model.data$X_2 <- as.numeric(choice.model.data$X_2)
+choice.model.data$X_3 <- as.numeric(choice.model.data$X_3)
+choice.model.data$X_4 <- as.numeric(choice.model.data$X_4)
+choice.model.data$X_5 <- as.numeric(choice.model.data$X_5)
+choice.model.data$X_6 <- as.numeric(choice.model.data$X_6)
+
+# Ensure that other variables are of appropriate type
+choice.model.data$UnitID <- as.integer(choice.model.data$UnitID)
+choice.model.data$Set <- as.factor(choice.model.data$Set)
+choice.model.data$Alt <- as.factor(choice.model.data$Alt)
+choice.model.data$y <- as.factor(choice.model.data$y)
+
+# Setup xcoding and MCMC parameters
+xcoding <- c(1, 0, 0, 0, 0, 0)
+mcmc <- list(R = 30000, use = 5000, s = 0.1)
+
+# Set output directory
+output_directory <- "~/Documents/GitHub/esg_pensions"
+
+
+```
+

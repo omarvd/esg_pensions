@@ -1,0 +1,6 @@
+"0","RBetas$firearms = (RBetas$A2B1 - RBetas$A2B2)"
+"0","RBetas$fossil_fuels = (RBetas$A3B1 - RBetas$A3B2)"
+"0","RBetas$child_labor = (RBetas$A4B1 - RBetas$A4B2)"
+"0","RBetas$racial_diversity_mgmt = (RBetas$A5B1 - RBetas$A5B2)"
+"0","RBetas$gender_pay_gap = (RBetas$A6B1 - RBetas$A6B2)"
+"0",""

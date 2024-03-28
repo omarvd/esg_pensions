@@ -1,0 +1,75 @@
+"0",""
+"0","df$pension = df$pension/1000"
+"0",""
+"0","model2 <- logitr("
+"0","  data = df,"
+"0","  outcome = ""choice_indicator"","
+"0","  obsID = ""obs_id"","
+"0","  panelID = ""survey_id"","
+"0","  pars = c(""firearms"", ""fossil_fuels"", ""may_employ_children"", "
+"0","           ""racial_diversity"", ""gender_equal_pay""),"
+"0","  scalePar   = 'pension',"
+"0","  randPars = c(firearms = 'n', "
+"0","               fossil_fuels = ""n"", "
+"0","               may_employ_children = ""n"", "
+"0","               racial_diversity = ""n"", "
+"0","               gender_equal_pay = ""n""), # Assuming random parameter for pension with normal distribution"
+"0","  numMultiStarts = 10,"
+"0","  startVals = model2$Estimate# Assuming 'survey_id' represents panel data identifier"
+"0",")"
+"2","Running multistart...
+  Random starting point iterations: 10
+  Number of cores: 7
+"
+"2","Done!
+"
+"0","summary(model2)"
+"1","================================================="
+"1",""
+"1","
+"
+"1","
+Model estimated on:"
+"1"," "
+"1","Sun Dec 17 23:40:51 2023"
+"1"," "
+"1","
+"
+"1","
+Using logitr version:"
+"1"," "
+"1","1.0.1"
+"1"," "
+"1","
+
+"
+"1","Call:
+"
+"1","logitr(data = df, outcome = ""choice_indicator"", obsID = ""obs_id"", 
+"
+"1","    pars = c(""firearms"", ""fossil_fuels"", ""may_employ_children"", 
+"
+"1","        ""racial_diversity"", ""gender_equal_pay""), scalePar = ""pension"", 
+"
+"1","    randPars = c(firearms = ""n"", fossil_fuels = ""n"", may_employ_children = ""n"", 
+"
+"1","        racial_diversity = ""n"", gender_equal_pay = ""n""), panelID = ""survey_id"", 
+"
+"1","    startVals = model2$Estimate, numMultiStarts = 10)
+"
+"1","
+"
+"1","Frequencies of alternatives:
+"
+"1","      1 "
+"1","      2 "
+"1","
+"
+"1","0.49719 "
+"1","0.50281 "
+"1","
+"
+"1","
+"
+"1","Summary Of Multistart Runs:
+"

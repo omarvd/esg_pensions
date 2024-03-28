@@ -1,0 +1,131 @@
+---
+title: "bayesm"
+author: "Omar Vasquez Duque"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r}
+install.packages("bayesm")
+library(bayesm)
+library(tidyverse)
+
+```
+
+```{r}
+
+data = read_csv("conjoint2.csv")
+
+data = as.data.frame(data)
+
+conjoint_data = data %>% 
+  select(choice_indicator, survey_id, label, choice_set, pension,gender_equality, salary_equality, environmental_impact, firearms, living_wage, labor_rights, faith_morality) %>% 
+  mutate(pension = -1 * pension)
+# Load data - replace with your actual data loading method
+
+
+# Ensure factors are correctly coded
+conjoint_data$choice_indicator <- as.factor(conjoint_data$choice_indicator)
+
+```
+
+```{r}
+library(bayesm)
+
+# Assuming conjoint_data is your dataset and is properly formatted
+
+# Convert factors to dummy variables
+conjoint_data <- transform(conjoint_data, {
+  gender_equality <- as.numeric(gender_equality == "gender restrictions")
+  salary_equality <- as.numeric(salary_equality == "salary equality restrictions")
+  environmental_impact <- as.numeric(environmental_impact == "environmental restrictions")
+  firearms <- as.numeric(firearms == "firearms restrictions")
+  living_wage <- as.numeric(living_wage == "living wage restrictions")
+  labor_rights <- as.numeric(labor_rights == "labor rights restrictions")
+  faith_morality <- as.numeric(faith_morality == "faith/morality restrictions")
+  pension = as.numeric(pension)
+})
+
+
+# Combine all predictors
+Z <- as.matrix(conjoint_data[c("pension", "gender_equality", "salary_equality",
+                               "environmental_impact", "firearms", "living_wage",
+                               "labor_rights", "faith_morality")])
+
+# Choice variable
+Y <- conjoint_data$choice_indicator
+
+```
+
+
+
+
+```{r}
+# Parameters
+n_respondents <- 100  # Number of respondents
+n_choices <- 8        # Number of choices per respondent
+n_alternatives <- 2   # Number of alternatives in each choice set
+
+# Create a data frame for choices
+set.seed(123)  # for reproducibility
+choice_data <- expand.grid(
+  respondent_id = 1:n_respondents,
+  choice_set_id = 1:n_choices,
+  alternative_id = 1:n_alternatives
+)
+
+# Assign attributes to each alternative in each choice set
+choice_data$pension <- sample(c(40000, 45000, 50000, 55000, 60000, 65000, 70000), nrow(choice_data), replace = TRUE)
+choice_data$gender_equality <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$salary_equality <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$environmental_impact <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$firearms <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$living_wage <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$labor_rights <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+choice_data$faith_morality <- sample(c(0, 1), nrow(choice_data), replace = TRUE)
+
+# Simulate choices (randomly for the sake of example)
+choice_data$choice <- as.integer(runif(nrow(choice_data)) > 0.5)
+
+```
+
+
+
+```{r}
+# Reshape data for bayesm
+library(reshape2)
+long_data <- melt(choice_data, id.vars = c("respondent_id", "choice_set_id", "alternative_id", "choice"))
+
+# Creating a matrix of independent variables (X) and dependent variable (y)
+X <- model.matrix(~ -1 + factor(pension) + gender_equality + salary_equality + 
+                  environmental_impact + firearms + living_wage + labor_rights + 
+                  faith_morality, data = choice_data)
+y <- choice_data$choice
+
+```
+
+```{r}
+# Reshape data into a list where each element is a respondent's data
+resp_data <- split(choice_data, choice_data$respondent_id)
+
+# Create a list of matrices for choices and attributes for each respondent
+choice_list <- lapply(resp_data, function(df) {
+  y <- df$choice  # dependent variable
+  X <- as.matrix(df[, c("pension", "gender_equality", "salary_equality", 
+                        "environmental_impact", "firearms", "living_wage", 
+                        "labor_rights", "faith_morality")])  # independent variables
+  list(y = y, X = X)
+})
+
+```
+
+
+```{r}
+# Run Hierarchical Bayes using MCMC
+hb_result <- rhierMnlRwMixture(choice_list, 
+                               R = 1000,    # Number of MCMC draws
+                               keep = 1,    # Thinning parameter
+                               nprint = 100)  # Print output every nprint iterations
+
+```
+

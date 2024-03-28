@@ -1,0 +1,7 @@
+"0","dflogitr = dflogitr %>% "
+"0","  mutate(belowmean = ifelse(pension <40000, 1, 0),"
+"0","         pension_range = case_when(pension<31000 ~ ""up to 30K"","
+"0","                                   pension >30000 & pension < 41000 ~ ""up to 40K"","
+"0","                                   pension >40000 & pension <51000 ~""up to 50K"","
+"0","                                   pension > 50000 & pension <61000 ~ ""up to 60K""))"
+"0",""

@@ -1,0 +1,20 @@
+"0","mnl_pref_w <- logitr(
+    data    = dfcjlogitr,
+    outcome = ""choice_indicator"",
+    obsID   = ""obs_id"",
+    pars    = c(""pension"",
+                ""gender_equality"",
+                 ""living_wage"",
+                ""salary_equality"",
+                ""labor_rights"",
+                ""environmental_impact"",
+                ""faith_morality"",
+                ""firearms""),
+    weights = ""weights"",
+    panelID = ""survey_id""
+)
+"
+"2","Error in missingInData(inputs$weights, ""weights"", dataColumnNames) : 
+  The following specified names for ""weights"" are missing in the data:
+weights
+"

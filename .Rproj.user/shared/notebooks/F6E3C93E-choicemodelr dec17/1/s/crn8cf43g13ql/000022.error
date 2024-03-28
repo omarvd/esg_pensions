@@ -1,0 +1,1 @@
+{"frames":[{"func":"choicemodelr(data = df_formatted, xcoding = xcoding, mcmc = mcmc, \n    directory = output_directory)","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in `[<-`(`*tmp*`, nn, Xind, value = (Xt[nn, i] == j) * 1 - (Xt[nn,  : \n  subscript out of bounds\n"}

@@ -1,0 +1,4 @@
+"0","median_complet_t2 = median(dfcj2$respondent_length_of_interview_seconds)"
+"0",""
+"0","dfcj2 = dfcj2 %>%"
+"0","  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t2 & respondent_length_of_interview_seconds <= 2 * median_complet_t2)"

@@ -1,0 +1,10 @@
+"0",""
+"0",""
+"0","ggsave(amce1shorter, path = NULL, "
+"0","       filename = ""amcecj1jmainb.png"","
+"0","       device = ""png"","
+"0","       type = ""cairo"", "
+"0","       dpi = ""retina"")"
+"2","[38;5;250mSaving 4.35 x 2.69 in image[39m"
+"2","Warning: [38;5;250mUsing ragg device as default. Ignoring `type` and
+`antialias` arguments[39m"

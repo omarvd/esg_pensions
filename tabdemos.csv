@@ -1,0 +1,3207 @@
+age.cat,education,gender,income,experiment
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+56+,grad school,male,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,college,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+18-24,college,female,"35,000 to 49,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,female,"25,000 to 34,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,college,female,"25,000 to 34,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,grad school,female,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,less than hs,female,"35,000 to 49,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+56+,less than hs,female,"35,000 to 49,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,grad school,male,"25,000 to 34,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"75,000 to 99,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,grad school,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,grad school,female,"50,000 to 74,999",1
+25-39,college,female,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,grad school,male,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,hs,female,"50,000 to 74,999",1
+18-24,hs,female,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"15,000 to 24,999",1
+40-55,grad school,female,"35,000 to 49,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,grad school,female,"25,000 to 34,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,grad school,male,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,grad school,female,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,female,"35,000 to 49,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,hs,female,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,grad school,male,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,college,female,"35,000 to 49,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,grad school,male,"50,000 to 74,999",1
+18-24,hs,female,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,female,"25,000 to 34,999",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,college,male,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+40-55,college,male,"35,000 to 49,999",1
+56+,hs,female,"75,000 to 99,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,college,female,"25,000 to 34,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,hs,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+40-55,hs,male,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"75,000 to 99,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,college,male,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,grad school,male,"35,000 to 49,999",1
+18-24,hs,female,"35,000 to 49,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+18-24,college,male,"75,000 to 99,999",1
+56+,hs,male,"25,000 to 34,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+18-24,hs,female,"75,000 to 99,999",1
+40-55,college,female,"25,000 to 34,999",1
+56+,college,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,college,female,"15,000 to 24,999",1
+40-55,college,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+18-24,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+56+,less than hs,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,college,male,"35,000 to 49,999",1
+56+,hs,male,"25,000 to 34,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+18-24,college,male,"50,000 to 74,999",1
+56+,grad school,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,college,female,"75,000 to 99,999",1
+40-55,college,female,"75,000 to 99,999",1
+40-55,hs,female,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,less than hs,male,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+40-55,college,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,male,"75,000 to 99,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+40-55,less than hs,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,less than hs,female,"75,000 to 99,999",1
+25-39,college,male,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"25,000 to 34,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+40-55,college,female,"15,000 to 24,999",1
+18-24,hs,other,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,female,"25,000 to 34,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,grad school,male,"35,000 to 49,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,hs,male,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+18-24,hs,female,"50,000 to 74,999",1
+56+,grad school,male,"25,000 to 34,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+40-55,college,male,"75,000 to 99,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,college,female,"15,000 to 24,999",1
+40-55,college,male,"15,000 to 24,999",1
+40-55,college,male,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,college,female,"25,000 to 34,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+18-24,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+56+,less than hs,female,"15,000 to 24,999",1
+25-39,less than hs,female,"15,000 to 24,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,male,"75,000 to 99,999",1
+25-39,hs,female,"75,000 to 99,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,grad school,male,"50,000 to 74,999",1
+40-55,college,male,"75,000 to 99,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+18-24,hs,male,"15,000 to 24,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+18-24,college,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,grad school,male,"15,000 to 24,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,college,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"75,000 to 99,999",1
+56+,less than hs,female,"75,000 to 99,999",1
+56+,grad school,female,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+40-55,less than hs,female,"25,000 to 34,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+25-39,college,female,"25,000 to 34,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,hs,male,"25,000 to 34,999",1
+18-24,less than hs,female,"15,000 to 24,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,hs,female,"50,000 to 74,999",1
+18-24,college,male,"35,000 to 49,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,college,female,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,college,female,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+18-24,hs,female,"25,000 to 34,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,college,female,"25,000 to 34,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+56+,grad school,male,"15,000 to 24,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,grad school,male,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,college,female,"35,000 to 49,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,college,female,"25,000 to 34,999",1
+40-55,college,female,"35,000 to 49,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,less than hs,female,"15,000 to 24,999",1
+56+,grad school,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,female,"25,000 to 34,999",1
+40-55,hs,male,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,less than hs,female,"25,000 to 34,999",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"25,000 to 34,999",1
+18-24,hs,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,less than hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,grad school,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+40-55,less than hs,female,"50,000 to 74,999",1
+40-55,college,female,"35,000 to 49,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,college,male,"25,000 to 34,999",1
+40-55,college,male,"50,000 to 74,999",1
+40-55,college,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,hs,female,"75,000 to 99,999",1
+25-39,college,female,"35,000 to 49,999",1
+18-24,grad school,female,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,college,female,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+18-24,hs,female,"25,000 to 34,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,male,"75,000 to 99,999",1
+25-39,grad school,female,"25,000 to 34,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+18-24,college,female,"35,000 to 49,999",1
+40-55,hs,female,"25,000 to 34,999",1
+18-24,college,female,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"50,000 to 74,999",1
+18-24,college,male,"35,000 to 49,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"35,000 to 49,999",1
+18-24,hs,female,"25,000 to 34,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,college,female,"15,000 to 24,999",1
+40-55,hs,female,"75,000 to 99,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,college,male,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,grad school,female,"35,000 to 49,999",1
+18-24,hs,male,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+40-55,hs,male,"35,000 to 49,999",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+18-24,hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+40-55,less than hs,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,grad school,female,"25,000 to 34,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+40-55,grad school,female,"35,000 to 49,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,female,"25,000 to 34,999",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,hs,male,"50,000 to 74,999",1
+40-55,college,female,"25,000 to 34,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,college,female,"35,000 to 49,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,college,female,"25,000 to 34,999",1
+56+,grad school,female,"75,000 to 99,999",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,grad school,male,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,less than hs,female,"25,000 to 34,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,male,"15,000 to 24,999",1
+40-55,college,female,"15,000 to 24,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,college,female,"25,000 to 34,999",1
+18-24,hs,male,"35,000 to 49,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,hs,female,"75,000 to 99,999",1
+56+,college,female,"15,000 to 24,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,hs,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+56+,college,female,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,grad school,male,"75,000 to 99,999",1
+18-24,hs,female,"50,000 to 74,999",1
+18-24,hs,male,"15,000 to 24,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"15,000 to 24,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,college,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"35,000 to 49,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+18-24,less than hs,female,"15,000 to 24,999",1
+40-55,college,male,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+18-24,hs,male,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,grad school,female,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"75,000 to 99,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+40-55,hs,female,"35,000 to 49,999",1
+40-55,college,male,"15,000 to 24,999",1
+40-55,less than hs,female,"35,000 to 49,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+18-24,college,other,"50,000 to 74,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+25-39,college,male,"15,000 to 24,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+18-24,hs,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,grad school,male,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,hs,male,"75,000 to 99,999",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,college,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"15,000 to 24,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,college,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+40-55,college,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,grad school,male,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"25,000 to 34,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,less than hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+56+,hs,male,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"25,000 to 34,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+18-24,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+25-39,college,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"50,000 to 74,999",1
+18-24,hs,female,"35,000 to 49,999",1
+40-55,hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,hs,male,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,grad school,male,"15,000 to 24,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+56+,college,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+25-39,college,male,"75,000 to 99,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,hs,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,grad school,female,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,less than hs,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+25-39,grad school,female,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+56+,college,female,"100,000 or more",1
+18-24,hs,female,"35,000 to 49,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+40-55,college,female,"25,000 to 34,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,female,"100,000 or more",1
+56+,grad school,female,"100,000 or more",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"100,000 or more",1
+56+,grad school,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"100,000 or more",1
+40-55,college,female,"100,000 or more",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,college,female,"25,000 to 34,999",1
+18-24,less than hs,other,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,college,female,"15,000 to 24,999",1
+56+,grad school,male,"75,000 to 99,999",1
+25-39,college,female,"25,000 to 34,999",1
+56+,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,college,male,"25,000 to 34,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,grad school,female,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,male,"35,000 to 49,999",1
+40-55,hs,female,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"100,000 or more",1
+40-55,hs,female,"100,000 or more",1
+56+,hs,male,"100,000 or more",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,college,male,"100,000 or more",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,female,"75,000 to 99,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,hs,female,"100,000 or more",1
+40-55,college,female,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"75,000 to 99,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,hs,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+56+,hs,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+18-24,college,female,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,college,male,"50,000 to 74,999",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+56+,hs,male,"25,000 to 34,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"15,000 to 24,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,hs,male,"75,000 to 99,999",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,grad school,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"50,000 to 74,999",1
+25-39,hs,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,hs,male,"100,000 or more",1
+25-39,college,male,"35,000 to 49,999",1
+40-55,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+40-55,grad school,male,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,college,male,"35,000 to 49,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,grad school,male,"75,000 to 99,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,grad school,male,"100,000 or more",1
+40-55,hs,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,grad school,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+56+,grad school,male,"35,000 to 49,999",1
+56+,hs,female,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,grad school,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"100,000 or more",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,male,"100,000 or more",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,college,female,"100,000 or more",1
+25-39,hs,female,"100,000 or more",1
+40-55,college,female,"100,000 or more",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,less than hs,female,"35,000 to 49,999",1
+56+,hs,female,"25,000 to 34,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"25,000 to 34,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,female,"100,000 or more",1
+56+,college,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+25-39,college,male,"50,000 to 74,999",1
+40-55,hs,female,"100,000 or more",1
+56+,college,male,"25,000 to 34,999",1
+56+,college,male,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,hs,male,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"25,000 to 34,999",1
+56+,college,female,"15,000 to 24,999",1
+18-24,hs,female,"75,000 to 99,999",1
+56+,hs,female,"100,000 or more",1
+40-55,college,female,"100,000 or more",1
+56+,grad school,male,"50,000 to 74,999",1
+40-55,college,female,"100,000 or more",1
+56+,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,hs,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+40-55,college,female,"35,000 to 49,999",1
+56+,hs,male,"35,000 to 49,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,college,male,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,female,"100,000 or more",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,grad school,male,"100,000 or more",1
+56+,college,female,"100,000 or more",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,hs,male,"25,000 to 34,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,hs,female,"25,000 to 34,999",1
+56+,college,male,"25,000 to 34,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+40-55,college,female,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,college,female,"15,000 to 24,999",1
+40-55,college,female,"25,000 to 34,999",1
+40-55,college,female,"15,000 to 24,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,grad school,female,"25,000 to 34,999",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,college,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,grad school,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,hs,male,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,college,male,"25,000 to 34,999",1
+40-55,less than hs,male,"75,000 to 99,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"25,000 to 34,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,college,male,"25,000 to 34,999",1
+56+,grad school,male,"100,000 or more",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"50,000 to 74,999",1
+56+,college,male,"25,000 to 34,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,grad school,female,"100,000 or more",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,less than hs,female,"15,000 to 24,999",1
+40-55,college,female,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,male,"25,000 to 34,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,less than hs,female,"15,000 to 24,999",1
+40-55,college,female,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+40-55,college,female,"100,000 or more",1
+25-39,grad school,male,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+40-55,college,female,"75,000 to 99,999",1
+25-39,college,female,"100,000 or more",1
+18-24,grad school,female,"15,000 to 24,999",1
+56+,college,female,"25,000 to 34,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"100,000 or more",1
+25-39,grad school,female,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,college,female,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,college,female,"25,000 to 34,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,hs,female,"25,000 to 34,999",1
+56+,college,male,"100,000 or more",1
+25-39,college,female,"100,000 or more",1
+40-55,college,female,"15,000 to 24,999",1
+40-55,college,female,"15,000 to 24,999",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+25-39,college,female,"50,000 to 74,999",1
+56+,grad school,female,"50,000 to 74,999",1
+25-39,hs,other,"15,000 to 24,999",1
+18-24,hs,female,"50,000 to 74,999",1
+56+,college,female,"15,000 to 24,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"75,000 to 99,999",1
+18-24,college,female,"35,000 to 49,999",1
+40-55,hs,male,"50,000 to 74,999",1
+56+,grad school,female,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,college,female,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,college,male,"35,000 to 49,999",1
+56+,less than hs,male,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,hs,male,"100,000 or more",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,female,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,college,female,"25,000 to 34,999",1
+25-39,college,female,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,hs,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,hs,female,"50,000 to 74,999",1
+18-24,hs,female,"75,000 to 99,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,grad school,female,"15,000 to 24,999",1
+40-55,college,female,"15,000 to 24,999",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,hs,female,"50,000 to 74,999",1
+18-24,college,male,"50,000 to 74,999",1
+40-55,college,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+56+,hs,other,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,college,male,"75,000 to 99,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"75,000 to 99,999",1
+25-39,grad school,other,"50,000 to 74,999",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+56+,less than hs,male,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+56+,college,male,"25,000 to 34,999",1
+56+,college,male,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,college,male,"100,000 or more",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"35,000 to 49,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"25,000 to 34,999",1
+40-55,college,male,"50,000 to 74,999",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+18-24,hs,male,"35,000 to 49,999",1
+18-24,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"50,000 to 74,999",1
+40-55,college,male,"35,000 to 49,999",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,college,male,"100,000 or more",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+25-39,grad school,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"50,000 to 74,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+25-39,hs,male,"50,000 to 74,999",1
+18-24,hs,male,"25,000 to 34,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+18-24,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"75,000 to 99,999",1
+25-39,college,male,"35,000 to 49,999",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,college,male,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,college,male,"100,000 or more",1
+40-55,college,male,"15,000 to 24,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+18-24,college,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"100,000 or more",1
+40-55,grad school,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,college,male,"35,000 to 49,999",1
+18-24,less than hs,male,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,grad school,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+56+,grad school,male,"100,000 or more",1
+56+,grad school,male,"35,000 to 49,999",1
+25-39,college,male,"15,000 to 24,999",1
+25-39,college,male,"25,000 to 34,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,hs,male,"35,000 to 49,999",1
+18-24,hs,male,"75,000 to 99,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+56+,hs,male,"100,000 or more",1
+40-55,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"35,000 to 49,999",1
+40-55,college,male,"75,000 to 99,999",1
+40-55,hs,male,"15,000 to 24,999",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"100,000 or more",1
+40-55,college,male,"75,000 to 99,999",1
+18-24,hs,male,"15,000 to 24,999",1
+40-55,college,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,hs,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,college,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+40-55,grad school,male,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+18-24,hs,male,"75,000 to 99,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,hs,male,"75,000 to 99,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,college,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,male,"25,000 to 34,999",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,grad school,male,"50,000 to 74,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,grad school,male,"15,000 to 24,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,less than hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+18-24,hs,male,"100,000 or more",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,hs,male,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"25,000 to 34,999",1
+25-39,college,male,"100,000 or more",1
+18-24,college,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+18-24,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,hs,male,"35,000 to 49,999",1
+18-24,less than hs,male,"35,000 to 49,999",1
+40-55,hs,male,"75,000 to 99,999",1
+25-39,college,male,"100,000 or more",1
+18-24,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,college,male,"100,000 or more",1
+25-39,grad school,male,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,hs,male,"50,000 to 74,999",1
+56+,grad school,male,"100,000 or more",1
+56+,college,male,"15,000 to 24,999",1
+56+,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"50,000 to 74,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,college,male,"50,000 to 74,999",1
+40-55,college,male,"35,000 to 49,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,less than hs,male,"25,000 to 34,999",1
+18-24,hs,male,"35,000 to 49,999",1
+18-24,college,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+40-55,college,male,"35,000 to 49,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+18-24,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,college,male,"35,000 to 49,999",1
+18-24,hs,male,"15,000 to 24,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+18-24,hs,male,"15,000 to 24,999",1
+40-55,college,male,"25,000 to 34,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"15,000 to 24,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,college,male,"15,000 to 24,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+18-24,college,male,"50,000 to 74,999",1
+40-55,hs,male,"25,000 to 34,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,hs,other,"15,000 to 24,999",1
+25-39,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+40-55,grad school,male,"35,000 to 49,999",1
+25-39,hs,male,"15,000 to 24,999",1
+18-24,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+56+,college,male,"75,000 to 99,999",1
+40-55,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+18-24,college,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"100,000 or more",1
+18-24,college,male,"75,000 to 99,999",1
+18-24,hs,male,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,less than hs,male,"75,000 to 99,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,college,male,"100,000 or more",1
+40-55,hs,male,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+56+,hs,male,"75,000 to 99,999",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,less than hs,male,"25,000 to 34,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,grad school,male,"100,000 or more",1
+40-55,hs,male,"50,000 to 74,999",1
+18-24,hs,male,"25,000 to 34,999",1
+18-24,college,male,"35,000 to 49,999",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,college,male,"35,000 to 49,999",1
+18-24,hs,male,"75,000 to 99,999",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+40-55,college,male,"35,000 to 49,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,college,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+25-39,college,male,"35,000 to 49,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,grad school,male,"75,000 to 99,999",1
+40-55,college,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"100,000 or more",1
+25-39,hs,male,"15,000 to 24,999",1
+40-55,grad school,male,"100,000 or more",1
+18-24,college,male,"35,000 to 49,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,less than hs,male,"25,000 to 34,999",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,hs,male,"50,000 to 74,999",1
+18-24,hs,male,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+25-39,college,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,college,male,"25,000 to 34,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"75,000 to 99,999",1
+40-55,college,male,"75,000 to 99,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,hs,male,"25,000 to 34,999",1
+18-24,hs,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,college,male,"100,000 or more",1
+40-55,hs,male,"25,000 to 34,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,college,male,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,hs,male,"25,000 to 34,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+56+,grad school,male,"75,000 to 99,999",1
+18-24,hs,female,"25,000 to 34,999",1
+56+,grad school,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,female,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+25-39,college,male,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+18-24,hs,other,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,college,female,"100,000 or more",1
+25-39,hs,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,grad school,other,"25,000 to 34,999",1
+25-39,hs,male,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,college,female,"25,000 to 34,999",1
+18-24,college,female,"15,000 to 24,999",1
+56+,college,male,"50,000 to 74,999",1
+18-24,hs,female,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"50,000 to 74,999",1
+56+,college,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,college,female,"100,000 or more",1
+56+,college,male,"100,000 or more",1
+18-24,hs,female,"15,000 to 24,999",1
+18-24,less than hs,male,"15,000 to 24,999",1
+40-55,college,female,"100,000 or more",1
+56+,grad school,female,"50,000 to 74,999",1
+18-24,college,female,"35,000 to 49,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+18-24,college,female,"50,000 to 74,999",1
+18-24,college,female,"35,000 to 49,999",1
+25-39,hs,female,"50,000 to 74,999",1
+56+,college,male,"100,000 or more",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+40-55,grad school,female,"15,000 to 24,999",1
+40-55,grad school,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+25-39,college,male,"35,000 to 49,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,female,"35,000 to 49,999",1
+40-55,college,female,"15,000 to 24,999",1
+56+,grad school,female,"75,000 to 99,999",1
+56+,college,female,"100,000 or more",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+40-55,grad school,female,"100,000 or more",1
+25-39,college,female,"25,000 to 34,999",1
+40-55,hs,female,"25,000 to 34,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,grad school,female,"15,000 to 24,999",1
+25-39,college,female,"100,000 or more",1
+56+,hs,female,"35,000 to 49,999",1
+56+,hs,female,"50,000 to 74,999",1
+56+,college,female,"35,000 to 49,999",1
+56+,less than hs,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"75,000 to 99,999",1
+56+,hs,female,"75,000 to 99,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,grad school,male,"35,000 to 49,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+40-55,college,female,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,college,male,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,less than hs,male,"25,000 to 34,999",1
+25-39,college,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"25,000 to 34,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+40-55,college,male,"75,000 to 99,999",1
+56+,college,male,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,college,male,"25,000 to 34,999",1
+40-55,college,male,"50,000 to 74,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,college,male,"50,000 to 74,999",1
+56+,college,male,"35,000 to 49,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+40-55,college,male,"100,000 or more",1
+25-39,hs,male,"75,000 to 99,999",1
+56+,college,male,"25,000 to 34,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,hs,male,"25,000 to 34,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,grad school,female,"50,000 to 74,999",1
+25-39,grad school,female,"75,000 to 99,999",1
+25-39,college,female,"25,000 to 34,999",1
+56+,less than hs,male,"15,000 to 24,999",1
+56+,college,male,"15,000 to 24,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+56+,grad school,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+56+,college,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"50,000 to 74,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,college,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+40-55,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,college,male,"35,000 to 49,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+18-24,hs,male,"15,000 to 24,999",1
+56+,college,male,"100,000 or more",1
+56+,hs,male,"35,000 to 49,999",1
+56+,grad school,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,grad school,male,"50,000 to 74,999",1
+56+,college,male,"50,000 to 74,999",1
+25-39,grad school,male,"35,000 to 49,999",1
+56+,college,male,"75,000 to 99,999",1
+25-39,college,male,"15,000 to 24,999",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+40-55,college,female,"35,000 to 49,999",1
+56+,hs,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,male,"50,000 to 74,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,college,male,"75,000 to 99,999",1
+56+,grad school,male,"50,000 to 74,999",1
+18-24,college,female,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,college,male,"100,000 or more",1
+56+,hs,male,"75,000 to 99,999",1
+25-39,grad school,male,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,college,male,"25,000 to 34,999",1
+25-39,college,male,"75,000 to 99,999",1
+56+,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"75,000 to 99,999",1
+40-55,grad school,male,"100,000 or more",1
+25-39,hs,male,"35,000 to 49,999",1
+40-55,college,male,"50,000 to 74,999",1
+56+,college,female,"75,000 to 99,999",1
+56+,college,female,"50,000 to 74,999",1
+56+,grad school,female,"100,000 or more",1
+25-39,college,female,"15,000 to 24,999",1
+56+,hs,female,"75,000 to 99,999",1
+40-55,college,female,"75,000 to 99,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,college,female,"100,000 or more",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"75,000 to 99,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,college,female,"50,000 to 74,999",1
+40-55,college,female,"100,000 or more",1
+25-39,hs,female,"75,000 to 99,999",1
+40-55,college,female,"35,000 to 49,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"25,000 to 34,999",1
+56+,hs,female,"35,000 to 49,999",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"35,000 to 49,999",1
+56+,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,grad school,female,"100,000 or more",1
+25-39,grad school,female,"35,000 to 49,999",1
+18-24,hs,female,"35,000 to 49,999",1
+56+,grad school,female,"100,000 or more",1
+18-24,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"35,000 to 49,999",1
+56+,college,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+25-39,college,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,less than hs,female,"35,000 to 49,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+56+,college,female,"25,000 to 34,999",1
+18-24,hs,female,"50,000 to 74,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,grad school,female,"35,000 to 49,999",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,college,female,"100,000 or more",1
+40-55,college,female,"100,000 or more",1
+56+,hs,female,"75,000 to 99,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,college,female,"75,000 to 99,999",1
+25-39,hs,female,"15,000 to 24,999",1
+18-24,college,male,"100,000 or more",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,college,female,"50,000 to 74,999",1
+56+,hs,female,"25,000 to 34,999",1
+25-39,college,female,"35,000 to 49,999",1
+56+,hs,female,"35,000 to 49,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+40-55,hs,female,"50,000 to 74,999",1
+40-55,hs,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,grad school,female,"35,000 to 49,999",1
+40-55,college,female,"75,000 to 99,999",1
+40-55,hs,female,"25,000 to 34,999",1
+25-39,hs,female,"75,000 to 99,999",1
+40-55,hs,female,"50,000 to 74,999",1
+56+,grad school,female,"35,000 to 49,999",1
+56+,college,female,"15,000 to 24,999",1
+56+,hs,female,"50,000 to 74,999",1
+25-39,college,female,"75,000 to 99,999",1
+40-55,college,female,"15,000 to 24,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,college,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"50,000 to 74,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"75,000 to 99,999",1
+40-55,grad school,female,"75,000 to 99,999",1
+18-24,less than hs,female,"100,000 or more",1
+56+,college,male,"25,000 to 34,999",1
+56+,college,male,"25,000 to 34,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"25,000 to 34,999",1
+56+,hs,male,"15,000 to 24,999",1
+56+,hs,male,"15,000 to 24,999",1
+25-39,hs,male,"75,000 to 99,999",1
+40-55,college,male,"100,000 or more",1
+40-55,college,male,"50,000 to 74,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+18-24,hs,male,"75,000 to 99,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+18-24,hs,male,"50,000 to 74,999",1
+25-39,college,male,"100,000 or more",1
+25-39,college,male,"25,000 to 34,999",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+56+,grad school,male,"15,000 to 24,999",1
+25-39,college,male,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,college,male,"35,000 to 49,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+25-39,hs,other,"15,000 to 24,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,college,male,"100,000 or more",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,college,male,"50,000 to 74,999",1
+25-39,hs,male,"50,000 to 74,999",1
+40-55,hs,male,"25,000 to 34,999",1
+40-55,hs,male,"75,000 to 99,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,male,"35,000 to 49,999",1
+40-55,grad school,male,"75,000 to 99,999",1
+25-39,college,male,"50,000 to 74,999",1
+56+,grad school,male,"25,000 to 34,999",1
+18-24,hs,male,"15,000 to 24,999",1
+25-39,grad school,male,"75,000 to 99,999",1
+18-24,college,female,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,hs,male,"25,000 to 34,999",1
+40-55,grad school,male,"100,000 or more",1
+40-55,college,male,"100,000 or more",1
+40-55,grad school,male,"100,000 or more",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,hs,male,"75,000 to 99,999",1
+40-55,grad school,male,"100,000 or more",1
+56+,college,female,"25,000 to 34,999",1
+25-39,college,female,"35,000 to 49,999",1
+25-39,grad school,female,"100,000 or more",1
+25-39,college,female,"50,000 to 74,999",1
+25-39,hs,female,"35,000 to 49,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,grad school,female,"50,000 to 74,999",1
+18-24,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"25,000 to 34,999",1
+40-55,grad school,female,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,college,male,"100,000 or more",1
+56+,hs,female,"35,000 to 49,999",1
+56+,less than hs,female,"35,000 to 49,999",1
+56+,college,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"50,000 to 74,999",1
+40-55,college,female,"50,000 to 74,999",1
+40-55,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"25,000 to 34,999",1
+25-39,grad school,female,"50,000 to 74,999",1
+18-24,college,female,"50,000 to 74,999",1
+18-24,hs,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+56+,hs,female,"75,000 to 99,999",1
+40-55,grad school,female,"50,000 to 74,999",1
+56+,less than hs,female,"50,000 to 74,999",1
+56+,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+18-24,hs,female,"15,000 to 24,999",1
+25-39,college,female,"100,000 or more",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,college,female,"75,000 to 99,999",1
+40-55,college,female,"35,000 to 49,999",1
+25-39,hs,other,"25,000 to 34,999",1
+25-39,grad school,female,"100,000 or more",1
+25-39,hs,female,"50,000 to 74,999",1
+25-39,grad school,female,"15,000 to 24,999",1
+40-55,hs,female,"35,000 to 49,999",1
+40-55,hs,female,"25,000 to 34,999",1
+40-55,college,female,"100,000 or more",1
+40-55,grad school,female,"15,000 to 24,999",1
+56+,hs,female,"15,000 to 24,999",1
+25-39,hs,female,"35,000 to 49,999",1
+25-39,hs,female,"75,000 to 99,999",1
+40-55,college,female,"50,000 to 74,999",1
+40-55,hs,female,"15,000 to 24,999",1
+40-55,college,female,"100,000 or more",1
+25-39,college,female,"35,000 to 49,999",1
+18-24,hs,female,"35,000 to 49,999",1
+40-55,hs,female,"35,000 to 49,999",1
+18-24,hs,female,"25,000 to 34,999",1
+40-55,hs,female,"35,000 to 49,999",1
+40-55,college,female,"35,000 to 49,999",1
+25-39,college,female,"100,000 or more",1
+40-55,hs,female,"25,000 to 34,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,grad school,female,"100,000 or more",1
+25-39,hs,female,"15,000 to 24,999",1
+40-55,hs,female,"15,000 to 24,999",1
+56+,hs,female,"35,000 to 49,999",1
+25-39,grad school,male,"50,000 to 74,999",1
+40-55,hs,male,"50,000 to 74,999",1
+25-39,grad school,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+56+,hs,male,"25,000 to 34,999",1
+25-39,college,male,"100,000 or more",1
+25-39,grad school,male,"100,000 or more",1
+40-55,grad school,male,"75,000 to 99,999",1
+40-55,hs,male,"35,000 to 49,999",1
+25-39,hs,male,"75,000 to 99,999",1
+25-39,college,male,"100,000 or more",1
+25-39,hs,male,"25,000 to 34,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,hs,male,"15,000 to 24,999",1
+18-24,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+56+,hs,male,"50,000 to 74,999",1
+56+,college,male,"25,000 to 34,999",1
+18-24,hs,male,"100,000 or more",1
+40-55,hs,male,"35,000 to 49,999",1
+56+,hs,male,"50,000 to 74,999",1
+56+,grad school,male,"75,000 to 99,999",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,college,male,"75,000 to 99,999",1
+56+,hs,male,"35,000 to 49,999",1
+25-39,college,male,"100,000 or more",1
+56+,grad school,male,"100,000 or more",1
+56+,hs,male,"15,000 to 24,999",1
+40-55,college,female,"25,000 to 34,999",2
+40-55,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,college,female,"15,000 to 24,999",2
+18-24,grad school,female,"100,000 or more",2
+25-39,grad school,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,grad school,female,"15,000 to 24,999",2
+18-24,grad school,female,"50,000 to 74,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+25-39,hs,female,"50,000 to 74,999",2
+56+,college,female,"15,000 to 24,999",2
+40-55,college,male,"15,000 to 24,999",2
+18-24,college,female,"75,000 to 99,999",2
+40-55,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+18-24,college,female,"25,000 to 34,999",2
+25-39,hs,female,"25,000 to 34,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"100,000 or more",2
+40-55,grad school,female,"15,000 to 24,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+18-24,hs,male,"25,000 to 34,999",2
+40-55,college,male,"50,000 to 74,999",2
+18-24,hs,female,"25,000 to 34,999",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,hs,male,"35,000 to 49,999",2
+18-24,college,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+18-24,hs,female,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,grad school,male,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,college,female,"25,000 to 34,999",2
+25-39,hs,female,"50,000 to 74,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,hs,female,"15,000 to 24,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+40-55,hs,male,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"15,000 to 24,999",2
+25-39,college,female,"25,000 to 34,999",2
+40-55,college,male,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,female,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,college,female,"25,000 to 34,999",2
+18-24,hs,female,"75,000 to 99,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,grad school,male,"100,000 or more",2
+25-39,hs,female,"50,000 to 74,999",2
+25-39,college,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,hs,female,"35,000 to 49,999",2
+56+,hs,male,"15,000 to 24,999",2
+25-39,college,female,"25,000 to 34,999",2
+25-39,hs,female,"75,000 to 99,999",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,college,female,"100,000 or more",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"15,000 to 24,999",2
+40-55,college,female,"100,000 or more",2
+18-24,grad school,female,"50,000 to 74,999",2
+18-24,grad school,male,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+25-39,hs,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,grad school,female,"100,000 or more",2
+25-39,less than hs,female,"75,000 to 99,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"35,000 to 49,999",2
+56+,college,female,"100,000 or more",2
+56+,college,female,"15,000 to 24,999",2
+25-39,college,female,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"35,000 to 49,999",2
+40-55,hs,male,"15,000 to 24,999",2
+18-24,hs,male,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,hs,male,"75,000 to 99,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+18-24,hs,male,"50,000 to 74,999",2
+25-39,college,male,"100,000 or more",2
+40-55,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"35,000 to 49,999",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,less than hs,female,"35,000 to 49,999",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,college,female,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,college,female,"25,000 to 34,999",2
+18-24,hs,female,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,college,male,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,hs,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,hs,male,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,college,female,"75,000 to 99,999",2
+25-39,hs,female,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,college,female,"35,000 to 49,999",2
+18-24,hs,female,"100,000 or more",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,hs,female,"15,000 to 24,999",2
+40-55,college,female,"25,000 to 34,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+18-24,college,female,"75,000 to 99,999",2
+25-39,college,female,"35,000 to 49,999",2
+25-39,grad school,other,"75,000 to 99,999",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,college,female,"75,000 to 99,999",2
+18-24,hs,female,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,hs,female,"50,000 to 74,999",2
+25-39,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"25,000 to 34,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,college,female,"25,000 to 34,999",2
+56+,hs,female,"25,000 to 34,999",2
+18-24,hs,female,"25,000 to 34,999",2
+25-39,college,female,"15,000 to 24,999",2
+40-55,college,female,"100,000 or more",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"25,000 to 34,999",2
+40-55,hs,female,"75,000 to 99,999",2
+25-39,grad school,female,"35,000 to 49,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,grad school,female,"50,000 to 74,999",2
+56+,college,female,"100,000 or more",2
+56+,college,female,"25,000 to 34,999",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,college,female,"100,000 or more",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,female,"100,000 or more",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,college,male,"35,000 to 49,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,hs,female,"35,000 to 49,999",2
+40-55,grad school,female,"100,000 or more",2
+40-55,college,female,"100,000 or more",2
+40-55,hs,male,"25,000 to 34,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,grad school,female,"50,000 to 74,999",2
+25-39,college,male,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,college,female,"25,000 to 34,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+25-39,college,female,"15,000 to 24,999",2
+40-55,college,female,"15,000 to 24,999",2
+18-24,college,female,"15,000 to 24,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+56+,grad school,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,male,"15,000 to 24,999",2
+18-24,hs,male,"50,000 to 74,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,hs,female,"15,000 to 24,999",2
+56+,grad school,female,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+56+,hs,male,"75,000 to 99,999",2
+18-24,hs,male,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+18-24,grad school,female,"75,000 to 99,999",2
+25-39,hs,female,"25,000 to 34,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+56+,college,female,"15,000 to 24,999",2
+56+,hs,female,"75,000 to 99,999",2
+25-39,hs,other,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+18-24,college,female,"15,000 to 24,999",2
+56+,college,male,"100,000 or more",2
+56+,hs,female,"35,000 to 49,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,college,female,"35,000 to 49,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,college,female,"25,000 to 34,999",2
+56+,college,male,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,college,male,"75,000 to 99,999",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,grad school,female,"100,000 or more",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,college,male,"75,000 to 99,999",2
+40-55,college,female,"50,000 to 74,999",2
+18-24,college,female,"100,000 or more",2
+56+,college,male,"25,000 to 34,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"35,000 to 49,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,grad school,female,"50,000 to 74,999",2
+25-39,college,male,"15,000 to 24,999",2
+18-24,hs,female,"100,000 or more",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,grad school,female,"100,000 or more",2
+18-24,hs,female,"25,000 to 34,999",2
+56+,grad school,female,"25,000 to 34,999",2
+56+,grad school,male,"100,000 or more",2
+18-24,hs,male,"100,000 or more",2
+40-55,college,female,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+56+,hs,female,"50,000 to 74,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+18-24,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,college,female,"35,000 to 49,999",2
+40-55,grad school,male,"100,000 or more",2
+18-24,hs,male,"50,000 to 74,999",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,grad school,female,"15,000 to 24,999",2
+25-39,hs,female,"100,000 or more",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,female,"15,000 to 24,999",2
+25-39,hs,female,"35,000 to 49,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+40-55,hs,female,"15,000 to 24,999",2
+40-55,college,male,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"25,000 to 34,999",2
+25-39,hs,male,"100,000 or more",2
+25-39,college,female,"50,000 to 74,999",2
+18-24,college,female,"15,000 to 24,999",2
+25-39,college,female,"100,000 or more",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,college,female,"25,000 to 34,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,hs,female,"35,000 to 49,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,hs,female,"75,000 to 99,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,college,female,"35,000 to 49,999",2
+40-55,hs,male,"35,000 to 49,999",2
+25-39,hs,female,"100,000 or more",2
+18-24,college,female,"15,000 to 24,999",2
+18-24,hs,male,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,college,female,"15,000 to 24,999",2
+56+,hs,female,"100,000 or more",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,hs,male,"15,000 to 24,999",2
+40-55,college,female,"25,000 to 34,999",2
+40-55,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,hs,female,"50,000 to 74,999",2
+56+,hs,male,"15,000 to 24,999",2
+25-39,hs,female,"50,000 to 74,999",2
+25-39,less than hs,female,"50,000 to 74,999",2
+56+,grad school,female,"75,000 to 99,999",2
+56+,college,male,"50,000 to 74,999",2
+40-55,college,female,"35,000 to 49,999",2
+40-55,hs,female,"50,000 to 74,999",2
+18-24,hs,female,"50,000 to 74,999",2
+18-24,college,female,"35,000 to 49,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+56+,hs,male,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,hs,male,"25,000 to 34,999",2
+18-24,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,college,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,female,"100,000 or more",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+56+,grad school,female,"35,000 to 49,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,hs,female,"25,000 to 34,999",2
+25-39,college,female,"75,000 to 99,999",2
+18-24,hs,female,"25,000 to 34,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+25-39,grad school,male,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,college,female,"75,000 to 99,999",2
+56+,hs,female,"50,000 to 74,999",2
+25-39,college,male,"35,000 to 49,999",2
+18-24,college,female,"50,000 to 74,999",2
+25-39,college,female,"100,000 or more",2
+56+,college,female,"100,000 or more",2
+40-55,grad school,female,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,less than hs,female,"35,000 to 49,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+56+,hs,female,"50,000 to 74,999",2
+18-24,hs,female,"35,000 to 49,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,grad school,female,"100,000 or more",2
+25-39,hs,female,"50,000 to 74,999",2
+25-39,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,college,male,"35,000 to 49,999",2
+25-39,grad school,female,"100,000 or more",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,female,"35,000 to 49,999",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,college,female,"75,000 to 99,999",2
+18-24,college,female,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+40-55,college,female,"15,000 to 24,999",2
+40-55,college,male,"75,000 to 99,999",2
+56+,hs,female,"25,000 to 34,999",2
+56+,less than hs,female,"50,000 to 74,999",2
+40-55,college,male,"75,000 to 99,999",2
+40-55,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"25,000 to 34,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,male,"50,000 to 74,999",2
+18-24,college,female,"15,000 to 24,999",2
+56+,college,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,hs,male,"75,000 to 99,999",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,college,female,"25,000 to 34,999",2
+56+,hs,male,"35,000 to 49,999",2
+25-39,hs,female,"50,000 to 74,999",2
+56+,college,female,"75,000 to 99,999",2
+40-55,college,male,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,female,"35,000 to 49,999",2
+25-39,hs,female,"25,000 to 34,999",2
+56+,college,female,"50,000 to 74,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+25-39,hs,male,"35,000 to 49,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,hs,female,"25,000 to 34,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+56+,hs,male,"50,000 to 74,999",2
+56+,college,female,"100,000 or more",2
+40-55,college,female,"100,000 or more",2
+40-55,college,female,"25,000 to 34,999",2
+40-55,grad school,female,"100,000 or more",2
+56+,college,female,"25,000 to 34,999",2
+56+,college,female,"50,000 to 74,999",2
+56+,grad school,female,"75,000 to 99,999",2
+18-24,hs,male,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+18-24,college,female,"50,000 to 74,999",2
+56+,hs,female,"50,000 to 74,999",2
+25-39,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,less than hs,female,"25,000 to 34,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,hs,female,"15,000 to 24,999",2
+56+,hs,female,"75,000 to 99,999",2
+56+,college,female,"50,000 to 74,999",2
+56+,college,male,"100,000 or more",2
+18-24,hs,male,"15,000 to 24,999",2
+40-55,college,female,"75,000 to 99,999",2
+40-55,college,female,"35,000 to 49,999",2
+56+,college,female,"100,000 or more",2
+25-39,grad school,male,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,college,female,"75,000 to 99,999",2
+40-55,hs,female,"75,000 to 99,999",2
+56+,college,male,"35,000 to 49,999",2
+25-39,college,female,"35,000 to 49,999",2
+18-24,hs,female,"15,000 to 24,999",2
+56+,college,female,"35,000 to 49,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+18-24,college,female,"25,000 to 34,999",2
+40-55,grad school,female,"35,000 to 49,999",2
+56+,grad school,female,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,hs,female,"25,000 to 34,999",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,college,other,"50,000 to 74,999",2
+40-55,grad school,female,"100,000 or more",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,college,female,"75,000 to 99,999",2
+25-39,college,female,"100,000 or more",2
+56+,less than hs,female,"100,000 or more",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,college,female,"75,000 to 99,999",2
+56+,college,male,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,college,male,"25,000 to 34,999",2
+40-55,hs,female,"50,000 to 74,999",2
+18-24,grad school,female,"75,000 to 99,999",2
+40-55,hs,male,"50,000 to 74,999",2
+18-24,college,female,"50,000 to 74,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,grad school,female,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+56+,college,female,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"25,000 to 34,999",2
+18-24,college,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,less than hs,male,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+18-24,grad school,male,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,hs,female,"15,000 to 24,999",2
+40-55,college,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+25-39,hs,male,"15,000 to 24,999",2
+40-55,less than hs,male,"50,000 to 74,999",2
+18-24,less than hs,male,"35,000 to 49,999",2
+40-55,less than hs,male,"35,000 to 49,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,hs,female,"35,000 to 49,999",2
+40-55,college,female,"100,000 or more",2
+18-24,hs,female,"35,000 to 49,999",2
+56+,college,female,"75,000 to 99,999",2
+25-39,college,male,"35,000 to 49,999",2
+25-39,college,female,"100,000 or more",2
+40-55,college,male,"25,000 to 34,999",2
+40-55,college,female,"100,000 or more",2
+18-24,college,male,"15,000 to 24,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,college,male,"50,000 to 74,999",2
+40-55,hs,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"75,000 to 99,999",2
+40-55,hs,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,college,female,"75,000 to 99,999",2
+56+,college,male,"75,000 to 99,999",2
+25-39,hs,female,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+18-24,college,female,"100,000 or more",2
+56+,college,female,"50,000 to 74,999",2
+18-24,hs,female,"35,000 to 49,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+18-24,hs,female,"35,000 to 49,999",2
+40-55,grad school,female,"100,000 or more",2
+40-55,college,female,"100,000 or more",2
+25-39,grad school,female,"50,000 to 74,999",2
+56+,less than hs,female,"100,000 or more",2
+25-39,college,female,"100,000 or more",2
+40-55,hs,female,"15,000 to 24,999",2
+25-39,less than hs,female,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,hs,female,"100,000 or more",2
+56+,hs,female,"25,000 to 34,999",2
+25-39,college,female,"25,000 to 34,999",2
+25-39,grad school,male,"100,000 or more",2
+18-24,hs,female,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,college,female,"100,000 or more",2
+25-39,grad school,female,"100,000 or more",2
+25-39,college,female,"50,000 to 74,999",2
+56+,college,female,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+18-24,hs,female,"35,000 to 49,999",2
+40-55,college,male,"75,000 to 99,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,less than hs,female,"75,000 to 99,999",2
+56+,grad school,female,"25,000 to 34,999",2
+56+,college,male,"15,000 to 24,999",2
+56+,college,female,"15,000 to 24,999",2
+40-55,college,female,"15,000 to 24,999",2
+18-24,hs,other,"15,000 to 24,999",2
+40-55,college,female,"100,000 or more",2
+40-55,grad school,female,"100,000 or more",2
+40-55,hs,female,"25,000 to 34,999",2
+56+,college,male,"75,000 to 99,999",2
+25-39,less than hs,female,"15,000 to 24,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,hs,female,"15,000 to 24,999",2
+56+,college,female,"35,000 to 49,999",2
+40-55,college,female,"25,000 to 34,999",2
+56+,grad school,female,"35,000 to 49,999",2
+25-39,hs,female,"50,000 to 74,999",2
+56+,hs,female,"35,000 to 49,999",2
+56+,college,female,"25,000 to 34,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,college,female,"35,000 to 49,999",2
+56+,college,female,"15,000 to 24,999",2
+40-55,grad school,female,"100,000 or more",2
+40-55,hs,female,"75,000 to 99,999",2
+40-55,college,female,"75,000 to 99,999",2
+18-24,grad school,female,"35,000 to 49,999",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,hs,male,"25,000 to 34,999",2
+40-55,hs,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,college,female,"25,000 to 34,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+40-55,grad school,female,"25,000 to 34,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,college,female,"25,000 to 34,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,college,female,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,college,female,"50,000 to 74,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,less than hs,male,"75,000 to 99,999",2
+40-55,hs,female,"35,000 to 49,999",2
+25-39,grad school,female,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,grad school,female,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+40-55,college,male,"100,000 or more",2
+40-55,college,female,"15,000 to 24,999",2
+40-55,college,female,"100,000 or more",2
+56+,college,female,"35,000 to 49,999",2
+56+,college,male,"100,000 or more",2
+18-24,hs,male,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+56+,college,male,"35,000 to 49,999",2
+40-55,hs,female,"75,000 to 99,999",2
+18-24,college,female,"50,000 to 74,999",2
+18-24,college,female,"35,000 to 49,999",2
+56+,less than hs,female,"50,000 to 74,999",2
+56+,college,female,"25,000 to 34,999",2
+40-55,college,female,"35,000 to 49,999",2
+40-55,college,female,"75,000 to 99,999",2
+40-55,less than hs,female,"100,000 or more",2
+25-39,college,female,"15,000 to 24,999",2
+40-55,college,female,"50,000 to 74,999",2
+56+,college,male,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,college,female,"75,000 to 99,999",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,college,female,"100,000 or more",2
+56+,college,female,"100,000 or more",2
+56+,grad school,male,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,grad school,female,"100,000 or more",2
+56+,college,female,"25,000 to 34,999",2
+56+,grad school,female,"100,000 or more",2
+56+,hs,female,"50,000 to 74,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+40-55,hs,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+56+,grad school,female,"15,000 to 24,999",2
+56+,less than hs,female,"15,000 to 24,999",2
+18-24,college,female,"15,000 to 24,999",2
+56+,college,male,"100,000 or more",2
+25-39,college,female,"25,000 to 34,999",2
+56+,hs,male,"25,000 to 34,999",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,college,female,"35,000 to 49,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"50,000 to 74,999",2
+18-24,hs,female,"25,000 to 34,999",2
+40-55,college,male,"35,000 to 49,999",2
+40-55,college,female,"100,000 or more",2
+40-55,less than hs,female,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,hs,female,"15,000 to 24,999",2
+18-24,hs,other,"15,000 to 24,999",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,college,male,"35,000 to 49,999",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,college,male,"25,000 to 34,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+56+,hs,female,"35,000 to 49,999",2
+56+,hs,male,"35,000 to 49,999",2
+40-55,hs,female,"15,000 to 24,999",2
+40-55,grad school,female,"15,000 to 24,999",2
+25-39,college,male,"100,000 or more",2
+40-55,college,female,"100,000 or more",2
+56+,college,female,"50,000 to 74,999",2
+40-55,grad school,female,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,hs,female,"15,000 to 24,999",2
+56+,college,female,"25,000 to 34,999",2
+40-55,less than hs,female,"35,000 to 49,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,less than hs,male,"15,000 to 24,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+25-39,college,female,"75,000 to 99,999",2
+56+,grad school,female,"50,000 to 74,999",2
+18-24,college,male,"50,000 to 74,999",2
+56+,grad school,female,"35,000 to 49,999",2
+25-39,hs,male,"50,000 to 74,999",2
+40-55,college,male,"100,000 or more",2
+40-55,grad school,male,"100,000 or more",2
+25-39,hs,female,"35,000 to 49,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,hs,female,"35,000 to 49,999",2
+56+,college,female,"50,000 to 74,999",2
+40-55,grad school,male,"15,000 to 24,999",2
+25-39,hs,female,"35,000 to 49,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,hs,female,"25,000 to 34,999",2
+56+,college,male,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+40-55,grad school,female,"100,000 or more",2
+40-55,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+56+,grad school,female,"100,000 or more",2
+56+,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"25,000 to 34,999",2
+56+,hs,female,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,grad school,female,"50,000 to 74,999",2
+25-39,less than hs,female,"25,000 to 34,999",2
+56+,grad school,female,"50,000 to 74,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+25-39,hs,female,"50,000 to 74,999",2
+40-55,hs,female,"75,000 to 99,999",2
+18-24,hs,female,"15,000 to 24,999",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,grad school,female,"100,000 or more",2
+25-39,college,female,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+25-39,college,female,"25,000 to 34,999",2
+56+,college,female,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+56+,grad school,female,"25,000 to 34,999",2
+56+,hs,female,"50,000 to 74,999",2
+56+,grad school,female,"50,000 to 74,999",2
+56+,less than hs,female,"50,000 to 74,999",2
+25-39,college,female,"35,000 to 49,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,hs,female,"15,000 to 24,999",2
+56+,hs,female,"50,000 to 74,999",2
+56+,grad school,female,"75,000 to 99,999",2
+56+,hs,female,"35,000 to 49,999",2
+25-39,college,female,"100,000 or more",2
+40-55,hs,male,"50,000 to 74,999",2
+18-24,college,female,"50,000 to 74,999",2
+56+,hs,female,"50,000 to 74,999",2
+18-24,hs,female,"15,000 to 24,999",2
+25-39,hs,female,"100,000 or more",2
+25-39,college,female,"50,000 to 74,999",2
+40-55,grad school,male,"100,000 or more",2
+40-55,hs,female,"50,000 to 74,999",2
+40-55,grad school,female,"100,000 or more",2
+18-24,hs,female,"15,000 to 24,999",2
+40-55,college,female,"100,000 or more",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,college,male,"100,000 or more",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,hs,female,"25,000 to 34,999",2
+40-55,hs,female,"15,000 to 24,999",2
+18-24,hs,female,"50,000 to 74,999",2
+25-39,college,female,"50,000 to 74,999",2
+25-39,less than hs,female,"15,000 to 24,999",2
+56+,college,female,"50,000 to 74,999",2
+56+,less than hs,female,"15,000 to 24,999",2
+25-39,grad school,female,"100,000 or more",2
+56+,college,female,"15,000 to 24,999",2
+56+,less than hs,male,"100,000 or more",2
+56+,college,male,"50,000 to 74,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,grad school,female,"100,000 or more",2
+25-39,college,female,"25,000 to 34,999",2
+25-39,college,female,"15,000 to 24,999",2
+56+,less than hs,female,"100,000 or more",2
+25-39,college,female,"15,000 to 24,999",2
+25-39,less than hs,female,"50,000 to 74,999",2
+25-39,grad school,female,"75,000 to 99,999",2
+40-55,college,female,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,college,male,"35,000 to 49,999",2
+56+,hs,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,hs,male,"50,000 to 74,999",2
+25-39,hs,male,"15,000 to 24,999",2
+56+,grad school,male,"100,000 or more",2
+18-24,college,male,"15,000 to 24,999",2
+25-39,hs,male,"50,000 to 74,999",2
+18-24,hs,female,"25,000 to 34,999",2
+18-24,hs,male,"35,000 to 49,999",2
+56+,hs,male,"15,000 to 24,999",2
+18-24,hs,male,"35,000 to 49,999",2
+25-39,college,male,"100,000 or more",2
+56+,hs,male,"25,000 to 34,999",2
+25-39,hs,male,"100,000 or more",2
+25-39,hs,male,"35,000 to 49,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,college,male,"100,000 or more",2
+56+,college,male,"100,000 or more",2
+56+,college,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+25-39,college,male,"35,000 to 49,999",2
+40-55,college,male,"75,000 to 99,999",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"35,000 to 49,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,less than hs,male,"35,000 to 49,999",2
+25-39,grad school,male,"100,000 or more",2
+40-55,hs,male,"35,000 to 49,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,hs,female,"25,000 to 34,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,hs,male,"75,000 to 99,999",2
+56+,hs,male,"50,000 to 74,999",2
+56+,hs,male,"50,000 to 74,999",2
+25-39,grad school,male,"50,000 to 74,999",2
+40-55,hs,male,"35,000 to 49,999",2
+25-39,hs,female,"50,000 to 74,999",2
+56+,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,male,"35,000 to 49,999",2
+40-55,college,male,"25,000 to 34,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,female,"25,000 to 34,999",2
+18-24,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,college,male,"100,000 or more",2
+56+,hs,male,"100,000 or more",2
+25-39,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"75,000 to 99,999",2
+25-39,college,male,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,hs,male,"100,000 or more",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,college,male,"15,000 to 24,999",2
+25-39,grad school,male,"100,000 or more",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,grad school,male,"100,000 or more",2
+25-39,college,male,"75,000 to 99,999",2
+56+,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,male,"35,000 to 49,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+25-39,college,male,"100,000 or more",2
+56+,hs,male,"50,000 to 74,999",2
+25-39,college,male,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+56+,hs,male,"50,000 to 74,999",2
+18-24,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"35,000 to 49,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,grad school,male,"100,000 or more",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"25,000 to 34,999",2
+40-55,hs,male,"75,000 to 99,999",2
+25-39,less than hs,male,"100,000 or more",2
+40-55,college,male,"35,000 to 49,999",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+40-55,grad school,male,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+56+,college,male,"100,000 or more",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"25,000 to 34,999",2
+25-39,college,male,"50,000 to 74,999",2
+18-24,hs,male,"75,000 to 99,999",2
+25-39,hs,male,"50,000 to 74,999",2
+56+,hs,male,"35,000 to 49,999",2
+25-39,college,male,"75,000 to 99,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+40-55,grad school,male,"50,000 to 74,999",2
+56+,grad school,male,"35,000 to 49,999",2
+56+,college,male,"100,000 or more",2
+40-55,college,male,"35,000 to 49,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+18-24,college,male,"35,000 to 49,999",2
+40-55,hs,male,"100,000 or more",2
+25-39,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,hs,male,"35,000 to 49,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,grad school,male,"35,000 to 49,999",2
+25-39,grad school,male,"50,000 to 74,999",2
+40-55,grad school,male,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+56+,hs,male,"35,000 to 49,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,male,"75,000 to 99,999",2
+25-39,college,male,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+56+,college,male,"15,000 to 24,999",2
+56+,hs,male,"35,000 to 49,999",2
+25-39,grad school,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,hs,male,"100,000 or more",2
+56+,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,college,male,"25,000 to 34,999",2
+25-39,hs,male,"35,000 to 49,999",2
+56+,college,male,"15,000 to 24,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,grad school,male,"50,000 to 74,999",2
+25-39,college,male,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,college,male,"25,000 to 34,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,hs,male,"25,000 to 34,999",2
+56+,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,college,male,"75,000 to 99,999",2
+40-55,college,male,"100,000 or more",2
+40-55,hs,male,"50,000 to 74,999",2
+56+,college,male,"100,000 or more",2
+56+,grad school,male,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"75,000 to 99,999",2
+56+,grad school,male,"100,000 or more",2
+25-39,hs,female,"15,000 to 24,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,hs,male,"35,000 to 49,999",2
+56+,college,male,"50,000 to 74,999",2
+25-39,hs,male,"25,000 to 34,999",2
+18-24,hs,male,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+18-24,less than hs,male,"25,000 to 34,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,hs,male,"75,000 to 99,999",2
+56+,hs,male,"75,000 to 99,999",2
+40-55,hs,male,"25,000 to 34,999",2
+25-39,hs,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+25-39,grad school,female,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+56+,college,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+25-39,college,male,"35,000 to 49,999",2
+40-55,college,male,"50,000 to 74,999",2
+18-24,college,male,"35,000 to 49,999",2
+56+,college,male,"100,000 or more",2
+25-39,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"50,000 to 74,999",2
+18-24,college,male,"100,000 or more",2
+56+,college,male,"100,000 or more",2
+40-55,college,male,"15,000 to 24,999",2
+25-39,grad school,male,"100,000 or more",2
+56+,hs,male,"50,000 to 74,999",2
+56+,grad school,male,"100,000 or more",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"100,000 or more",2
+40-55,hs,male,"50,000 to 74,999",2
+56+,grad school,male,"35,000 to 49,999",2
+40-55,college,male,"25,000 to 34,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,hs,male,"25,000 to 34,999",2
+25-39,college,male,"100,000 or more",2
+56+,hs,male,"50,000 to 74,999",2
+56+,college,male,"100,000 or more",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,college,male,"25,000 to 34,999",2
+56+,college,male,"50,000 to 74,999",2
+25-39,hs,male,"75,000 to 99,999",2
+40-55,hs,male,"35,000 to 49,999",2
+56+,hs,male,"50,000 to 74,999",2
+56+,hs,male,"25,000 to 34,999",2
+25-39,college,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+25-39,college,male,"50,000 to 74,999",2
+56+,hs,male,"15,000 to 24,999",2
+25-39,college,male,"25,000 to 34,999",2
+40-55,college,male,"100,000 or more",2
+40-55,college,male,"100,000 or more",2
+18-24,college,male,"75,000 to 99,999",2
+18-24,college,male,"75,000 to 99,999",2
+56+,grad school,male,"50,000 to 74,999",2
+40-55,hs,male,"75,000 to 99,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"100,000 or more",2
+25-39,hs,male,"25,000 to 34,999",2
+25-39,grad school,male,"100,000 or more",2
+25-39,hs,male,"50,000 to 74,999",2
+40-55,hs,male,"15,000 to 24,999",2
+40-55,college,male,"35,000 to 49,999",2
+40-55,college,male,"100,000 or more",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"75,000 to 99,999",2
+56+,grad school,male,"50,000 to 74,999",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+56+,hs,male,"15,000 to 24,999",2
+56+,hs,male,"25,000 to 34,999",2
+25-39,grad school,male,"100,000 or more",2
+40-55,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"100,000 or more",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,male,"100,000 or more",2
+56+,college,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"75,000 to 99,999",2
+56+,hs,male,"35,000 to 49,999",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+40-55,grad school,male,"75,000 to 99,999",2
+56+,college,male,"25,000 to 34,999",2
+25-39,grad school,male,"75,000 to 99,999",2
+40-55,college,male,"15,000 to 24,999",2
+25-39,grad school,male,"100,000 or more",2
+40-55,hs,male,"25,000 to 34,999",2
+25-39,college,male,"75,000 to 99,999",2
+25-39,grad school,male,"100,000 or more",2
+25-39,grad school,male,"100,000 or more",2
+40-55,grad school,male,"75,000 to 99,999",2
+40-55,grad school,male,"100,000 or more",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+56+,hs,male,"15,000 to 24,999",2
+56+,hs,male,"15,000 to 24,999",2
+25-39,hs,male,"100,000 or more",2
+25-39,hs,male,"15,000 to 24,999",2
+56+,grad school,male,"50,000 to 74,999",2
+40-55,grad school,male,"75,000 to 99,999",2
+56+,college,male,"100,000 or more",2
+56+,less than hs,male,"50,000 to 74,999",2
+25-39,hs,male,"50,000 to 74,999",2
+25-39,college,female,"75,000 to 99,999",2
+25-39,less than hs,male,"15,000 to 24,999",2
+25-39,hs,male,"25,000 to 34,999",2
+56+,grad school,male,"100,000 or more",2
+18-24,hs,male,"15,000 to 24,999",2
+56+,college,male,"75,000 to 99,999",2
+56+,grad school,male,"100,000 or more",2
+40-55,college,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+25-39,college,male,"35,000 to 49,999",2
+40-55,hs,male,"100,000 or more",2
+25-39,hs,male,"75,000 to 99,999",2
+25-39,college,male,"50,000 to 74,999",2
+56+,college,male,"25,000 to 34,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,college,male,"75,000 to 99,999",2
+25-39,college,male,"35,000 to 49,999",2
+40-55,hs,male,"15,000 to 24,999",2
+56+,hs,male,"50,000 to 74,999",2
+40-55,college,male,"100,000 or more",2
+40-55,college,male,"100,000 or more",2
+56+,hs,male,"15,000 to 24,999",2
+40-55,hs,male,"50,000 to 74,999",2
+56+,hs,male,"25,000 to 34,999",2
+25-39,college,male,"100,000 or more",2
+56+,college,male,"50,000 to 74,999",2
+40-55,college,male,"50,000 to 74,999",2
+56+,college,male,"15,000 to 24,999",2
+56+,hs,male,"75,000 to 99,999",2
+25-39,hs,male,"15,000 to 24,999",2
+25-39,college,male,"50,000 to 74,999",2
+40-55,grad school,male,"50,000 to 74,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,college,male,"75,000 to 99,999",2
+40-55,hs,male,"25,000 to 34,999",2
+56+,college,male,"100,000 or more",2
+56+,hs,male,"75,000 to 99,999",2
+56+,hs,male,"15,000 to 24,999",2
+56+,college,male,"25,000 to 34,999",2
+40-55,college,male,"100,000 or more",2
+40-55,hs,male,"35,000 to 49,999",2
+25-39,college,male,"50,000 to 74,999",2

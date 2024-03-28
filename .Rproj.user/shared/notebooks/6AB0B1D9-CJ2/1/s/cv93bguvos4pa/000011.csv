@@ -1,0 +1,8 @@
+"0","amceusw2gender <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,"
+"0","            estimate = ""amce"","
+"0","            weights = ~ weights,"
+"0","            by = ~ gender)"
+"2","Warning: svyglm not fitted by maximum likelihood."
+"2","Warning: svyglm not fitted by maximum likelihood."
+"2","Warning: svyglm not fitted by maximum likelihood."
+"0","plot(amceusw2gender, group = ""gender"", vline = 0) "

@@ -1,0 +1,2 @@
+"0","dfcj$weights = dfcj$gender_weight * dfcj$age_weight * dfcj$income_weight * dfcj$education_weight * dfcj$state.weight"
+"0",""

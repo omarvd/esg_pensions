@@ -1,0 +1,8 @@
+"0","# Run Hierarchical Bayes using MCMC"
+"0","hb_result <- rhierMnlRwMixture(choice_list, "
+"0","                               R = 1000,    # Number of MCMC draws"
+"0","                               keep = 1,    # Thinning parameter"
+"0","                               nprint = 100)  # Print output every nprint iterations"
+"2","Error in rhierMnlRwMixture(choice_list, R = 1000, keep = 1, nprint = 100) : 
+  unused arguments (R = 1000, keep = 1, nprint = 100)
+"

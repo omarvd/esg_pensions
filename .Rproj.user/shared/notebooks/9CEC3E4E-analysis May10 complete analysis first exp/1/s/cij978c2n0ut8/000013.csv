@@ -1,0 +1,5 @@
+"0","mm_income <- cj(dfincome, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""mm"", by = ~income_groups)"
+"0",""
+"0","diff_mm_income <- cj(dfincome, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""mm_diff"", by = ~income_groups)"
+"0",""
+"0","plot(mm_income, vline = 0.5) + ggplot2::facet_wrap(~BY, ncol = 2L) + ggtitle(""Marginal Means, U.S. by Income"")"

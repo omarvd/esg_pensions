@@ -1,0 +1,4 @@
+"0","df56 = dfcj %>% "
+"0","  select(survey_id, fiftysix)"
+"0",""
+"0","write.csv(df56, ""df56.csv"")"

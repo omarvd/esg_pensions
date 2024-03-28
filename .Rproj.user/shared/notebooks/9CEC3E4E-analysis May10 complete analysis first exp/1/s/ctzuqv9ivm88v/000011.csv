@@ -1,0 +1,6 @@
+"0","mms_age <- cj(na.omit(dfcjw), choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights = ~weight, estimate = ""mm"", by = ~age_groups)"
+"0",""
+"0","diff_mms_age <- cj(na.omit(dfcjw), choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights=~weight, estimate = ""mm_diff"", "
+"0","    by = ~age_groups)"
+"0",""
+"0","plot(mms_age, vline = 0.5) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle(""Marginal Means by Age"")"

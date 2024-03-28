@@ -1,0 +1,542 @@
+---
+title: "ESG Legislation"
+author: "Omar Vasquez Duque"
+date: "2023-12-05"
+output: pdf_document
+---
+
+
+```{r include=FALSE}
+
+options(scipen=999)
+
+options(digits = 5)
+```
+
+```{r include=FALSE}
+
+
+library(readr)
+
+
+dfcj2.raw <-read_csv("esgnov.csv")
+
+names(dfcj2.raw)
+
+```
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+
+```{r include=FALSE}
+
+dfcj2 = dfcj2.raw %>% 
+  clean_names() 
+
+```
+
+```{r}
+median_complet_t2 = median(dfcj2$respondent_length_of_interview_seconds) 
+# calculate median completion time in secs
+
+average_complet2 = mean(dfcj2$respondent_length_of_interview_seconds)
+
+```
+
+
+```{r}
+dfcj2 =dfcj2 %>% 
+  mutate(expected_pension = factor(expected_pension),
+         gender_equality_mgmt = if_else(gender_equality == "Does not invest in companies with a low proportion of women in executive and director positions", "gender restrictions", "no gender restrictions"),
+         living_wage = if_else(living_wage == "Only invests in companies that ensure their workers earn enough to not fall under poverty", "living wage restrictions", "no living wage restrictions"),
+         salary_equality_within_firm = if_else(salary_equality=="Does not invest in companies that have the highest pay disparity between their top executives and their median employee", "salary equality restrictions", "no salary equality restrictions"),
+         labor_rights = if_else(labor_rights == "Only invests in companies that meet United Nations global standards for labor rights", "labor rights restrictions", "no labor rights restrictions"),
+         environmental_impact = if_else(environmental_impact == "Excludes companies whose products have negative environmental impacts", "environmental restrictions", "no environmental restrictions"),
+         faith_morality = if_else(faith_morality == "Excludes companies that profit from adult entertainment, alcohol, tobacco, or gambling", "faith/morality restrictions", "no faith/morality restrictions"),
+         firearms = if_else(firearms == "Does not invest in firearms", "firearms restrictions", "no firearms restrictions"))
+```
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(gender_equality_mgmt = as.factor(gender_equality_mgmt),
+         living_wage = as.factor(living_wage),
+         salary_equality_within_firm = as.factor(salary_equality_within_firm),
+         labor_rights  = as.factor(labor_rights),
+         environmental_impact  = as.factor(environmental_impact),
+         faith_morality  = as.factor(faith_morality),
+         firearms  = as.factor(firearms))
+```
+
+```{r}
+dfcj2$gender_equality_mgmt <- relevel(dfcj2$gender_equality_mgmt, ref = "no gender restrictions")
+
+dfcj2$living_wage <- relevel(dfcj2$living_wage, ref = "no living wage restrictions")
+
+dfcj2$salary_equality_within_firm <- relevel(dfcj2$salary_equality_within_firm, ref = "no salary equality restrictions")
+
+dfcj2$labor_rights <- relevel(dfcj2$labor_rights, ref = "no labor rights restrictions")
+
+dfcj2$environmental_impact <- relevel(dfcj2$environmental_impact, ref = "no environmental restrictions")
+
+dfcj2$faith_morality <- relevel(dfcj2$faith_morality, ref = "no faith/morality restrictions")
+
+dfcj2$firearms <- relevel(dfcj2$firearms, ref = "no firearms restrictions")
+```
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(republican = ifelse(q22_party_identification_o1_republican==1 |
+                               q23_political_affiliation_o1_republican ==1, 1, 0))
+
+dfcj2$republican = as.factor(dfcj2$republican)
+```
+
+
+```{r}
+
+dfcj2 = dfcj2 %>% 
+  mutate(age = 2023 - as.numeric(q21_age_write_in))
+
+dfcj2 = dfcj2 %>% 
+  filter(!is.na(age))
+
+
+dfcj2 = dfcj2 %>% 
+  mutate(age.cat = case_when(age > 17 & age <=24 ~ "18-24",
+                                    age >= 25 & age <=39 ~ "25-39",
+                                    age >= 40 & age <=55 ~ "40-55",
+                                    age >=56 ~ "56+"))
+
+dfcj2=dfcj2 %>% 
+  mutate(income = case_when(q27_annual_income_us_o1_between_15_000_and_24_999 == 1 ~ "15,000 to 24,999",
+                            q27_annual_income_us_o2_between_25_000_and_34_999 == 1 ~ "25,000 to 34,999",
+                            q27_annual_income_us_o3_between_35_000_and_44_999 == 1 ~  "35,000 to 49,999",
+                            q27_annual_income_us_o4_between_45_000_and_54_999 == 1 ~ "50,000 to 74,999",
+                            q27_annual_income_us_o5_between_55_000_and_64_999 == 1 ~ "50,000 to 74,999",
+                            q27_annual_income_us_o6_between_65_000_and_74_999 == 1 ~ "50,000 to 74,999",
+                            q27_annual_income_us_o7_between_75_000_and_84_999 == 1 ~ "75,000 to 99,999",
+                            q27_annual_income_us_o8_between_85_000_and_94_999 == 1 ~ "75,000 to 99,999",
+                            q27_annual_income_us_o9_95_000_or_more == 1 ~ "100,000 or more"))
+dfcj2 = dfcj2 %>% 
+  mutate(gender = case_when(q24_gender_o1_male == 1 ~ "male",
+                            q24_gender_o2_female == 1 ~ "female",
+                            q24_gender_o3_other == 1 ~ "other"))
+
+dfcj2 = dfcj2 %>% 
+  mutate(education = case_when(q26_degree_o1_high_school == 1 ~ "hs",
+                               q26_degree_o2_college_degree == 1 ~ "college",
+                               q26_degree_o3_graduate_degree == 1 ~ "grad school",
+                               q26_degree_o4_none_of_the_above == 1 ~ "less than hs"),
+         prior = factor(ifelse(q6_taking_into_account_esg_factors_o1_yes ==1, "pro", "anti")))
+
+
+```
+
+Check if there are NAs in other variables too!
+
+```{r}
+median_complet_t2 = median(dfcj2$respondent_length_of_interview_seconds)
+
+dfconjointly2 = dfcj2 %>% 
+  mutate(CONJOINTLY_ACTION = ifelse(respondent_length_of_interview_seconds >= 0.5 * median_complet_t2 & respondent_length_of_interview_seconds <= 2 * median_complet_t2, "INCLUDE_IN_ANALYSIS", "EXCLUDE_FROM_ANALYSIS")) %>% 
+  select(survey_id, CONJOINTLY_ACTION)
+
+write_csv(dfconjointly2, "dfconjointly2.csv")
+
+31728/24
+
+26064/24
+
+table(dfconjointly2$CONJOINTLY_ACTION)
+
+dfcj2 = dfcj2 %>%
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t2 & respondent_length_of_interview_seconds <= 2 * median_complet_t2)
+```
+
+
+```{r}
+
+# Define the distributions
+gender_dist <- c("male" = 44.5, "female" = 45.5, "other" = 10)
+
+age_dist <- c("18-24" = 0.12, "25-39" = 0.27, "40-55" = 0.26, "56+" = 0.35)
+
+
+income_dist <- c("under 15,000" = 8.3, "15,000 to 24,999" = 7.4, "25,000 to 34,999" = 7.6,
+                 "35,000 to 49,999" = 10.6, "50,000 to 74,999" = 16.2, "75,000 to 99,999" = 12.3,
+                 "100,000 or more" = 37.5)
+
+                 
+education_dist <- c("less than hs" = 9, "hs" = 28, "some college" = 15,
+                    "college" = 33, "grad school" = 14)
+
+# Normalize distributions to sum to 1 (100%)
+gender_dist <- gender_dist / sum(gender_dist)
+age_dist <- age_dist / sum(age_dist)
+income_dist <- income_dist / sum(income_dist)
+education_dist <- education_dist / sum(education_dist)
+```
+
+```{r}
+dfcj2$gender <- factor(dfcj2$gender, levels = c("male", "female", "other"))
+dfcj2$age.cat <- factor(dfcj2$age.cat, levels = c("18-24", "25-39", "40-55", "56+"))
+dfcj2$income <- factor(dfcj2$income, levels = c("15,000 to 24,999", "25,000 to 34,999",
+                                               "35,000 to 49,999", "50,000 to 74,999", "75,000 to 99,999",
+                                               "100,000 or more"))
+dfcj2$education <- factor(dfcj2$education, levels = c("less than hs", "hs", "some college",
+                                                     "college", "grad school"))
+
+# Checking the levels of the income variable
+levels(dfcj2$income)
+
+table(dfcj2$income)
+
+```
+
+```{r}
+
+# Function to calculate weights for each row
+calculate_weight <- function(data, column, dist) {
+  factor_column <- factor(data[[column]], levels = names(dist))
+  proportions <- table(factor_column) / nrow(data)
+
+  # Handle NA values
+  factor_column[is.na(factor_column)] <- "NA"
+  proportions["NA"] <- 1
+
+  weights <- vector("numeric", length = nrow(data))
+  for (i in 1:nrow(data)) {
+    cat <- as.character(factor_column[i])
+    weights[i] <- dist[cat] / proportions[cat]
+  }
+
+  return(weights)
+}
+
+# Applying the function to each column
+dfcj2$gender_weight <- calculate_weight(dfcj2, "gender", gender_dist)
+dfcj2$age_weight <- calculate_weight(dfcj2, "age.cat", age_dist)
+dfcj2$income_weight <- calculate_weight(dfcj2, "income", income_dist)
+dfcj2$education_weight <- calculate_weight(dfcj2, "education", education_dist)
+
+# View the first few entries
+
+sum(is.na(dfcj2$age_weight))
+```
+
+For age weights. Do the same I did with the other file! Shorter!
+
+Do weights for gender too
+
+
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(weights = age_weight * gender_weight * education_weight * income_weight)
+```
+
+```{r}
+n2 = nrow(dfcj2)/24
+```
+
+
+```{r}
+library(RColorBrewer)
+library(ggthemes)
+library(ggsci)
+
+amce2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ weights)
+
+#Check robustness with no weights
+amce2nw <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce")
+
+
+amce2plot = plot(amce2, vline = 0,feature_headers = F) +
+  theme(text = element_text(family = "LM Roman 10", size = 14)) +
+scale_color_jco()
+
+plot(amce2nw, vline = 0,feature_headers = F) +
+  theme(text = element_text(family = "LM Roman 10", size = 14)) +
+scale_color_jco()
+
+amce2plot
+
+ggsave(amce2plot, path = NULL, 
+       filename = "amcecj2jmain.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina", 
+       width = 12, 
+       height = 5)
+
+
+```
+Check by gender
+
+```{r}
+amce2shorter = amce2 %>% 
+  filter(!str_detect(feature, "pension"))
+#Trying to produce nicer plots
+
+amce2shorter = plot(amce2shorter, vline =0, feature_headers = F) +
+  theme(text = element_text(family = "LM Roman 10")) +
+scale_color_jco() +
+   ggplot2::facet_wrap(~feature, ncol = 1L,
+                      scales = "free_y", strip.position = "top") +
+  xlim(-0.25,0.25)
+
+
+ggsave(amce2shorter, path = NULL, 
+       filename = "amcecj2jmainb.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina", height = 6)
+
+amce2shorter
+```
+
+
+```{r}
+amceusw2gender <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ weights,
+            by = ~ gender)
+
+
+plot(amceusw2gender, group = "gender", vline = 0) 
+```
+
+
+```{r}
+amceusw2rep <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ weights,
+            by= ~republican)
+
+
+amceusw2repplot = plot(amceusw2rep, group = "republican", vline = 0, feature_headers = F) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3"), labels=c('no', 'yes')) + 
+  theme(text = element_text(family = "LM Roman 10"))
+
+ggsave(amceusw2repplot, path = NULL, 
+       filename = "amcecj2byr.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina")
+
+amceusw2repplot
+
+```
+
+```{r}
+amce2_byr_shorter = amceusw2rep %>% 
+  filter(!str_detect(feature, "pension"))
+#Trying to produce nicer plots
+
+amce2_byr_shorter_plot = plot(amce2_byr_shorter, vline =0, feature_headers = F) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3"), labels=c('no', 'yes')) +
+    theme(text = element_text(family = "LM Roman 10")) +
+   ggplot2::facet_wrap(~feature, ncol = 1L,
+                      scales = "free_y", strip.position = "top") +
+  xlim(-0.25,0.25)
+
+
+
+ggsave(amce2_byr_shorter_plot, path = NULL, 
+       filename = "amce2_byr_shorter.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina", height = 6)
+
+amce2_byr_shorter_plot
+```
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(fiftysix = factor(ifelse(age>55,1,0)))
+
+df56.2 = dfcj2 %>% 
+  select(survey_id, fiftysix)
+
+
+write_csv(df56.2, "df56_2.csv")
+```
+
+
+```{r}
+
+amceusw_byprior2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce", weights = ~ weights,
+            by = ~prior)
+
+amceusw_byprior2 = amceusw_byprior2 %>% 
+  filter(!str_detect(feature, "pension"))
+
+amceusw_byprior2 = plot(amceusw_byprior2, group = "prior", vline = 0, feature_headers = F) +
+  scale_colour_manual(na.translate = F, values = c("#F8867D", "#00BFC4"), labels=c('anti-ESG', 'pro-ESG')) + 
+  theme(text = element_text(family = "LM Roman 10")) +
+  ggplot2::facet_wrap(~feature, ncol = 1L,
+                      scales = "free_y", strip.position = "top") +
+  xlim(-0.25,0.25)
+
+ggsave(amceusw_byprior2,
+       path = NULL,
+       filename = "amceprior2.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina",
+       height = 6)
+
+amceusw_byprior2
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+amceusw.r.age <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+           # weights = ~w_age_rep,
+            by = ~republican)
+
+
+plot(amceusw.r.age, 
+     group = "republican", 
+     vline = 0) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) 
+```
+
+```{r}
+#Religion
+
+dfcj2 = dfcj2 %>% 
+  mutate(religiosity = case_when(q28_religiosity_o1_never == 1 ~ "no/low",
+                                 q28_religiosity_o2_a_few_days_per_year == 1 ~ "no/low",
+                                 q28_religiosity_o3_a_few_days_per_month == 1 ~ "no/low",
+                                 q28_religiosity_o4_every_week == 1 ~ "mid",
+                                 q28_religiosity_o5_almost_every_day == 1 ~ "high"))
+
+dfcj2 = dfcj2 %>% 
+  mutate(religiosity = as.factor(religiosity))
+
+dfcj2$religiosity <- fct_relevel(dfcj2$religiosity, "no/low", "mid","high")
+
+amcesrel2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, 
+                id = ~survey_id, 
+                estimate = "amce", 
+                by = ~religiosity)
+
+diff_amcerel2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~survey_id, estimate = "amce_diff", 
+    by = ~religiosity)
+
+
+plot(diff_amcerel2, vline=0) + ggplot2::facet_wrap(~BY, ncol = 3L) +
+  theme_classic() +
+  theme(text = element_text(family = "LM Roman 10")) 
+```
+
+
+```{r}
+dfcj2nr = dfcj2 %>% 
+  filter(republican==0)
+
+amcesrel2nr <- cj(dfcj2nr, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, 
+                id = ~survey_id, 
+                estimate = "amce", 
+                by = ~religiosity)
+
+diff_amcerel2nr <- cj(dfcj2nr, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~survey_id, estimate = "amce_diff", 
+    by = ~religiosity)
+
+
+plot(diff_amcerel2nr, vline=0) + ggplot2::facet_wrap(~BY, ncol = 3L) +
+  theme_classic() +
+  theme(text = element_text(family = "LM Roman 10")) 
+```
+```{r}
+dfcj2r = dfcj2 %>% 
+  filter(republican==1)
+
+amcesrel2r <- cj(dfcj2r, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, 
+                id = ~survey_id, 
+                estimate = "amce", 
+                by = ~religiosity)
+
+diff_amcerel2r <- cj(dfcj2r, choice_indicator ~ expected_pension + gender_equality_mgmt + living_wage + salary_equality_within_firm + labor_rights + environmental_impact + faith_morality + firearms, id = ~survey_id, estimate = "amce_diff", 
+    by = ~religiosity)
+
+
+plot(diff_amcerel2r, vline=0) + ggplot2::facet_wrap(~BY, ncol = 3L) +
+  theme_classic() +
+  theme(text = element_text(family = "LM Roman 10")) 
+```
+
+
+```{r}
+dfcj_demos = dfcj %>% 
+  select(survey_id, age.cat, education, gender, income) %>% 
+  mutate(experiment = 1)
+
+dfcj2_demos =dfcj2 %>% 
+  select(survey_id, age.cat, education, gender, income) %>% 
+  mutate(experiment = 2)
+
+dfcj_tabdemos = rbind(dfcj_demos,dfcj2_demos)
+
+levels(dfcj_tabdemos$education)
+
+dfcj_tabdemos = droplevels(dfcj_tabdemos)
+
+dfcj_tabdemos = dfcj_tabdemos %>% 
+  group_by(survey_id) %>% 
+  filter(row_number() ==1) %>% 
+  ungroup()
+
+dfcj_tabdemos = dfcj_tabdemos %>% 
+  select(-survey_id)
+
+write_csv(dfcj_tabdemos, "tabdemos.csv")
+
+
+library(gtsummary)
+
+library(gt)
+
+tab_demos = dfcj_tabdemos %>%
+  tbl_summary(by = experiment) %>% 
+  as_gt() 
+
+
+
+tab_demos |> gtsave("tab_demos.tex")
+
+
+
+```
+
+
+```{r}
+#demographics
+
+N2 = nrow(dfcj2)/24
+
+table(dfcj2$gender)
+
+cj2male = sum(dfcj2$gender=="male")/24
+cj2female = sum(dfcj2$gender=="female")/24
+cj2other=sum(dfcj2$gender=="other")/24
+
+table(dfcj2$education)
+
+mean(dfcj2$age)
+
+table(dfcj2$income)
+
+
+```

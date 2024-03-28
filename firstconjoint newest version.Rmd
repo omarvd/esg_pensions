@@ -1,0 +1,1086 @@
+---
+#word_document: default
+title: "In Who's Best Interest? An Empirical Analysis on the Legitimacy of Anti-ESG Legislation"
+author: "Omar Vasquez Duque"
+date: "2023-03-16"
+
+output: 
+  bookdown::pdf_document2:
+  
+# output:
+#   pdf_document: default
+#   word_document:
+#       reference_docx: docx_template.docx
+#   html_document: default
+---
+
+# Preliminary Analysis
+
+```{r include=FALSE}
+
+options(scipen=999)
+
+options(digits = 3)
+```
+
+```{r include=FALSE}
+library(readr)
+
+#setwd("/Users/ovd/Documents/GitHub/esg_pensions")
+
+dfcj <- read_csv("rds_prod.experiment.420656.stacked(18).csv")
+```
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+```{r include=FALSE}
+
+dfcj = dfcj %>% 
+  clean_names() 
+
+```
+
+```{r include=FALSE}
+
+#'*Check whether it makes sense to filter speeders (if any).*
+
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds) 
+# calculate median completion time in secs
+
+dfcj$income_num = readr::parse_number(dfcj$q17_annual_income)
+
+hist(dfcj$respondent_length_of_interview_seconds)
+
+median(dfcj$respondent_length_of_interview_seconds)
+
+434/60
+
+dfcj2 = dfcj %>% 
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t,
+         respondent_length_of_interview_seconds <= 2 * median_complet_t) %>% 
+  filter(!is.na(income_num)) %>% 
+  filter(income_num > 15000)
+
+nrow(dfcj2)/24 #1,617 responses!
+
+dffilt = dfcj %>% 
+  filter(income_num < 15000)
+
+nrow(dffilt)/24
+
+dfcj = dfcj %>% 
+  mutate(include = ifelse(respondent_length_of_interview_seconds >= 0.5 * median_complet_t & respondent_length_of_interview_seconds <= 2 * median_complet_t & income_num > 15000 & !is.na(income_num), 1, 0))
+
+mean(dfcj$include)
+
+dfcj = dfcj %>% 
+  mutate(CONJOINTLY_ACTION = ifelse(include ==1, "INCLUDE_IN_ANALYSIS", "EXCLUDE_FROM_ANALYSIS"))
+
+table(dfcj$CONJOINTLY_ACTION)
+
+dfconjointly = dfcj %>% 
+  select(survey_id, CONJOINTLY_ACTION)
+
+#revert
+dfconjointly$CONJOINTLY_ACTION = "INCLUDE_IN_ANALYSIS"
+
+
+write_csv(dfconjointly, "dfconjointly.csv")
+ 
+ # filter responded too quickly or slowly
+```
+
+```{r include=FALSE}
+#Transform variables to factors
+dfcj = dfcj %>% 
+  mutate(expected_pension = factor(expected_pension),
+         firearms = factor(invests_in_firearms,
+                           levels = c("Invests in firearms", "Does not invest in firearms")),           
+         fossil_fuels =  factor(invests_in_fossil_fuels,
+                                levels = c("Invests in fossil fuels", "Does not invest in fossil fuels")),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children,
+                                      levels = c("Invests in firms that may employ children", "Invests in firms that ensure no children are employed")),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management,
+                                   levels = c("Does not advocate for racial diversity in management",
+                                              "Advocates for racial diversity in management")),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women,
+                                   levels = c("Does not advocate for equal pay for men and women",
+                                              "Advocates for equal pay for men and women")),
+        choice_indicator = as.numeric(choice_indicator),
+        choice = as.factor(choice_indicator),
+        prior = factor(ifelse(q9_taking_into_account_esg_factors_o1_yes ==1, "pro-esg", "anti-esg")),
+        republican = factor(ifelse(q11_party_id_o1_republican==1 |
+          q12_party_leanings_o1_republican ==1, 1,0)),
+        florida = factor(ifelse(q15_state_us_o1_florida==1, 1,0)),
+        california = factor(ifelse(q15_state_us_o2_california==1,1,0)),
+        age = 2023 - (q10_age_write_in))
+
+```
+
+```{r}
+dfcj %>% 
+select(invests_in_firms_that_may_employ_children, choice_indicator) %>% 
+  table() 
+
+```
+
+Analysis with weighted sample. California = 12.2%; Florida = 6.6% and rest of US = 81.4%.
+
+```{r include=FALSE}
+
+dffl = dfcj %>% 
+  filter(florida==1)
+
+dfcl = dfcj %>% 
+  filter(california==1)
+
+
+
+# Work with weights with a mean of 1
+total = nrow(dfcj)
+
+florida.p = nrow(dffl)/total
+
+cali.p = nrow(dfcl)/total
+
+us.p = (total- nrow(dffl) - nrow(dfcl))/total
+
+florida.weight = (6.6/florida.p)/100
+
+cali.weight = (12/cali.p)/100
+
+us.weight = (81.4/us.p)/100
+```
+
+```{r include=FALSE}
+#Check gender and age 
+
+flfem = dffl %>% 
+  filter(q13_gender_o2_female==1)
+
+flfem.n = nrow(flfem)/24
+
+flmale = dffl %>% 
+  filter(q13_gender_o1_male==1)
+
+flmale.n = nrow(flmale)/24
+
+```
+
+```{r include=FALSE}
+#California
+
+cafem = dfcl %>% 
+  filter(q13_gender_o2_female==1)
+
+cafem.n= nrow(cafem)/24
+
+camale = dfcl %>% 
+  filter(q13_gender_o1_male==1)
+
+camale.n =nrow(camale)/24
+
+```
+
+```{r include=FALSE}
+#U.S.
+
+total_no_filter = nrow(dfcj)/24
+  
+total_filtered =nrow(dfcj2)/24
+
+usfem = dfcj %>% 
+  filter(q15_state_us_o3_other==1,
+         q13_gender_o2_female==1) 
+
+usmale = dfcj %>% 
+  filter(q15_state_us_o3_other==1,
+         q13_gender_o1_male==1)
+
+usfem.n = nrow(usfem)/24
+
+usmale.n = nrow(usmale)/24
+  
+```
+
+```{r}
+
+dfcj = dfcj %>% 
+  mutate(state.weight = case_when(florida==1 ~ florida.weight,
+                             california==1 ~ cali.weight,
+                             florida == 0 & california == 0 ~us.weight))
+
+#mean(dfcjw$weight) # Looks good
+```
+
+The plot below shows the importance of each attribute considering a weighted sample of the U.S. which is representative in terms of age and gender.
+
+```{r echo=FALSE, warning=FALSE}
+# weight = dfcjw$weights
+
+mmusw <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", weights = ~ state.weight)
+
+amceusw <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", weights = ~ state.weight)
+
+plot(mmusw, vline = 0.5) + 
+  ggtitle("U.S. Weighted Sample")
+
+plot(amceusw, vline = 0) +
+  theme_minimal()
+
+summary(amceusw)
+
+ggsave("amceusw.pdf", width = 10, height = 5)
+
+```
+
+Now, apply more comprehensive weights
+
+```{r}
+
+dfcj=dfcj %>% 
+  mutate(income = case_when(income_num <=24999 ~ "15,000 to 24,999",
+                            income_num >=25000 & income_num <=34999 ~ "25,000 to 34,999",
+                            income_num >= 35000 & income_num <=49999 ~  "35,000 to 49,999",
+                            income_num >= 50000 & income_num <=74999 ~ "50,000 to 74,999",
+                            income_num >= 75000 & income_num <=99999 ~ "75,000 to 99,999",
+                            income_num >= 100000 ~ "100,000 or more"))
+```
+
+```{r}
+table(dfcj$income)
+```
+
+```{r}
+
+
+dfcj = dfcj %>% 
+  mutate(gender = case_when(q13_gender_o1_male == 1 ~ "male",
+                            q13_gender_o2_female == 1 ~ "female",
+                            q13_gender_o3_other == 1 ~ "other"),
+         education = case_when(q16_education_o1_some_high_school == 1 ~ "less than hs",
+                               q16_education_o2_high_school ==1 ~ "hs",
+                               q16_education_o3_some_college ==1 ~ "hs",
+                               q16_education_o4_college_degree== 1 ~ "college",
+                               q16_education_o5_graduate_degree == 1 ~ "grad school"),
+         religiosity =case_when(q18_frequency_o1_0 == 1 ~ "no",
+                                q18_frequency_o2_1 == 1 ~ "low",
+                                q18_frequency_o3_2 == 1 ~ "low",
+                                q18_frequency_o4_3 == 1 ~ "mid",
+                                q18_frequency_o5_4 == 1 ~ "mid",
+                                q18_frequency_o6_5 == 1 ~ "high",
+                                q18_frequency_o7_6 == 1 ~ "high",
+                                q18_frequency_o8_7 == 1 ~ "high"),
+         prior = as.factor(ifelse(q9_taking_into_account_esg_factors_o1_yes == 1, 1, 0)))
+
+mean(dfcj$age, na.rm = T) # There are NAs
+
+```
+
+```{r}
+dfcj =dfcj %>% 
+  select(respondent_id,
+         survey_id,
+         choice_set,
+         label,
+         choice_indicator,
+         expected_pension,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         respondent_length_of_interview_seconds,
+         prior,
+         income,
+         gender,
+         education,
+         age,
+         republican,
+         state.weight,
+         florida, 
+         california,
+         religiosity)
+```
+
+```{r}
+dfcj = na.omit(dfcj)
+```
+
+```{r}
+
+dfcj = dfcj %>% 
+  mutate(age.cat = case_when(age > 17 & age <=24 ~ "18-24",
+                             age >= 25 & age <=39 ~ "25-39",
+                             age >= 40 & age <=55 ~ "40-55",
+                             age >=56 ~ "56+"))
+
+dfcj$age.cat <- factor(dfcj$age.cat, levels = c("18-24", "25-39", "40-55", "56+"))
+
+
+```
+
+there were some NAs!
+
+```{r}
+names(dfcj)
+```
+
+```{r}
+# Assuming your data frame 'df' has 'gender', 'age', 'income', and 'education' columns
+
+# Define the distributions
+gender_dist <- c("male" = 44.5, "female" = 45.5, "other" = 10)
+
+age_dist <- c("18-24" = 0.12, "25-39" = 0.27, "40-55" = 0.26, "56+" = 0.35)
+
+
+income_dist <- c("under 15,000" = 8.3, "15,000 to 24,999" = 7.4, "25,000 to 34,999" = 7.6,
+                 "35,000 to 49,999" = 10.6, "50,000 to 74,999" = 16.2, "75,000 to 99,999" = 12.3,
+                 "100,000 or more" = 37.5)
+
+                 
+education_dist <- c("less than hs" = 9, "hs" = 28, "some college" = 15,
+                    "college" = 33, "grad school" = 14)
+
+# Normalize distributions to sum to 1 (100%)
+gender_dist <- gender_dist / sum(gender_dist)
+age_dist <- age_dist / sum(age_dist)
+income_dist <- income_dist / sum(income_dist)
+education_dist <- education_dist / sum(education_dist)
+```
+
+```{r}
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds)
+
+dfcj = dfcj %>%
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t & respondent_length_of_interview_seconds <= 2 * median_complet_t)
+```
+
+```{r}
+dfcj$gender <- factor(dfcj$gender, levels = c("male", "female", "other"))
+dfcj$age.cat <- factor(dfcj$age.cat, levels = c("18-24", "25-39", "40-55", "56+"))
+dfcj$income <- factor(dfcj$income, levels = c("15,000 to 24,999", "25,000 to 34,999",
+                                               "35,000 to 49,999", "50,000 to 74,999", "75,000 to 99,999",
+                                               "100,000 or more"))
+dfcj$education <- factor(dfcj$education, levels = c("less than hs", "hs", "some college",
+                                                     "college", "grad school"))
+
+# Checking the levels of the income variable
+levels(dfcj$income)
+
+table(dfcj$income)
+
+
+```
+
+Mind around 25% of people reported income \>100K
+
+```{r}
+
+# Function to calculate weights for each row
+calculate_weight <- function(data, column, dist) {
+  factor_column <- factor(data[[column]], levels = names(dist))
+  proportions <- table(factor_column) / nrow(data)
+
+  # Handle NA values
+  factor_column[is.na(factor_column)] <- "NA"
+  proportions["NA"] <- 1
+
+  weights <- vector("numeric", length = nrow(data))
+  for (i in 1:nrow(data)) {
+    cat <- as.character(factor_column[i])
+    weights[i] <- dist[cat] / proportions[cat]
+  }
+
+  return(weights)
+}
+
+# Applying the function to each column
+dfcj$gender_weight <- calculate_weight(dfcj, "gender", gender_dist)
+dfcj$age_weight <- calculate_weight(dfcj, "age.cat", age_dist)
+dfcj$income_weight <- calculate_weight(dfcj, "income", income_dist)
+dfcj$education_weight <- calculate_weight(dfcj, "education", education_dist)
+
+# View the first few entries
+
+sum(is.na(dfcj$age_weight))
+```
+
+```{r}
+dfcj$weights = dfcj$gender_weight * dfcj$age_weight * dfcj$income_weight * dfcj$education_weight * dfcj$state.weight
+
+```
+
+```{r}
+summary(dfcj$weights)
+```
+
+```{r}
+names(dfcj)
+```
+
+```{r}
+library(ggthemes)
+library(ggsci)
+
+amce1 = cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", weights = ~ weights)
+
+amce1plot = plot(amce1, vline =0, feature_headers = F) +
+  theme(text = element_text(family = "CMU Serif")) +
+scale_color_jco() 
+
+amce1plot
+
+ggsave(amce1plot, path = NULL, 
+       filename = "amcecj1jmain.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina",
+       width = 12, 
+       height = 6)
+
+```
+
+Shorter amce df to produce smaller plot
+
+```{r}
+amce1shorter = amce1 %>% 
+  filter(!str_detect(feature, "pension"))
+#Trying to produce nicer plots
+
+amce1shorter = plot(amce1shorter, vline =0, feature_headers = F) +
+  theme(text = element_text(family = "CMU Serif")) +
+scale_color_jco() +
+   ggplot2::facet_wrap(~feature, ncol = 1L,
+                      scales = "free_y", strip.position = "bottom")
+
+amce1shorter +
+   scale_fill_manual(labels=c("firearms", "fossil fuels", "child labor", "racial diversity", "gender pay parity"))
+
+
+ggsave(amce1shorter, path = NULL, 
+       filename = "amcecj1jmainb.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina")
+
+```
+
+The plot below displays the same result but distinguishing between respondents who identify as republicans and those that don't.
+
+```{r echo=FALSE, warning=FALSE}
+mmusw_by_r <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", weights = ~ weights,
+            by = ~republican)
+
+amceusw_by_r <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", weights = ~ weights,
+            by = ~republican)
+
+plot(mmusw_by_r, group = "republican", vline = 0.5) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) +
+  ggtitle("U.S. Weighted Sample")
+
+amce_byr = plot(amceusw_by_r, group = "republican", vline = 0, feature_headers = F) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3"), labels=c('no', 'yes')) +
+    theme(text = element_text(family = "CMU Serif"))
+
+ggsave(amce_byr, path = NULL, 
+       filename = "amcecj1j_byr.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina")
+
+amce_byr
+
+```
+
+```{r}
+diff_amces <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce_diff", weights = ~ weights,
+            by = ~republican)
+
+plot(diff_amces)
+
+#plot(rbind(amceusw_by_w, diff_amces)) + ggplot2::facet_wrap(~BY, ncol = 3L) + theme_linedraw() + scale_color_jco()
+```
+
+```{r}
+# Shorter plot easier to understand
+
+amceusw_fl <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", #weights = ~ weights,
+            by = ~florida)
+
+plot(amceusw_fl, group = "florida",vline=0) +
+   scale_colour_manual(na.translate = F, values = c("royalblue", "orange3")) 
+```
+
+```{r}
+table(dfcj$republican, dfcj$prior)
+```
+
+The first question asked whether people would like to restrict their investments to ESG-only alternatives. I coded the results as "prior." In principle, the choices of those who oppose ESG should show they are not influenced by environmental or social concerns. But this is not what the data show. Respondents with an anti-esg prior, are unaffected by the firearms feature. But they still favor options that ensure no children are employed and advocate for gender equality. They also tend to prefer investing in firms that advocate for racial diversity, but this effect is much smaller.
+
+```{r echo=FALSE, warning=FALSE}
+mmusw_byprior <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", weights = ~ weights,
+            by = ~prior)
+
+amceusw_byprior <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", weights = ~ weights,
+            by = ~prior)
+
+plot(amceusw_byprior, group = "prior", vline = 0, feature_headers = F) +
+  scale_colour_manual(na.translate = F, values = c("#F8867D", "#00BFC4"), labels=c('anti-ESG', 'pro-ESG')) + 
+  theme(text = element_text(family = "CMU Serif")) 
+  
+
+ggsave("amceprior.png",
+       device = "png",
+       type = "cairo", 
+       dpi = "retina")
+
+amceusw_byprior
+
+# +
+#  # scale_colour_manual(na.translate = F, values = c("navy", "turquoise")) +
+#   ggtitle("U.S. Weighted Sample")
+```
+
+People in Florida are indifferent to environmental factors, but they are as pro-social as the U.S. and they care more about child labor than the U.S. average.
+
+```{r echo=FALSE, warning=FALSE}
+# Florida
+amce_byfl <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id, 
+              estimate = "amce", 
+              weights = ~weights,
+              by = ~florida)
+
+plot(amce_byfl, group = "florida", vline = 0) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) 
+
+ggsave("amcefl.pdf", width = 10, height = 5)
+```
+
+People's religiousness has a very minor effect. The more religious people are, the more they prefer investments that don't involve firearms.
+
+# Religiosity
+
+Religions just make people more conservative
+
+```{r echo=FALSE, warning=FALSE}
+# calculate conditional MMs
+
+dfcj = dfcj %>% 
+  mutate(religiosity = factor(religiosity, 
+                       levels = c("no", "low", "mid", "high")))
+
+dfcj$religiosity <- fct_relevel(dfcj$religiosity, "no", "low", "mid","high")
+
+amcesrel <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "amce", by = ~religiosity)
+
+diff_amcerel <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "amce_diff", 
+    by = ~religiosity)
+
+
+plot(diff_amcerel, vline=0) + ggplot2::facet_wrap(~BY, ncol = 3L) +
+  theme_classic() +
+  theme(text = element_text(family = "CMU Serif")) 
+
+#ggsave("amcerel.pdf", width = 10, height = 5)
+
+#plot(rbind(mms, diff_mms)) + ggplot2::facet_wrap(~BY, ncol = 3L) #weird
+```
+
+Sanity check below: people closer to retirement are more sensible to changes in their expected pension. Interestingly, they positively value investments that don't involve firearms, unlike younger people.
+
+```{r echo=FALSE, warning=FALSE, width="7", height="5"}
+
+mms_age <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights = ~weights, estimate = "mm", by = ~age.cat)
+
+diff_mms_age <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights=~weights, estimate = "mm_diff", 
+    by = ~age.cat)
+
+plot(mms_age, vline = 0.5) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle("Marginal Means by Age")
+
+#Now AMCE
+
+amce_age <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights = ~weights, estimate = "amce", by = ~age.cat)
+
+diff_amce_age <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, weights=~weights, estimate = "amce_diff", 
+    by = ~age.cat)
+
+plot(amce_age, vline = 0) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle("AMCE by Age")
+
+```
+
+```{r}
+
+dfcj.segments = dfcj %>% 
+  select(survey_id, republican, prior, age.cat, education, gender)
+
+
+write_csv(dfcj.segments, "dfcj_seg.csv")
+
+
+```
+
+
+```{r include=FALSE}
+dfrep = dfcj %>% 
+  filter(republican==1)
+```
+
+```{r}
+dfnorep = dfcj %>% 
+  filter(republican==0)
+```
+
+## Republicans' Religiousness doesn't make a difference
+
+```{r echo=FALSE, warning=FALSE}
+# calculate interaction AMCEs (ACIEs) 
+#I changed to MM
+amces_2 <- cj(dfrep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm", by = ~religiosity)
+
+diff_amces_2 <- cj(dfrep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm_diff", by = ~religiosity)
+
+plot(diff_amces_2, vline = 0) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle("Republicans Only: Religiosity")
+
+#plot(rbind(amces_2, diff_amces_2)) + ggplot2::facet_wrap(~BY, ncol = 3L)
+```
+
+## Religiousness has a small effect in those who don't identify as republicans
+
+Non-religious people oppose firearms and fossil fuels a tiny bit more than religious people.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+mm_norep <- cj(dfnorep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm", by = ~religiosity)
+
+diff_mmnorep <- cj(dfnorep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm_diff", by = ~religiosity)
+
+plot(diff_mmnorep, vline = 0) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle("No Republicans Only: Religiosity")
+```
+Religion makes non-republicans more conservative
+
+
+## Wealthier People tend to be less pro-social
+
+```{r echo=FALSE, warning=FALSE}
+mm_income <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm", by = ~income)
+
+diff_mm_income <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "mm_diff", by = ~income)
+
+plot(mm_income, vline = 0.5) + ggplot2::facet_wrap(~BY, ncol = 2L) + ggtitle("Marginal Means, U.S. by Income")
+
+# plot(mm_income, vline = 0.5, group = "income_groups") +  ggtitle("Marginal Means, U.S. by Income")
+
+amce_income <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = "amce", by = ~income)
+
+plot(amce_income, group = "income", vline = 0) + ggtitle("U.S. by Income (AMCE)")
+
+library(ggstats)
+
+```
+
+```{r}
+#demographics
+
+cjmale = sum(dfcj$gender=="male")/24
+
+cjfemale = sum(dfcj$gender=="female")/24
+
+cjother = sum(dfcj$gender=="other")/24
+
+age1 = mean(dfcj$age)
+
+table(dfcj$income)
+
+```
+
+WTP analysis. TBD.
+
+```{r include=FALSE}
+library(logitr)
+
+```
+
+```{r include=FALSE}
+
+# Transforming to character. It was a factor before and that caused error with parse_number
+dfcj = dfcj %>% 
+  mutate(expected_pension = as.character(expected_pension))
+
+dfcj = dfcj %>%
+  mutate(pension = parse_number(expected_pension))
+
+
+```
+
+```{r include=FALSE}
+#This code below worked!
+
+dflogitr = dfcj %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id()) %>% 
+  ungroup() # I had forgotten to do this!
+```
+
+```{r include=FALSE}
+mean(dflogitr$pension)
+```
+
+```{r include=FALSE}
+
+dflogitr = dflogitr %>% 
+  select(survey_id,
+         obs_id, 
+         label,
+         choice_set, 
+         pension,
+         choice_indicator, 
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         republican,
+         weights) 
+
+dflogitr$std.pension = scale(dflogitr$pension)
+
+```
+
+```{r include=FALSE}
+
+dflogitr = dflogitr %>% 
+  mutate(price = pension/1000,
+         firearms = ifelse(firearms == "Invests in firearms", 1, 0),
+         fossil_fuels = ifelse(fossil_fuels == "Invests in fossil fuels", 1, 0),
+         may_employ_children = ifelse(may_employ_children == "Invests in firms that may employ children", 1, 0),
+         racial_diversity = ifelse(racial_diversity == "Does not advocate for racial diversity in management", 1, 0),
+         gender_equal_pay = ifelse(gender_equal_pay == "Does not advocate for equal pay for men and women", 1, 0))
+
+dflogitr = dflogitr %>% 
+  rename(no_racial_diversity = racial_diversity,
+         no_gender_equal_pay = gender_equal_pay)
+
+
+```
+
+```{r}
+# dflogitr = dflogitr %>% 
+#   mutate(belowmean = ifelse(pension <40000, 1, 0),
+#          pension_range = case_when(pension<31000 ~ "up to 30K",
+#                                    pension >30000 & pension < 41000 ~ "up to 40K",
+#                                    pension >40000 & pension <51000 ~"up to 50K",
+#                                    pension > 50000 & pension <61000 ~ "up to 60K"))
+
+```
+
+```{r}
+write.csv(dflogitr, file = "dflogitr.csv")
+```
+
+```{r include=FALSE}
+dflogitr = as.data.frame(dflogitr)
+
+mnl_pref1 <- logitr(
+    data    = dflogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("std.pension",
+                "firearms", 
+                "fossil_fuels",
+                "may_employ_children",
+                "may_employ_children",
+                "no_racial_diversity",
+                "no_gender_equal_pay"),
+    panelID = "survey_id",
+    weights = "weights"
+)
+
+summary(mnl_pref1)
+
+ggcoef_model(mnl_pref1)
+
+```
+
+```{r}
+
+#Ask author why NAs
+mnl_wtp <- logitr(
+    data     = dflogitr,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("firearms",
+                 "fossil_fuels",
+                 "may_employ_children",
+                 "no_racial_diversity",
+                 "no_gender_equal_pay"),
+    scalePar = "std.pension",
+    weights = "weights",
+    numMultiStarts = 10
+)
+
+summary(mnl_wtp)
+```
+
+```{r}
+dflogitr = dflogitr %>% 
+  mutate(repXfirearms = as.numeric(republican) * firearms,
+         repXfossil_fuels = as.numeric(republican) * fossil_fuels,
+         repXmay_employ = as.numeric(republican) * may_employ_children,
+         repXno_racial_div = as.numeric(republican) * no_racial_diversity,
+         repXno_gender_equal_pay = as.numeric(republican) * no_gender_equal_pay)
+```
+
+```{r}
+mnl_wtp_inter <- logitr(
+    data     = dflogitr,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("firearms",
+                 "fossil_fuels",
+                 "may_employ_children",
+                 "no_racial_diversity",
+                 "no_gender_equal_pay",
+                 "repXfirearms",
+                 "repXfossil_fuels",
+                 "repXmay_employ",
+                 "repXno_racial_div",
+                 "repXno_gender_equal_pay"),
+    scalePar = "price",
+    numMultiStarts = 10,
+    weights = "weights"
+)
+
+summary(mnl_wtp_inter)
+
+ggcoef_model(mnl_wtp_inter)
+
+```
+
+```{r}
+
+outcomes <- predict(
+  mnl_wtp_inter,
+  type = "outcome",
+  returnData = TRUE
+)
+
+chosen <- subset(outcomes, choice_indicator == 1)
+chosen$correct <- chosen$choice_indicator == chosen$predicted_outcome
+sum(chosen$correct) / nrow(chosen)
+```
+
+```{r include=FALSE}
+library(gtsummary)
+
+mnl_wtp |> 
+  tbl_regression()
+
+```
+
+
+```{r}
+
+#I had an incentive compatibility problem. People saw children and just neglected anything else.
+
+#'*Running mixed logit model*
+
+mnl_prefam <- logitr(
+  data = dflogitr, 
+  outcome = "choice_indicator",  
+  obsID   = "obs_id", 
+  panelID = "survey_id",   
+  pars    = c("firearms", "fossil_fuels","may_employ_children", "no_racial_diversity","no_gender_equal_pay"), 
+  randPars = c(firearms = 'n', fossil_fuels = 'n', may_employ_children = 'n', no_racial_diversity= 'n', no_gender_equal_pay = 'n'), 
+  scalePar = "price",
+  numMultiStarts = 10) 
+                     
+                     #startVals = mnl_prefam$Estimate)
+summary(mnl_prefam)
+```
+
+```{r}
+mnl_prefam.wtp <- logitr(
+  data = dflogitr, 
+  outcome = "choice_indicator",  
+  obsID   = "obs_id", 
+  panelID = "survey_id",   
+  pars    = c("firearms", "fossil_fuels","may_employ_children", "no_racial_diversity","no_gender_equal_pay"), 
+  randPars = c(firearms = 'n', fossil_fuels = 'n', may_employ_children = 'n', no_racial_diversity= 'n', no_gender_equal_pay = 'n'), 
+  scalePar = "price",
+  numMultiStarts = 10) 
+                     
+                     #startVals = mnl_prefam$Estimate)
+summary(mnl_prefam)
+```
+
+
+```{r}
+
+summary(mnl_prefam)
+
+library(gtsummary)
+
+tbl_regression(mnl_prefam)
+
+outcomes <- predict(
+  mnl_prefam,
+  type = "outcome",
+  returnData = TRUE
+)
+
+chosen <- subset(outcomes, choice_indicator == 1)
+chosen$correct <- chosen$choice_indicator == chosen$predicted_outcome
+sum(chosen$correct) / nrow(chosen)
+
+# Code below is an example
+# mxl_pref <- logitr(
+#   data     = yogurt,
+#   outcome  = 'choice',
+#   obsID    = 'obsID',
+#   panelID  = 'id',
+#   pars     = c('price', 'feat', 'brand'),
+#   randPars = c(feat = 'n', brand = 'n'),
+#   numMultiStarts = 10
+# )
+```
+
+Models with interactions. Logitr not working
+
+Filter data: republicans only
+
+```{r include=FALSE}
+dflogitr.rep = dflogitr %>% 
+  filter(republican==1)
+
+mnl_pref3 <- logitr(
+    data    = dflogitr.rep,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("firearms",
+                "fossil_fuels",
+                "may_employ_children",
+                "no_racial_diversity",
+                "no_gender_equal_pay"),
+    scalePar = "price",
+    panelID = "survey_id"
+)
+summary(mnl_pref3)
+
+outcomes <- predict(
+  mnl_pref3,
+  type = "outcome",
+  returnData = TRUE
+)
+
+chosen <- subset(outcomes, choice_indicator == 1)
+chosen$correct <- chosen$choice_indicator == chosen$predicted_outcome
+sum(chosen$correct) / nrow(chosen)
+
+```
+
+```{r}
+
+mnl_pref33 <- logitr(
+    data    = dflogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension",
+                "firearms", 
+                "fossil_fuels",
+                "may_employ_children",
+                "racial_diversity",
+                "gender_equal_pay"),
+    panelID = "survey_id",
+    randPars = c(pension = "n", firearms = 'n', fossil_fuels = 'n', may_employ_children = 'n', racial_diversity = 'n',
+                 gender_equal_pay = 'n'),
+numMultiStarts = 10, drawType = 'sobol', numDraws = 200,
+startVals = mnl_pref33$Estimate)
+
+summary(mnl_pref33)
+
+mxl_wtp <- logitr(
+  data       = dflogitr,
+  outcome    = 'choice_indicator',
+  obsID      = 'obs_id',
+  panelID    = 'survey_id',
+  pars    = c("pension",
+                "firearms", 
+                "fossil_fuels",
+                "may_employ_children",
+                "racial_diversity",
+                "gender_equal_pay"),
+  scalePar   = 'price',
+ randPars = c(firearms = 'n', fossil_fuels = 'n', may_employ_children = 'n', racial_diversity = 'n'),
+  numMultiStarts = 10
+)
+
+summary(mxl_wtp)
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+wtp(mnl_pref3, scalePar = "pension")
+```
+
+Word Cloud: 10 most frequent terms in open-ended question.
+
+STRINGR not filtering out "none"
+
+```{r include=FALSE}
+#Word cloud with reliable data
+
+#Create a vector containing only the text
+txt = as.character(dfcj$q22_openended_feedback) 
+
+
+
+## Loading packages for word clouds
+library(wordcloud)
+library(RColorBrewer)
+library(wordcloud2)
+library(tm)
+
+# Create a corpus  
+docs <- Corpus(VectorSource(txt))
+```
+
+```{r include=FALSE}
+# clean text data
+docs <- docs %>%
+  tm_map(removeNumbers) %>%
+  tm_map(removePunctuation) %>%
+  tm_map(stripWhitespace)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("english"))
+```
+
+```{r include=FALSE}
+#Document term matrix
+
+dtm <- TermDocumentMatrix(docs) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df <- data.frame(word = names(words),freq=words)
+```
+
+```{r echo=FALSE}
+# Create word cloud
+set.seed(1234) # for reproducibility 
+
+wordcloud(words = df$word, freq = df$freq, min.freq = 1,           
+          max.words=20, random.order=FALSE, rot.per=0.35,            
+          colors=brewer.pal(8, "Dark2"))
+```

@@ -1,0 +1,5 @@
+"0","pop_male = pmale * ptotal * part_men"
+"0",""
+"0","pop_female = pfemale * ptotal * part_women"
+"0",""
+"0","part_other = (ptotal_rep - (pop_male + pop_female))/(pother*ptotal_rep) # ok, so gay people were not coded in a separate category"

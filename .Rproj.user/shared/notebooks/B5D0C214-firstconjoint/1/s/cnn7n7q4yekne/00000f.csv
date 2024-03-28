@@ -1,0 +1,7 @@
+"0",""
+"0","dfcjw = dfcj2 %>% "
+"0","  mutate(weight = case_when(florida==1 ~ florida.weight,"
+"0","                             california==1 ~ cali.weight,"
+"0","                             florida == 0 & california == 0 ~us.weight))"
+"0",""
+"0","#mean(dfcjw$weight) # Looks good"

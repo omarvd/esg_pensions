@@ -1,0 +1,299 @@
+---
+title: "Pensions ESG Pilot"
+author: "OVD"
+date: "2023-03-16"
+output:
+  bookdown::pdf_book:
+    dev: cairo_pdf
+---
+
+```{r}
+#setwd(dir = "/Users/ovd/Documents/GitHub/esg_pensions")
+
+options(scipen=999)
+```
+
+```{r}
+library(readr)
+
+dfcj <- read_csv("~/Downloads/rds_prod.experiment.421854.stacked.csv")
+```
+
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+Import data and filter responses 0.5 or 1.5 * median completion time
+
+```{r}
+
+dfcj = dfcj %>% 
+  clean_names() 
+
+# dfcj %>% 
+#   filter(q3_screen_out == "NULL" & 
+#            q6_screen_out == "NULL" & q8_screen_out == "NULL") 
+# filter screen-outs (zero)
+```
+
+```{r}
+
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds) 
+# calculate median completion time in secs
+
+ dfcj = dfcj %>% 
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t,
+         respondent_length_of_interview_seconds <= 1.5 * median_complet_t)
+ 
+ # filter responded too quickly or slowly
+```
+
+
+```{r}
+#Transform variables to factors
+dfcj2 = dfcj %>% 
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms,
+                           levels = c("Invests in firearms", "Does not invest in firearms")),           
+         fossil_fuels =  factor(invests_in_fossil_fuels,
+                                levels = c("Invests in fossil fuels", "Does not invest in fossil fuels")),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children,
+                                      levels = c("Invests in firms that may employ children", "Invests in firms that ensure no children are employed")),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management,
+                                   levels = c("Does not advocate for racial diversity in management",
+                                              "Advocates for racial diversity in management")),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women,
+                                   levels = c("Does not advocate for equal pay for men and women",
+                                              "Advocates for equal pay for men and women")),
+        choice_indicator = as.numeric(choice_indicator),
+        choice = as.factor(choice_indicator),
+        prior = factor(ifelse(q9_taking_into_account_esg_factors_o1_yes ==1, "anti-esg", "pro=esg")),
+        republican = factor(ifelse(q11_party_id_o1_republican==1 |
+          q12_party_leanings_o1_republican ==1, 1,0)))
+
+table(dfcj$invests_in_firms_that_may_employ_children)
+
+```
+
+```{r}
+
+```
+
+
+
+```{r}
+dfcjlab = dfcj2 
+
+```
+
+The code below wasn't necessary. Assigned levels to factors when creating the data set
+```{r}
+
+# dfcjlab$firearms  = relevel(dfcjlab$firearms, ref = "Invests in firearms")
+# 
+# dfcjlab$fossil_fuels = relevel(dfcjlab$fossil_fuels, ref = "Invests in fossil fuels")
+# 
+# dfcjlab$may_employ_children = relevel(dfcjlab$may_employ_children, ref = "Invests in firms that may employ children")
+# 
+# dfcjlab$racial_diversity = relevel(dfcjlab$racial_diversity, ref = "Does not advocate for racial diversity in management")
+# 
+# dfcjlab$gender_equal_pay = relevel(dfcjlab$gender_equal_pay, ref = "Does not advocate for equal pay for men and women")
+```
+
+
+Vector for AMCE model and plot:
+```{r}
+mm_by <- cj(dfcj2, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children, id = ~ survey_id,
+            estimate = "mm", 
+            by = ~republican)
+
+amce_by <- cj(dfcj2, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", 
+            by = ~republican)
+
+amce <- cj(dfcj2, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce")
+
+plot(mm_by, group = "republican", vline = 0.5)
+
+plot(amce_by, group = "republican")
+
+plot(amce)
+```
+
+WTP analysis. The logitr package uses a Hierarchical Bayesian model to estimate WTP and utilities from each attribute.
+
+```{r}
+library(logitr)
+```
+
+```{r}
+
+dfcjtest = dfcj2 %>% 
+  mutate(pension = expected_pension)
+
+
+dfcjtest$pension <- recode(dfcjtest$pension,
+                           "Expected pension: $20,000 a year" = "20,000", 
+                           "Expected pension: $25,000 a year" = "25,000", 
+                           "Expected pension: $30,000 a year" = "30,000", 
+                           "Expected pension: $35,000 a year" = "35,000", 
+                           "Expected pension: $40,000 a year" = "40,000", 
+                           "Expected pension: $45,000 a year" = "45,000", 
+                           "Expected pension: $50,000 a year" = "50,000",
+                           "Expected pension: $55,000 a year" = "55,000",
+                           "Expected pension: $60,000 a year" = "60,000"
+                           )
+```
+
+
+
+```{r}
+#transform to numeric
+
+dfcjtest = dfcjtest %>%
+   mutate(pension_num = readr::parse_number(pension)) 
+
+```
+
+
+```{r}
+#This code below worked!
+dfcjtest2 = dfcjtest %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id())
+```
+
+Didn't use this time
+```{r}
+# ncl = pivot_longer(dfcjtest, cols = everything, names_to = "choice")
+# 
+# ncl = ncl %>% 
+#   mutate(nc = ifelse(value == 3, 1, 0),
+#          choice_set = parse_number(choice),
+#          survey_id = ID) %>% 
+#   select(nc, choice_set, survey_id)
+```
+
+```{r}
+#ok, now I need to create new var with the option not chosen
+```
+
+```{r}
+mean(dfcjtest2$pension_num)
+```
+
+
+```{r}
+# dfnc = merge(dfcj, ncl, by = "survey_id", "choice_set")
+```
+
+
+```{r}
+
+# dfcjtest = dfcjtest %>% 
+#   arrange(survey_id, desc(choice_set)) %>% 
+#   mutate(obsID = as.integer(gl(2508, 2, labels = c(1: 2508))))
+
+
+dfcjtest2 = dfcjtest2 %>% 
+  select(survey_id, 
+         obs_id, 
+         choice_set, 
+         pension_num,
+         choice_indicator, 
+         choice,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay)
+
+```
+
+I will filter the data in republican/democrats to calculate the differences in WTP per group
+
+```{r}
+
+#removing none
+
+
+#changing price to negative
+
+dfcjtest3 = dfcjtest2 %>% 
+  mutate(price = -1 * pension_num,
+         firearms.num = ifelse(firearms == "Invests in firearms", 1, 0),
+         fossil_fuels.num = ifelse(fossil_fuels == "Invests in fossil fuels", 1, 0),
+         may_employ_children.num = ifelse(may_employ_children == "Invests in firms that may employ children", 1, 0),
+         racial_diversity.num = ifelse(racial_diversity == "Does not advocate for racial diversity in management", 1, 0),
+         gender_equal_pay.num = ifelse(gender_equal_pay == "Does not advocate for equal pay for men and women", 1, 0))
+
+table(dfcjtest3$gender_equal_pay.num)
+
+mnl_pref <- logitr(
+    data    = dfcjtest3,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("price",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "racial_diversity.num",
+                "gender_equal_pay.num")
+)
+
+wtp(mnl_pref, scalePar = "price")
+
+mnl_wtp <- logitr(
+    data     = dfcjtest3,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("firearms", 
+                "fossil_fuels",
+                "may_employ_children",
+                "racial_diversity",
+                "gender_equal_pay"),
+    scalePar = "price"
+)
+
+summary(mnl_pref)
+
+summary(mnl_wtp)
+
+
+```
+
+```{r}
+library(radiant)
+```
+
+
+```{r}
+respondent1 <- icecream %>% filter(respondent == "Individual 1")
+
+# save the conjoint analysis in an object, because we'll use it as input to summary(), plot(), and predict() later on
+
+conjointmod <- conjoint(dfcjtest3, rvar = "choice_indicator", evar = c("price","firearms.num","fossil_fuels.num","may_employ_children.num", "racial_diversity.num", "gender_equal_pay.num")) 
+
+summary(conjointmod)
+
+
+mnl_pref <- logitr(
+    data    = dfcjtest3,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("price",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "racial_diversity.num",
+                "gender_equal_pay.num")
+)
+
+
+```
+
+

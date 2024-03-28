@@ -1,0 +1,5 @@
+"0","plot(amceusw_by, group = ""republican"", vline = 0) +"
+"0","  scale_colour_manual(na.translate = F, values = c(""royalblue"", ""red3"")) "
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"

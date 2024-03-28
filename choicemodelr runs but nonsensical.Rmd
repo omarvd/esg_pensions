@@ -1,0 +1,139 @@
+---
+title: "choicemodelr"
+author: "Omar Vasquez Duque"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r}
+
+library(readr)
+library(tidyverse)
+
+conjoint_data = read_csv("conjoint2.csv")
+
+names(conjoint_data)
+```
+
+```{r}
+# Assuming 'choice_data' is your dataset
+conjoint_data = conjoint_data %>% 
+  select(survey_id, choice_set, label, pension_num, gender_equality, living_wage, salary_equality, labor_rights, environmental_impact, faith_morality, firearms, choice_indicator, republican) 
+
+
+
+# conjoint_data <- conjoint_data %>%
+#   group_by(survey_id, choice_set) %>%
+#   mutate(choice_indicator = ifelse(row_number() == 1, sum(choice_indicator * label), 0)) %>%
+#   ungroup()
+
+
+# conjoint_data = conjoint_data %>% 
+#   mutate(gender_equality = ifelse(gender_equality == "gender restrictions", 1,0),
+#          living_wage = ifelse(living_wage == "living wage restrictions", 1,0),
+#          salary_equality = ifelse(salary_equality == "salary equality restrictions",1,0),
+#          labor_rights = ifelse(labor_rights == "labor rights restrictions", 1, 0),
+#          environmental_impact = ifelse(environmental_impact == "environmental restrictions", 1, 0),
+#          faith_morality = ifelse(faith_morality == "faith/morality restrictions", 1, 0),
+#          firearms = ifelse(firearms == "firearms restrictions",1,0))
+```
+
+
+```{r eval=FALSE, include=FALSE}
+# Load the ChoiceModelR package
+library(ChoiceModelR)
+
+# Set up the xcoding vector
+# 1 for 'pension' (continuous), 0 for all other categorical attributes
+xcoding <- c(1, 0, 0, 0, 0, 0, 0, 0)
+
+# Structure your data according to the documentation
+# The data frame should have columns: UnitID, Set, Alt, X_1, ..., X_natts, y
+# Where UnitID = respondent ID, Set = choice_set, Alt = label, y = choice_indicator
+# And X_1, ..., X_natts are your attributes
+
+# Assuming your data is structured with these columns in this order:
+#choice.model.data <- choice_data[, c(})]
+
+
+
+
+respondent_republican_status <- conjoint_data %>%
+  mutate(republican = as.numeric(as.character(republican))) %>%  # Convert 'republican' to numeric
+  group_by(survey_id) %>%
+  summarise(republican = max(republican, na.rm = TRUE)) %>%  # Use max on the numeric values
+  ungroup()
+
+
+
+
+#names(choice.model.data) <- c("UnitID", "Set", "Alt", "X_1", "X_2", "X_3", "X_4", "X_5", "X_6", "X_7", "X_8", "y")
+
+# Set up the MCMC parameters
+mcmc <- list(R = 20000, use = 5000, s = 0.1)  # Example parameters, adjust based on your needs
+
+output_directory <- "~/Documents/GitHub/esg_pensions"  # Replace with your desired path
+
+# Run the choicemodelr function
+result3 <- choicemodelr(data = choice.model.data.norep, 
+                      # demos = respondent_republican_status,
+                       xcoding = xcoding, 
+                       mcmc = mcmc, 
+                       directory = output_directory)# Continue with analysis...
+
+```
+```{r}
+#'*Following choicetools vignette*
+cbc.tab2 = conjoint_data %>% 
+  mutate(pension_num = pension_num * -1) %>% 
+  select(-republican)
+
+cbc.tab2 = cbc.tab2 %>% 
+  mutate(
+    pension_num = case_when(pension_num == 40000 ~ 1,
+                        pension_num == 45000 ~2,
+                        pension_num == 50000 ~3,
+                        pension_num == 55000 ~4,
+                        pension_num == 60000 ~5,
+                        pension_num ==65000 ~6,
+                        pension_num ==70000 ~7),
+    gender_equality = case_when(gender_equality == "no gender restrictions" ~ 1,
+                                gender_equality == "gender restrictions" ~ 2),
+    salary_equality = case_when(salary_equality == "no salary equality restrictions" ~ 1,
+                                salary_equality == "salary equality restrictions" ~ 2),
+    labor_rights = case_when(labor_rights == "no labor rights restrictions" ~1,
+                             labor_rights == "labor rights restrictions" ~2),
+    environmental_impact = case_when(environmental_impact == "no environmental restrictions" ~1,
+                                     environmental_impact == "environmental restrictions" ~2),
+    faith_morality = case_when(faith_morality == "no faith/morality restrictions" ~1,
+                               faith_morality=="faith/morality restrictions" ~ 2),
+    firearms = case_when(firearms == "no firearms restrictions" ~ 1,
+                         firearms == "firearms restrictions" ~ 2 ),
+    living_wage = case_when(living_wage == "no living wage restrictions" ~1,
+                            living_wage == "living wage restrictions" ~2))
+cbc.tab2 = cbc.tab2 %>% 
+  select(-c(survey_id:label, choice_indicator))
+
+cbc.win2 = conjoint_data$choice_indicator
+
+cbc.tasks2 = 12
+
+cbc.concepts2 = 2
+
+N2 = nrow(conjoint_data)/24
+
+# Specify attributes, excluding 'pension' since it's continuous
+cbc.attrs2 <- c(
+  pension_num = 7,
+  gender_equality=2, living_wage = 2, salary_equality=2, labor_rights=2, environmental_impact=2, faith_morality =2, firearms =2)
+
+library(choicetools)
+
+# Estimate the model
+cbc.hb2 <- estimateMNLfromDesignHB(tmp.des=cbc.tab2, tmp.win=cbc.win2, 
+                                  kCards=cbc.concepts2, kTrials=cbc.tasks2,
+                                  kResp=N2, mcmcIters=20000)
+
+```
+
+

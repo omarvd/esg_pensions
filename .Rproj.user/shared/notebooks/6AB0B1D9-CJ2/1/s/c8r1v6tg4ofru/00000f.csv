@@ -1,0 +1,5 @@
+"0","median_complet_t2 = median(dfcj2$respondent_length_of_interview_seconds) "
+"0","# calculate median completion time in secs"
+"0",""
+"0","average_complet2 = mean(dfcj2$respondent_length_of_interview_seconds)"
+"0",""

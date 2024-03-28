@@ -1,0 +1,5 @@
+"0","result <- choicemodelr(data = choice.model.data, xcoding = xcoding, mcmc = mcmc, directory = output_directory)# Continue with analysis...
+"
+"2","Error in Ops.data.frame(data[, 1], ID[i]) : 
+  ‘==’ only defined for equally-sized data frames
+"

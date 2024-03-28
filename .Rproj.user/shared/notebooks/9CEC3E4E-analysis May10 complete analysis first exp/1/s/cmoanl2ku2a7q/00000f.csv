@@ -1,0 +1,18 @@
+"0","library(readr)"
+"0",""
+"0","#setwd(""/Users/ovd/Documents/GitHub/esg_pensions"")"
+"0",""
+"0","dfcj <- read_csv(""rds_prod.experiment.420656.stacked(18).csv"")"
+"2","Warning: [38;5;250mOne or more parsing issues, call `problems()` on your data frame for
+details, e.g.:
+  dat <- vroom(...)
+  problems(dat)[39m"
+"2","[1mRows: [22m[34m57336[39m [1mColumns: [22m[34m87[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (28): EXPECTED_PENSION, INVESTS_IN_FIREARMS, INVESTS_IN_FOSSI...
+[32mdbl[39m  (57): RESPONDENT_ID, SURVEY_ID, CHOICE_SET, LABEL, CHOICE_IND...
+[34mdttm[39m  (2): RESPONDENT_TIME_OF_OPENING_SURVEY, RESPONDENT_TIME_OF_C..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

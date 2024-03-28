@@ -1,0 +1,169 @@
+---
+title: "April 25"
+author: "Omar Vasquez Duque"
+date: "2023-04-25"
+output: html_document
+---
+```{r}
+options(scipen=999)
+
+options(digits = 3)
+
+
+library(readr)
+
+dat1 <- read_csv("~/Downloads/rds_prod.experiment.420656.stacked.csv")
+
+library(cregg)
+library(janitor)
+library(tidyverse)
+
+
+dat1 = dat1 %>% 
+  clean_names() 
+
+```
+
+
+```{r}
+dat1 = dat1 %>% 
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms,
+                           levels = c("Invests in firearms", "Does not invest in firearms")),           
+         fossil_fuels =  factor(invests_in_fossil_fuels,
+                                levels = c("Invests in fossil fuels", "Does not invest in fossil fuels")),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children,
+                                      levels = c("Invests in firms that may employ children", "Invests in firms that ensure no children are employed")),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management,
+                                   levels = c("Does not advocate for racial diversity in management",
+                                              "Advocates for racial diversity in management")),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women,
+                                   levels = c("Does not advocate for equal pay for men and women",
+                                              "Advocates for equal pay for men and women")),
+        choice_indicator = as.numeric(choice_indicator),
+        choice = as.factor(choice_indicator),
+        prior = factor(ifelse(q9_taking_into_account_esg_factors_o1_yes ==1, "anti-esg", "pro=esg")),
+        republican = factor(ifelse(q11_party_id_o1_republican==1 |
+          q12_party_leanings_o1_republican ==1, 1,0)),
+        florida = factor(ifelse(q15_state_us_o1_florida==1,1,0)))
+
+
+```
+
+
+```{r}
+mm_by <- cj(dat1, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", 
+            by = ~republican)
+
+amce_by <- cj(dat1, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", 
+            by = ~republican)
+```
+```{r}
+plot(mm_by, group = "republican", vline = 0.5)
+
+plot(amce_by, group = "republican")
+```
+
+
+```{r}
+mm_by_fl <- cj(dat1, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", 
+            by = ~florida)
+
+amce_by_fl <- cj(dat1, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", 
+            by = ~florida)
+```
+```{r}
+plot(mm_by_fl, group = "florida", vline = 0.5)
+
+plot(amce_by_fl, group = "florida")
+```
+
+
+
+```{r}
+#WTP analysis
+library(logitr)
+```
+
+
+```{r}
+#Prepare data
+
+dat1 = dat1 %>% 
+  mutate(pension = expected_pension, 
+         pension_num = parse_number(expected_pension))
+
+dat1$pension <- recode(dat1$pension,
+                           "Expected pension: $20,000 a year" = "20,000", 
+                           "Expected pension: $25,000 a year" = "25,000", 
+                           "Expected pension: $30,000 a year" = "30,000", 
+                           "Expected pension: $35,000 a year" = "35,000", 
+                           "Expected pension: $40,000 a year" = "40,000", 
+                           "Expected pension: $45,000 a year" = "45,000", 
+                           "Expected pension: $50,000 a year" = "50,000",
+                           "Expected pension: $55,000 a year" = "55,000",
+                           "Expected pension: $60,000 a year" = "60,000"
+                           )
+dat1 = dat1 %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id()) %>% 
+  ungroup()
+
+```
+
+
+```{r}
+dflogitr = dat1 %>% 
+  select(survey_id, 
+         obs_id, 
+         choice_set, 
+         pension_num,
+         choice_indicator, 
+         choice,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         republican,
+         florida)
+
+dflogitr = dflogitr %>% 
+  mutate(price = -1 * pension_num,
+         firearms.num = ifelse(firearms == "Invests in firearms", 1, 0),
+         fossil_fuels.num = ifelse(fossil_fuels == "Invests in fossil fuels", 1, 0),
+         may_employ_children.num = ifelse(may_employ_children == "Invests in firms that may employ children", 1, 0),
+         racial_diversity.num = ifelse(racial_diversity == "Does not advocate for racial diversity in management", 1, 0),
+         gender_equal_pay.num = ifelse(gender_equal_pay == "Does not advocate for equal pay for men and women", 1, 0))
+
+dflogitr = dflogitr %>% 
+  rename(no_racial_diversity.num = racial_diversity.num,
+         no_gender_equal_pay.num = gender_equal_pay.num)
+```
+
+Check WTP analysis with Bilal
+
+```{r}
+
+mnl_pref <- logitr(
+    data    = dflogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension_num",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "no_racial_diversity.num",
+                "no_gender_equal_pay.num"),
+    panelID = "survey_id"
+)
+
+summary(mnl_pref)
+
+wtp(mnl_pref, scalePar = "pension_num")
+```
+

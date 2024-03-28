@@ -1,0 +1,8 @@
+"0","dfcj2 = dfcj2 %>% "
+"0","  mutate(fiftysix = factor(ifelse(age>55,1,0)))"
+"0",""
+"0","df56.2 = dfcj2 %>% "
+"0","  select(survey_id, fiftysix)"
+"0",""
+"0",""
+"0","write_csv(df56.2, ""df56_2.csv"")"

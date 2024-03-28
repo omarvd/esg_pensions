@@ -1,0 +1,7 @@
+"0","# calculate conditional MMs"
+"0","amcesrel <- cj(na.omit(dfcjw), choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""amce"", by = ~religiousness)"
+"0",""
+"0","diff_amcerel <- cj(na.omit(dfcjw), choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""amce_diff"", "
+"0","    by = ~religiousness)"
+"0",""
+"0","plot(diff_amcerel, vline=0) + ggplot2::facet_wrap(~BY, ncol = 3L)"

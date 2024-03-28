@@ -1,0 +1,14 @@
+"0","amce1shorter = amce1 %>% "
+"0","  filter(!str_detect(feature, ""pension""))"
+"0","#Trying to produce nicer plots"
+"0",""
+"0","amce1shorter = plot(amce1shorter, vline =0, feature_headers = F) +"
+"0","  theme(text = element_text(family = ""CMU Serif"")) +"
+"0","scale_color_jco() +"
+"0","   ggplot2::facet_wrap(~feature, ncol = 1L,"
+"0","                      scales = ""free_y"", strip.position = ""top"")"
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"
+"0","amce1shorter +"
+"0","  ggplot2::scale_fill_manual(labels=c(""firearms"", ""fossil fuels"", ""child labor"", ""racial diversity"", ""gender pay parity"")) "

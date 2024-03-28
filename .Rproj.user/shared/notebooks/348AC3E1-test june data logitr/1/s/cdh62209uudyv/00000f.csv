@@ -1,0 +1,12 @@
+"0","dfcjlogitr = dfcjlogitr %>% 
+  muatate(gender_equality.num = as.numeric(gender_equality),
+          salary_equality.num = as.numeric(salary_equality),
+          environmental_impact.num = as.numeric(environmental_impact),
+          firearms.num = as.numeric(firearms),
+          living_wage.num = as.numeric(living_wage),
+          labor_rights.num = as.numeric(labor_rights),
+          faith_morality.num = as.numeric(faith_morality))
+"
+"2","Error in muatate(., gender_equality.num = as.numeric(gender_equality),  : 
+  could not find function ""muatate""
+"

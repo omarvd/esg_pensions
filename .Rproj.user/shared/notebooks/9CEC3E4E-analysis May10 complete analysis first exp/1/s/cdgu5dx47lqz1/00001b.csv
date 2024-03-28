@@ -1,0 +1,14 @@
+"0","mmusw_by <- cj(dfcjw, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""mm"", weights = ~ weight,"
+"0","            by = ~republican)"
+"0",""
+"0","amceusw_by <- cj(dfcjw, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""amce"", weights = ~ weight,"
+"0","            by = ~republican)"
+"0",""
+"0","plot(mmusw_by, group = ""republican"", vline = 0.5) +"
+"0","  scale_colour_manual(na.translate = F, values = c(""royalblue"", ""red3"")) +"
+"0","  ggtitle(""U.S. Weighted Sample"")"
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"

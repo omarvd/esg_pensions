@@ -1,0 +1,18 @@
+"0","mnl_pref1 <- logitr(
+    data    = dfcjlogitr,
+    outcome = ""choice_indicator"",
+    obsID   = ""obs_id"",
+    pars    = c(""pension"",
+                ""gender_equality"",
+                 ""living_wage"",
+                ""salary_equality"",
+                ""labor_rights"",
+                ""environmental_impact"",
+                ""faith_morality"",
+                ""firearms""),
+    panelID = ""survey_id""
+)
+"
+"2","Error in `contrasts<-`(`*tmp*`, value = contr.funs[1 + isOF[nn]]) : 
+  contrasts can be applied only to factors with 2 or more levels
+"

@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","# +"
+"0","#   scale_colour_manual(na.translate = F, values = c(""#F8867D"", ""#00BFC4""), labels=c('anti-ESG', 'pro-ESG')) + "
+"0","#   theme(text = element_text(family = ""LM Roman 10"")) "
+"0","  "

@@ -1,0 +1,3 @@
+"0","#Transform wtp into positive values (from utility loses)"
+"0",""
+"0","dfwtp = dfwtp * -1"

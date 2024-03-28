@@ -1,0 +1,644 @@
+{
+    "sources": [
+        {
+            "URL": "https://nypost.com/2022/08/16/blackrock-faces-scrutiny-from-19-state-ags-over-esg-investments/",
+            "author": [
+                {
+                    "family": "Moynihan",
+                    "given": "Lydia"
+                }
+            ],
+            "container-title": "New York Post",
+            "id": "moynihan2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        8,
+                        16
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "title": "BlackRock faces scrutiny from 19 state AGs over ESG investments",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.2139/ssrn.4221990",
+            "author": [
+                {
+                    "family": "Edmans",
+                    "given": "Alex"
+                }
+            ],
+            "id": "edmans",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "The End of ESG",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pollman",
+                    "given": "Elizabeth"
+                }
+            ],
+            "id": "pollman",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "The Making and Meaning of ESG",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1017/9781108777919.004",
+            "URL": "https://www.cambridge.org/core/books/advances-in-experimental-political-science/conjoint-survey-experiments/759C9A2E706E4F8539F40E44A43D6ACF",
+            "author": [
+                {
+                    "family": "Bansak",
+                    "given": "Kirk"
+                },
+                {
+                    "family": "Hainmueller",
+                    "given": "Jens"
+                },
+                {
+                    "family": "Hopkins",
+                    "given": "Daniel J."
+                },
+                {
+                    "family": "Yamamoto",
+                    "given": "Teppei"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Green",
+                    "given": "Donald P."
+                },
+                {
+                    "family": "Druckman",
+                    "given": "James N."
+                }
+            ],
+            "id": "bansak2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1017/9781108777919.004",
+            "page": "19-41",
+            "publisher": "Cambridge University Press",
+            "publisher-place": "Cambridge",
+            "title": "Conjoint survey experiments",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Schanzenbach",
+                    "given": "Max M."
+                },
+                {
+                    "family": "Sitkoff",
+                    "given": "Robert H."
+                }
+            ],
+            "container-title": "Stanford Law Review",
+            "id": "schanzenbach2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "381-446",
+            "title": "Reconciling fiduciary duty and social conscience: The law and economics of ESG investing by a trustee",
+            "title-short": "Reconciling fiduciary duty and social conscience",
+            "type": "article-journal",
+            "volume": "72"
+        },
+        {
+            "DOI": "10.1111/fima.12413",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/fima.12413",
+            "author": [
+                {
+                    "family": "Edmans",
+                    "given": "Alex"
+                }
+            ],
+            "container-title": "Financial Management",
+            "id": "edmans2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/fima.12413",
+            "page": "3-17",
+            "title": "The end of ESG",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "URL": "https://www.elgaronline.com/display/edcoll/9781784716745/9781784716745.00011.xml",
+            "author": [
+                {
+                    "family": "Toubia",
+                    "given": "Olivier"
+                }
+            ],
+            "container-title": "Handbook of Marketing Analytics",
+            "id": "toubia2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        3,
+                        30
+                    ]
+                ]
+            },
+            "language": "en{\\_}us",
+            "note": "ISBN: 9781784716752 Publisher: Edward Elgar Publishing Section: Handbook of Marketing Analytics",
+            "page": "52-76",
+            "title": "Conjoint Analysis",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1093/pan/mpt024",
+            "URL": "https://www.cambridge.org/core/journals/political-analysis/article/causal-inference-in-conjoint-analysis-understanding-multidimensional-choices-via-stated-preference-experiments/414DA03BAA2ACE060FFE005F53EFF8C8",
+            "author": [
+                {
+                    "family": "Hainmueller",
+                    "given": "Jens"
+                },
+                {
+                    "family": "Hopkins",
+                    "given": "Daniel J."
+                },
+                {
+                    "family": "Yamamoto",
+                    "given": "Teppei"
+                }
+            ],
+            "container-title": "Political Analysis",
+            "id": "hainmueller2014",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: Cambridge University Press",
+            "page": "1-30",
+            "title": "Causal Inference in Conjoint Analysis: Understanding Multidimensional Choices via Stated Preference Experiments",
+            "title-short": "Causal Inference in Conjoint Analysis",
+            "type": "article-journal",
+            "volume": "22"
+        },
+        {
+            "DOI": "10.1017/pan.2019.30",
+            "URL": "https://www.cambridge.org/core/journals/political-analysis/article/measuring-subgroup-preferences-in-conjoint-experiments/4F2C21AC02753F1FFF2F5EA0F943C1B2",
+            "author": [
+                {
+                    "family": "Leeper",
+                    "given": "Thomas J."
+                },
+                {
+                    "family": "Hobolt",
+                    "given": "Sara B."
+                },
+                {
+                    "family": "Tilley",
+                    "given": "James"
+                }
+            ],
+            "container-title": "Political Analysis",
+            "id": "leeper2020",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        4
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: Cambridge University Press",
+            "page": "207-221",
+            "title": "Measuring Subgroup Preferences in Conjoint Experiments",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "DOI": "10.1561/0800000036",
+            "URL": "https://www.nowpublishers.com/article/Details/ECO-036",
+            "author": [
+                {
+                    "family": "Ben-Akiva",
+                    "given": "Moshe"
+                },
+                {
+                    "family": "McFadden",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Train",
+                    "given": "Kenneth"
+                }
+            ],
+            "container-title": "Foundations and Trends in Econometrics",
+            "id": "ben-akiva2019",
+            "issue": "1-2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        1,
+                        27
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "note": "Publisher: Now Publishers, Inc.",
+            "page": "1-144",
+            "title": "Foundations of stated preference elicitation: Consumer behavior and choice-based conjoint analysis",
+            "title-short": "Foundations of stated preference elicitation",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ben-Akiva",
+                    "given": "Moshe E."
+                },
+                {
+                    "family": "Lerman",
+                    "given": "Steven R."
+                }
+            ],
+            "id": "ben-akiva1985",
+            "issued": {
+                "date-parts": [
+                    [
+                        1985
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Google-Books-ID: oLC6ZYPs9UoC",
+            "publisher": "MIT Press",
+            "title": "Discrete Choice Analysis: Theory and Application to Travel Demand",
+            "title-short": "Discrete Choice Analysis",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1177/002224299005400402",
+            "URL": "https://doi.org/10.1177/002224299005400402",
+            "author": [
+                {
+                    "family": "Green",
+                    "given": "Paul E."
+                },
+                {
+                    "family": "Srinivasan",
+                    "given": "V."
+                }
+            ],
+            "container-title": "Journal of Marketing",
+            "id": "green1990",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1990,
+                        10,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: SAGE Publications Inc",
+            "page": "3-19",
+            "title": "Conjoint Analysis in Marketing: New Developments with Implications for Research and Practice",
+            "title-short": "Conjoint Analysis in Marketing",
+            "type": "article-journal",
+            "volume": "54"
+        },
+        {
+            "DOI": "10.1002/1099-1255(200009/10)15:5<447::AID-JAE570>3.0.CO;2-1",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/1099-1255%28200009/10%2915%3A5%3C447%3A%3AAID-JAE570%3E3.0.CO%3B2-1",
+            "author": [
+                {
+                    "family": "McFadden",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Train",
+                    "given": "Kenneth"
+                }
+            ],
+            "container-title": "Journal of Applied Econometrics",
+            "id": "mcfadden2000",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/1099-1255",
+            "page": "447-470",
+            "title": "Mixed MNL models for discrete response",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "author": [
+                {
+                    "family": "Allenby",
+                    "given": "Greg M."
+                },
+                {
+                    "family": "Rossi",
+                    "given": "Peter E."
+                }
+            ],
+            "container-title": "The handbook of marketing research: Uses, misuses, and future advances",
+            "id": "allenby2006",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "note": "Publisher: Sage",
+            "page": "418-440",
+            "title": "Hierarchical bayes models",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.2139/ssrn.4115854",
+            "author": [
+                {
+                    "family": "Hirst",
+                    "given": "Scott"
+                },
+                {
+                    "family": "Kastiel",
+                    "given": "Kobi"
+                },
+                {
+                    "family": "Kricheli-Katz",
+                    "given": "Tamar"
+                }
+            ],
+            "id": "hirst2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "How Much Do Investors Care About Social Responsibility?",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1509/jmkr.45.6.633",
+            "URL": "https://doi.org/10.1509/jmkr.45.6.633",
+            "author": [
+                {
+                    "family": "Mazar",
+                    "given": "Nina"
+                },
+                {
+                    "family": "Amir",
+                    "given": "On"
+                },
+                {
+                    "family": "Ariely",
+                    "given": "Dan"
+                }
+            ],
+            "container-title": "Journal of Marketing Research",
+            "id": "mazar2008",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: SAGE Publications Inc",
+            "page": "633-644",
+            "title": "The Dishonesty of Honest People: A Theory of Self-Concept Maintenance",
+            "title-short": "The Dishonesty of Honest People",
+            "type": "article-journal",
+            "volume": "45"
+        },
+        {
+            "DOI": "10.1177/0956797609355572",
+            "URL": "https://doi.org/10.1177/0956797609355572",
+            "author": [
+                {
+                    "family": "Hardisty",
+                    "given": "David J."
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Eric J."
+                },
+                {
+                    "family": "Weber",
+                    "given": "Elke U."
+                }
+            ],
+            "container-title": "Psychological Science",
+            "id": "hardisty2010",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: SAGE Publications Inc",
+            "page": "86-92",
+            "title": "A Dirty Word or a Dirty World?: Attribute Framing, Political Affiliation, and Query Theory",
+            "title-short": "A Dirty Word or a Dirty World?",
+            "type": "article-journal",
+            "volume": "21"
+        },
+        {
+            "DOI": "10.1017/S193029750000173X",
+            "URL": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/compensatory-versus-noncompensatory-models-for-predicting-consumer-preferences/425838A1D04DF97B561BEC001107283E",
+            "author": [
+                {
+                    "family": "Dieckmann",
+                    "given": "Anja"
+                },
+                {
+                    "family": "Dippold",
+                    "given": "Katrin"
+                },
+                {
+                    "family": "Dietrich",
+                    "given": "Holger"
+                }
+            ],
+            "container-title": "Judgment and Decision Making",
+            "id": "dieckmann2009",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        4
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: Cambridge University Press",
+            "page": "200-213",
+            "title": "Compensatory versus noncompensatory models for predicting consumer preferences",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "DOI": "10.2139/ssrn.3004794",
+            "author": [
+                {
+                    "family": "Hart",
+                    "given": "Oliver"
+                },
+                {
+                    "family": "Zingales",
+                    "given": "Luigi"
+                }
+            ],
+            "container-title": "Working Paper, No. 267, University of Chicago Booth School of Business, Stigler Center for the Study of the Economy and the State",
+            "id": "hart",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        8
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Companies Should Maximize Shareholder Welfare Not Market Value",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://www.spglobal.com/marketintelligence/en/news-insights/latest-news-headlines/blue-states-stick-with-pension-fund-esg-investments-citing-focus-on-long-term-74862511",
+            "author": [
+                {
+                    "family": "Rives",
+                    "given": "Karin"
+                }
+            ],
+            "id": "rives2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        4,
+                        10
+                    ]
+                ]
+            },
+            "language": "en-us",
+            "title": "Blue states stick with pension fund ESG investments, citing focus on long term",
+            "type": ""
+        },
+        {
+            "URL": "https://www.reuters.com/business/finance/florida-pulls-2-bln-blackrock-largest-anti-esg-divestment-2022-12-01/",
+            "author": [
+                {
+                    "family": "Kerber",
+                    "given": "Ross"
+                },
+                {
+                    "family": "Kerber",
+                    "given": "Ross"
+                }
+            ],
+            "container-title": "Reuters",
+            "id": "kerber2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Florida pulls $2 bln from BlackRock in largest anti-ESG divestment",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://www.ropesgray.com/en/sites/navigating-state-regulation-of-esg",
+            "author": [
+                {
+                    "family": "Ropes & Gray LLP"
+                }
+            ],
+            "id": "ropesgrayllp2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        12
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Navigating State Regulation of ESG",
+            "type": ""
+        }
+    ],
+    "project_biblios": []
+}

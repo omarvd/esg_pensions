@@ -1,0 +1,4 @@
+"0","# estimate population retirement fund owners"
+"0",""
+"0","ptotal_rep = (n18_24 * part15_23) + (n25_39 * part24_39) + (n40_55 * part40_55) + (n56_over * part56_over)"
+"0",""

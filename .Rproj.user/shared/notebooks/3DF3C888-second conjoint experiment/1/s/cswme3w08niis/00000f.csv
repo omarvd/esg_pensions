@@ -1,0 +1,8 @@
+"0","dfcj = dfcj %>% "
+"0","  mutate(w_age = case_when(age_groups == ""18-29"" ~ w18_29,"
+"0","                           age_groups == ""30-39"" ~ w30_39,"
+"0","                           age_groups == ""40-49"" ~ w40_49,"
+"0","                           age_groups == ""50-59"" ~ w50_59,"
+"0","                           age_groups == ""60-69"" ~ w60_69,"
+"0","                           age_groups == ""70 and over"" ~ w70_n))"
+"0",""

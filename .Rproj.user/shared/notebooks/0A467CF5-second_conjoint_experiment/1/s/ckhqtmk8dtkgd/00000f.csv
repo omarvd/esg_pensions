@@ -1,0 +1,8 @@
+"0","dfcj2 = dfcj2 %>% "
+"0","  mutate(gender_equality = as.factor(gender_equality),"
+"0","         living_wage = as.factor(living_wage),"
+"0","         salary_equality = as.factor(salary_equality),"
+"0","         labor_rights  = as.factor(labor_rights),"
+"0","         environmental_impact  = as.factor(environmental_impact),"
+"0","         faith_morality  = as.factor(faith_morality),"
+"0","         firearms  = as.factor(firearms))"

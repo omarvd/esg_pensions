@@ -1,0 +1,14 @@
+"0","mnl_wtp <- logitr("
+"0","    data     = yogurt,"
+"0","    outcome  = ""choice"","
+"0","    obsID    = ""obsID"","
+"0","    pars     = c(""feat"", ""brand""),"
+"0","    scalePar = ""price"","
+"0","    numMultiStarts = 10"
+"0",")"
+"2","Running multistart...
+  Random starting point iterations: 10
+  Number of cores: 7
+"
+"2","Done!
+"

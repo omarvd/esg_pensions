@@ -1,0 +1,2 @@
+"0","dfrep = dfcj %>% "
+"0","  filter(republican==1)"

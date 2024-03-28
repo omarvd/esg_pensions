@@ -1,0 +1,6 @@
+"0",""
+"0",""
+"0","dflogitr.test <- dflogitr %>%"
+"0","  group_by(survey_id, choice_set) %>%"
+"0","  mutate(choice_indicator = ifelse(row_number() == 1, sum(choice_indicator * label), 0)) %>%"
+"0","  ungroup()"

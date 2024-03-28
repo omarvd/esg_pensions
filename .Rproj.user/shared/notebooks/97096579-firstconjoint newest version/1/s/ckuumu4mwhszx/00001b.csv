@@ -1,0 +1,11 @@
+"0","write_csv(dflogitr, file = ""dflogitr.csv"")
+"
+"1","[1m[33mError[39m in `cli_block()`:[22m
+[33m![39m `x` must not contain list or matrix columns:
+[31m✖[39m invalid columns at index(s): 14
+Backtrace:
+[90m 1. [39m[1mreadr[22m::write_csv(dflogitr, file = ""dflogitr.csv"")
+[90m 2. [39mreadr::write_delim(...)
+[90m 3. [39mreadr:::check_column_types(x)
+[90m 4. [39m[1m[94mreadr:::cli_block([39m[22m...[1m[94m)[39m[22m
+"

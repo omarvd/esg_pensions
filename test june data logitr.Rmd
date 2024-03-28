@@ -1,0 +1,342 @@
+---
+#word_document: default
+title: "In Who's Best Interest? An Empirical Analysis on the Legitimacy of Anti-ESG Legislation"
+author: "Omar Vasquez Duque"
+date: "2023-03-16"
+toc: FALSE
+abstract: |
+  The polarization of US politics has reached the management of state pension funds. More than a dozen Republican state legislatures have passed or introduced legislation that either outright forbids ESG investment or blacklists money managers that promote it. A similar number of Democratic states are debating legislation, or have already enacted it, that encourages pension investments to include ESG considerations or prevents public funds from funding polluters or weapon manufacturers.
+  
+  The legal rhetoric used to justify the political position against ESG investing deals with potential breaches of the managers' duty of loyalty. The hypothesis is that managers who consider ESG factors when investing the state pension funds pursue a political agenda at the expense of their trustees. However, workers--including conservative workers--may well prefer a constrained pension optimization strategy that aligns with their ethical values.
+  This work is the first to use conjoint analysis to examine people's willingness to sacrifice profits to pursue social causes, and the first to analyze the preferences of American retirement fund investors to assess the legitimacy of anti-ESG legislation.
+  
+  The experiment results show an overall preference for funds that restrict their investments to firms that promote social goals. There are important differences among respondents that identify as Democrats or Republicans, but even the latter are willing to sacrifice profits to reward firms that ensure no children are employed in the supply chain and promote gender equality in management. ESG opponents appear to believe it just embraces environmental goals. In fact, even those who oppose ESG prefer investment options that pursue social goals.There are good reasons to be skeptical about ESG investing, but potential breaches of fiduciary duties that assume people want to maximize profits at all cost is not one.
+
+output: 
+  bookdown::pdf_document2:
+  
+# output:
+#   pdf_document: default
+#   word_document:
+#       reference_docx: docx_template.docx
+#   html_document: default
+---
+
+# Preliminary Analysis
+
+```{r include=FALSE}
+
+options(scipen=999)
+
+options(digits = 5)
+```
+
+```{r include=FALSE}
+
+
+library(readr)
+
+dfcj <- read_csv("June62023.csv")
+
+6864/24
+
+```
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+
+```{r include=FALSE}
+
+dfcj = dfcj %>% 
+  clean_names() 
+
+```
+
+
+Check this!!! factor levels once again giving trouble
+
+```{r}
+table(dfcj$firearms)
+```
+
+
+```{r}
+
+dfcj =dfcj %>% 
+  mutate(expected_pension = factor(expected_pension),
+         gender_equality = if_else(gender_equality == "Does not invest in companies with a low proportion of women in executive and director positions", "gender restrictions", "no gender restrictions"),
+         living_wage = if_else(living_wage == "Only invests in companies that ensure their workers earn enough to not fall under poverty", "living wage restrictions", "no living wage restrictions"),
+         salary_equality = if_else(salary_equality=="Does not invest in companies that have the highest pay disparity between their top executives and their median employee", "salary equality restrictions", "no salary equality restrictions"),
+         labor_rights = if_else(labor_rights == "Only invests in companies that meet United Nations global standards for labor rights", "labor rights restrictions", "no labor rights restrictions"),
+         environmental_impact = if_else(environmental_impact == "Excludes companies whose products have negative environmental impacts", "environmental restrictions", "no environmental restrictions"),
+         faith_morality = if_else(faith_morality == "Excludes companies that profit from adult entertainment, alcohol, tobacco, or gambling", "faith/morality restrictions", "no faith/morality restrictions"),
+         firearms = if_else(firearms == "Does not invest in firearms", "firearms restrictions", "no firearms restrictions"))
+```
+
+```{r}
+
+
+dfcj = dfcj %>% 
+  mutate(gender_equality = as.factor(gender_equality),
+         living_wage = as.factor(living_wage),
+         salary_equality = as.factor(salary_equality),
+         labor_rights  = as.factor(labor_rights),
+         environmental_impact  = as.factor(environmental_impact),
+         faith_morality  = as.factor(faith_morality),
+         firearms  = as.factor(firearms))
+
+```
+
+```{r}
+dfcj$gender_equality <- relevel(dfcj$gender_equality, ref = "no gender restrictions")
+
+dfcj$living_wage <- relevel(dfcj$living_wage, ref = "no living wage restrictions")
+
+dfcj$salary_equality <- relevel(dfcj$salary_equality, ref = "no salary equality restrictions")
+
+dfcj$labor_rights <- relevel(dfcj$labor_rights, ref = "no labor rights restrictions")
+
+dfcj$environmental_impact <- relevel(dfcj$environmental_impact, ref = "no environmental restrictions")
+
+dfcj$faith_morality <- relevel(dfcj$faith_morality, ref = "no faith/morality restrictions")
+
+dfcj$firearms <- relevel(dfcj$firearms, ref = "no firearms restrictions")
+
+
+```
+
+```{r}
+table(dfcj$firearms)
+```
+
+
+WTP analysis. TBD.
+
+```{r include=FALSE}
+library(logitr)
+
+```
+
+```{r include=FALSE}
+
+# Transforming to character. It was a factor before and that caused error with parse_number
+dfcj = dfcj %>% 
+  mutate(expected_pension = as.character(expected_pension))
+
+dfcj = dfcj %>%
+  mutate(pension = parse_number(expected_pension))
+
+
+```
+
+
+```{r include=FALSE}
+#This code below worked!
+
+dfcjlogitr = dfcj %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id()) %>% 
+  ungroup() # I had forgotten to do this!
+```
+
+```{r include=FALSE}
+mean(dfcjlogitr$pension)
+```
+
+```{r include=FALSE}
+
+dfcjlogitr = dfcjlogitr %>% 
+  select(survey_id,
+         choice_indicator,
+         obs_id, 
+         label,
+         choice_set, 
+         pension,
+         gender_equality,
+         living_wage,
+         salary_equality,
+         labor_rights,
+         environmental_impact,
+         faith_morality,
+         firearms) %>% 
+  mutate(price = -1 * pension)
+
+```
+
+```{r eval=FALSE, include=FALSE}
+
+```
+
+
+```{r}
+write.csv(dflogitr, file = "dflogitr.csv")
+```
+
+
+```{r include=FALSE}
+
+library(logitr)
+
+mnl_pref1 <- logitr(
+    data    = dfcjlogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension",
+                "gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    panelID = "survey_id"
+)
+
+
+names(dfcjlogitr)
+
+
+
+#Ask author why NAs
+mnl_wtp <- logitr(
+    data     = dfcjlogitr,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    scalePar = "price",
+    numMultiStarts = 10
+)
+
+dflogitr$pension = as.numeric(dflogitr$pension)
+
+summary(mnl_pref1)
+
+
+summary(mnl_pref2)
+
+summary(mnl_wtp)
+
+library(gtsummary)
+
+tbl_regression(mnl_wtp)
+
+library(xtable)
+
+wtp(mnl_pref1, scalePar = "pension")
+
+
+library(xtable)
+tab1 = wtp(mnl_pref1, scalePar = "pension")
+
+
+print(tab1, type = "html")
+```
+```{r}
+colnames(dfcjlogitr)
+
+dfcjlogitr = dfcjlogitr %>% 
+  mutate(choice_indicator.num = as.numeric(choice_indicator),
+         gender_equality.num = as.numeric(gender_equality),
+         salary_equality.num = as.numeric(salary_equality),
+         environmental_impact.num = as.numeric(environmental_impact),
+         firearms.num = as.numeric(firearms),
+         living_wage.num = as.numeric(living_wage),
+         labor_rights.num = as.numeric(labor_rights),
+         faith_morality.num = as.numeric(faith_morality))
+```
+
+
+```{r}
+mnl_wtp <- logitr(
+    data     = dfcjlogitr,
+    outcome  = "choice_indicator.num",
+    obsID    = "obs_id",
+    pars     = c("gender_equality.num",
+                 "living_wage.num",
+                "salary_equality.num",
+                "labor_rights.num",
+                "environmental_impact.num",
+                "faith_morality.num",
+                "firearms.num"),
+    scalePar = "price",
+    numMultiStarts = 10
+)
+
+summary(mnl_wtp)
+```
+
+```{r}
+
+#I had an incentive compatibility problem. People saw children and just neglected anything else. Non-compensatory behavior!!!
+
+#'*Running mixed logit model*
+
+mnl_prefam <- logitr(
+    data    = dflogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+     panelID = "survey_id",
+    pars    = c("pension",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "no_racial_diversity.num",
+                "no_gender_equal_pay.num"),
+    randPars = c(firearms.num = 'n', fossil_fuels.num = 'n', may_employ_children.num = 'n', no_racial_diversity.num = 'n',
+                 no_gender_equal_pay.num = 'n'),
+  numMultiStarts = 10,
+   startVals = mnl_prefam$Estimate
+)
+
+summary(mnl_prefam)
+
+library(gtsummary)
+
+tbl_regression(mnl_prefam)
+
+# Code below is an example
+# mxl_pref <- logitr(
+#   data     = yogurt,
+#   outcome  = 'choice',
+#   obsID    = 'obsID',
+#   panelID  = 'id',
+#   pars     = c('price', 'feat', 'brand'),
+#   randPars = c(feat = 'n', brand = 'n'),
+#   numMultiStarts = 10
+# )
+```
+
+
+WTP not working. Di not export table.
+
+```{r}
+library(texreg)
+
+htmlreg(mnl_wtp, file = "wtomay27.html")
+
+htmlreg(tab1, file = "tab1.html")
+
+library(kableExtra)
+tab1 = kable(tab1)
+
+tbl_regression(tab1)
+```
+
+
+```{r message=FALSE, warning=FALSE, results='asis'}
+print(xtable(tab1))
+```
+Models with interactions. Logitr not working
+
+Filter data: republicans only
+

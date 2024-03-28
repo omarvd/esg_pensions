@@ -1,0 +1,2 @@
+"0","dfcj = dfcj %>% "
+"0","  mutate(weight = w_age * w_gender)"

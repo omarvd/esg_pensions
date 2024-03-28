@@ -1,0 +1,72 @@
+"0",""
+"0","#I had an incentive compatibility problem. People saw children and just neglected anything else."
+"0",""
+"0","#'*Running mixed logit model*"
+"0",""
+"0","mnl_prefam <- logitr("
+"0","  data = dflogitr, "
+"0","  outcome = ""choice_indicator"",  "
+"0","  obsID   = ""obs_id"", "
+"0","  panelID = ""survey_id"",   "
+"0","  pars    = c(""firearms"", ""fossil_fuels"",""may_employ_children"", ""no_racial_diversity"",""no_gender_equal_pay""), "
+"0","  randPars = c(firearms = 'n', fossil_fuels = 'n', may_employ_children = 'n', no_racial_diversity= 'n', no_gender_equal_pay = 'n'), "
+"0","  scalePar = ""price"","
+"0","  numMultiStarts = 10) "
+"2","Running multistart...
+  Random starting point iterations: 10
+  Number of cores: 7
+"
+"2","Done!
+"
+"0","                     "
+"0","                     #startVals = mnl_prefam$Estimate)"
+"0","summary(mnl_prefam)"
+"1","================================================="
+"1",""
+"1","
+"
+"1","
+Model estimated on:"
+"1"," "
+"1","Fri Dec 29 17:50:12 2023"
+"1"," "
+"1","
+"
+"1","
+Using logitr version:"
+"1"," "
+"1","1.0.1"
+"1"," "
+"1","
+
+"
+"1","Call:
+"
+"1","logitr(data = dflogitr, outcome = ""choice_indicator"", obsID = ""obs_id"", 
+"
+"1","    pars = c(""firearms"", ""fossil_fuels"", ""may_employ_children"", 
+"
+"1","        ""no_racial_diversity"", ""no_gender_equal_pay""), scalePar = ""price"", 
+"
+"1","    randPars = c(firearms = ""n"", fossil_fuels = ""n"", may_employ_children = ""n"", 
+"
+"1","        no_racial_diversity = ""n"", no_gender_equal_pay = ""n""), 
+"
+"1","    panelID = ""survey_id"", numMultiStarts = 10)
+"
+"1","
+"
+"1","Frequencies of alternatives:
+"
+"1","    1 "
+"1","    2 "
+"1","
+"
+"1","0.497 "
+"1","0.503 "
+"1","
+"
+"1","
+"
+"1","Summary Of Multistart Runs:
+"

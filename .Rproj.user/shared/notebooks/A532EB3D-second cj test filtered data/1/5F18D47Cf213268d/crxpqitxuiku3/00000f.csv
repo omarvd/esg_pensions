@@ -1,0 +1,15 @@
+"0",""
+"0",""
+"0","library(readr)"
+"0",""
+"0",""
+"0","dfcj2 <-read_csv(""esgnov.csv"")"
+"2","[1mRows: [22m[34m32112[39m [1mColumns: [22m[34m104[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m─────────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (93): EXPECTED_PENSION, GENDER_EQUALITY, LIVING_WAGE, SALARY_EQUALITY, LABOR_RIGHTS, ENVIRONMENTAL_IMPACT, FAITH_MORALITY, F...
+[32mdbl[39m   (9): RESPONDENT_ID, SURVEY_ID, CHOICE_SET, LABEL, CHOICE_INDICATOR, RESPONDENT_LENGTH_OF_INTERVIEW_SECONDS, RESPONDENT_TOUC...
+[34mdttm[39m  (2): RESPONDENT_TIME_OF_OPENING_SURVEY, RESPONDENT_TIME_OF_COMPLETING_SURVEY"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

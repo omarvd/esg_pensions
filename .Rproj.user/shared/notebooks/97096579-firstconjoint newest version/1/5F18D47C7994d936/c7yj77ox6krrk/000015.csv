@@ -1,0 +1,14 @@
+"0","mmusw_byprior <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""mm"", weights = ~ weights,"
+"0","            by = ~prior)"
+"0",""
+"0","amceusw_byprior <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""amce"", weights = ~ weights,"
+"0","            by = ~prior)"
+"0",""
+"0","plot(amceusw_byprior, group = ""prior"", vline = 0, feature_headers = F) +"
+"0","  scale_colour_manual(na.translate = F, values = c(""#F8867D"", ""#00BFC4""), labels=c('anti-ESG', 'pro-ESG')) + "
+"0","  theme(text = element_text(family = ""CMU Serif"")) "
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"

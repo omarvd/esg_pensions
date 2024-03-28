@@ -1,0 +1,5 @@
+"0","diff_amces <- cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""amce_diff"", weights = ~ weights,"
+"0","            by = ~republican)"
+"2","Warning: svyglm not fitted by maximum likelihood."
+"0","plot(diff_amces)"

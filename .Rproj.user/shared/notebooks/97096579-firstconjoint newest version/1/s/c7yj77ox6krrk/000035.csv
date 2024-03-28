@@ -1,0 +1,7 @@
+"0","  "
+"0",""
+"0","ggsave(""amceprior.png"","
+"0","       device = ""png"","
+"0","       type = ""cairo"", "
+"0","       dpi = ""retina"")"
+"2","[38;5;250mSaving 4.35 x 2.69 in image[39m"

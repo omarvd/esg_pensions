@@ -1,0 +1,6 @@
+"0","dflogitr = dflogitr %>% "
+"0","  mutate(repXfirearms = as.numeric(republican) * firearms,"
+"0","         repXfossil_fuels = as.numeric(republican) * fossil_fuels,"
+"0","         repXmay_employ = as.numeric(republican) * may_employ_children,"
+"0","         repXno_racial_div = as.numeric(republican) * no_racial_diversity,"
+"0","         repXno_gender_equal_pay = as.numeric(republican) * no_gender_equal_pay)"

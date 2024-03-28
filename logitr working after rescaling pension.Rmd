@@ -1,0 +1,135 @@
+---
+title: "choicemodelr"
+author: "Omar Vasquez Duque"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r}
+library(readr)
+
+conjoint_data = read.csv("dflogitr.csv")
+
+names(conjoint_data)
+```
+```{r}
+# Load necessary library
+library(ChoiceModelR)
+
+# Read the data
+df <- read.csv("dflogitr.csv")
+
+# Remove any rows with NA values
+df <- na.omit(df)
+
+# Convert categorical variables to factors
+df$firearms <- as.factor(df$firearms)
+df$fossil_fuels <- as.factor(df$fossil_fuels)
+df$may_employ_children <- as.factor(df$may_employ_children)
+df$racial_diversity <- as.factor(df$racial_diversity)
+df$gender_equal_pay <- as.factor(df$gender_equal_pay)
+
+```
+
+
+```{r}
+library(logitr)
+# Specify the model
+model <- logitr(
+  data = df,
+  outcome = "choice_indicator",
+  obsID = "obs_id",
+  pars = c("pension", "firearms", "fossil_fuels", "may_employ_children", 
+           "racial_diversity", "gender_equal_pay"),
+  randPars = c(pension = 'n'), # Assuming random parameter for pension with normal distribution
+  panelID = "survey_id" # Assuming 'survey_id' represents panel data identifier
+)
+
+summary(model)
+```
+
+```{r}
+wtp_mxl_pref <- wtp(model, scalePar =  "pension")
+```
+
+```{r}
+summary(wtp_mxl_pref)
+```
+
+```{r}
+mxl_wtp <- logitr(
+  data       = yogurt,
+  outcome    = 'choice',
+  obsID      = 'obsID',
+  panelID    = 'id',
+  pars       = c('feat', 'brand'),
+  scalePar   = 'price',
+  randPars   = c(feat = 'n', brand = 'n'),
+  numMultiStarts = 10,
+  startVals = wtp_mxl_pref$Estimate
+)
+```
+
+```{r}
+
+df$pension = df$pension/1000
+
+model2 <- logitr(
+  data = df,
+  outcome = "choice_indicator",
+  obsID = "obs_id",
+  panelID = "survey_id",
+  pars = c("firearms", "fossil_fuels", "may_employ_children", 
+           "racial_diversity", "gender_equal_pay"),
+  scalePar   = 'pension',
+  randPars = c(firearms = 'n', 
+               fossil_fuels = "n", 
+               may_employ_children = "n", 
+               racial_diversity = "n", 
+               gender_equal_pay = "n"), # Assuming random parameter for pension with normal distribution
+  numMultiStarts = 10,
+  startVals = model2$Estimate# Assuming 'survey_id' represents panel data identifier
+)
+
+summary(model2)
+```
+
+
+```{r}
+
+# Select and rename columns for ChoiceModelR
+df_formatted <- df[, c("survey_id", "choice_set", "label", 
+                       "firearms", "fossil_fuels", "may_employ_children", 
+                       "racial_diversity", "gender_equal_pay", 
+                       "pension", "choice_indicator")]
+
+names(df_formatted) <- c("UnitID", "Set", "Alt", "X_1", "X_2", "X_3", "X_4", "X_5", "X_6", "y")
+
+df_formatted$X_6 = df_formatted$X_6/1000
+
+# Set up the xcoding vector
+# Assuming the first five attributes are categorical and 'pension' is continuous
+xcoding <- c(0, 0, 0, 0, 0, 1)
+
+
+# Set up the MCMC parameters
+mcmc <- list(R = 30000, use = 20000, s = 0.1)  # Example adjustment
+
+# Specify the directory for saving output files
+output_directory <- "~/Documents/GitHub/esg_pensions"
+
+# Run the choicemodelr function
+result <- choicemodelr(data = df_formatted, xcoding = xcoding, mcmc = mcmc, directory = output_directory)
+
+```
+
+```{r}
+options(scipen=999)
+
+RBetas$wtp_fuels = RBetas$A2B1/RBetas$A6B1 * 1000
+
+RBetas$wtp_children = RBetas$A3B2/RBetas$A6B1 * 1000
+
+summary(RBetas$wtp_children)
+```
+

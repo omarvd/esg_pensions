@@ -1,0 +1,36 @@
+---
+title: "logitr"
+author: "Omar Vasquez Duque"
+date: "2023-12-10"
+output: html_document
+---
+
+```{r}
+typeof(dfcj2)
+```
+
+```{r}
+library(logitr)
+```
+```{r}
+yogurt = yogurt
+```
+
+```{r}
+mnl_wtp <- logitr(
+    data     = yogurt,
+    outcome  = "choice",
+    obsID    = "obsID",
+    pars     = c("feat", "brand"),
+    scalePar = "price",
+    numMultiStarts = 10
+)
+```
+```{r}
+summary(mnl_wtp)
+```
+
+```{r}
+typeof(yogurt$)
+```
+

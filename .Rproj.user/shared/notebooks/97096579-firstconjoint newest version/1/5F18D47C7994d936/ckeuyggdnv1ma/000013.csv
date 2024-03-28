@@ -1,0 +1,13 @@
+"0","library(ggthemes)"
+"0","library(ggsci)"
+"0",""
+"0","amce1 = cj(dfcj, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""amce"", weights = ~ weights)"
+"2","Warning: svyglm not fitted by maximum likelihood."
+"0","amce1plot = plot(amce1, vline =0, feature_headers = F) +"
+"0","  theme(text = element_text(family = ""CMU Serif"")) +"
+"0","scale_color_jco() "
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"
+"0","amce1plot"

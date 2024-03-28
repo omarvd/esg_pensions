@@ -1,0 +1,7 @@
+"0","# calculate interaction AMCEs (ACIEs) "
+"0","#I changed to MM"
+"0","amces_2 <- cj(dfrep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""mm"", by = ~religiousness)"
+"0",""
+"0","diff_amces_2 <- cj(dfrep, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~survey_id, estimate = ""mm_diff"", by = ~religiousness)"
+"0",""
+"0","plot(diff_amces_2, vline = 0) + ggplot2::facet_wrap(~BY, ncol = 3L) + ggtitle(""Republicans Only: Religiousness"")"

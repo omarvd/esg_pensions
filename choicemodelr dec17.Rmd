@@ -1,0 +1,80 @@
+---
+title: "choicemodelr"
+author: "Omar Vasquez Duque"
+date: "2023-12-13"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+
+conjoint_data = read.csv("dflogitr.csv")
+
+names(conjoint_data)
+```
+
+```{r}
+# Assuming 'choice_data' is your dataset
+df = conjoint_data
+# Load the ChoiceModelR package
+library(ChoiceModelR)
+
+# Ensure the data is in the correct format
+# The structure should be:
+# UnitID (survey_id), Set (choice_set), Alt (label), X_1 to X_n (attributes), y (choice_indicator)
+# Assuming the order of attributes in your dataset is as follows:
+# 'firearms', 'fossil_fuels', 'may_employ_children', 'racial_diversity', 'gender_equal_pay', 'pension'
+# and 'choice_indicator' is the dependent variable
+
+df_formatted <- df[, c("survey_id", "choice_set", "label", "firearms", "fossil_fuels", 
+                       "may_employ_children", "no_racial_diversity", "no_gender_equal_pay", 
+                       "pension", "choice_indicator")]
+
+df_formatted <- df_formatted %>%
+  group_by(survey_id, choice_set) %>%
+  mutate(
+    # For each choice set, identify which option was chosen
+    chosen_option = ifelse(choice_indicator == 1, label, NA_real_),
+    chosen_option = max(chosen_option, na.rm = TRUE),
+    # Set the first row to the chosen option, and second row to 0
+    choice_indicator_updated = ifelse(row_number() == 1, chosen_option, 0)
+  ) %>%
+  select(-chosen_option) %>%
+  ungroup()
+
+df_formatted = df_formatted %>% 
+  mutate(choice_indicator = choice_indicator_updated) %>% 
+  select(-choice_indicator_updated)
+
+
+
+# Rename columns to match the expected format in ChoiceModelR
+names(df_formatted) <- c("UnitID", "Set", "Alt", 
+                         "X_1", "X_2", "X_3", "X_4", "X_5", 
+                         "X_6", "y")
+
+table(df_formatted$Alt, df_formatted$y)
+# Set up the xcoding vector
+# Assuming 'pension' (X_6) is the only continuous attribute
+xcoding <- c(0, 0, 0, 0, 0, 1)
+
+# Set up the MCMC parameters
+mcmc <- list(R = 10000, use = 5000, s = 0.1)  # Adjust as necessary
+
+output_directory <- "~/Documents/GitHub/esg_pensions"
+
+df_formatted = as.data.frame(df_formatted)
+
+# Run the choicemodelr function
+result <- choicemodelr(data = df_formatted, xcoding = xcoding, mcmc = mcmc, directory = output_directory)
+
+write.csv(df_formatted, "testhb.csv")
+
+# View the results
+print(result)
+
+
+```
+
+

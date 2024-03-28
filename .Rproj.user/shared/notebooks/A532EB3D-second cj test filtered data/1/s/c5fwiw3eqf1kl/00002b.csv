@@ -1,0 +1,27 @@
+"0","mxl_pref <- logitr(
+    data    = dfcjlogitr,
+    outcome = ""choice_indicator"",
+    obsID   = ""obs_id"",
+    panelID = ""survey_id"",
+    pars    = c(
+                ""gender_equality"",
+                ""living_wage"",
+                ""salary_equality"",
+                ""labor_rights"",
+                ""environmental_impact"",
+                ""faith_morality"",
+                ""firearms""),
+    randPars = c(""pension"" = ""n"", ""gender_equality"" = ""n"", ""salary_equality"" = ""n"",
+                 ""environmental_impact"" = ""n"", ""firearms"" = ""n"", ""living_wage"" = ""n"",
+                 ""labor_rights"" = ""n"", ""faith_morality"" = ""n""),
+   # weights = ""w_age_rep"",
+    drawType = ""sobol"",
+   weights = ""weights"",
+   scalePar = ""pension"",
+     numMultiStarts = 10,
+  correlation = TRUE,
+)
+"
+"2","Error in runInputChecks(data, inputs) : 
+  pension provided in 'randPars' is missing from 'pars'
+"

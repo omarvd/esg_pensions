@@ -1,0 +1,8 @@
+"0",""
+"0","dfcj.segments = dfcj %>% "
+"0","  select(survey_id, republican, prior, age.cat, education, gender)"
+"0",""
+"0",""
+"0","write_csv(dfcj.segments, ""dfcj_seg.csv"")"
+"0",""
+"0",""

@@ -1,0 +1,767 @@
+---
+title: "ESG Legislation"
+author: "Omar Vasquez Duque"
+date: "2023-12-05"
+output: pdf_document
+---
+
+
+```{r include=FALSE}
+
+options(scipen=999)
+
+options(digits = 5)
+```
+
+```{r include=FALSE}
+
+
+library(readr)
+
+
+dfcj2 <-read_csv("esgnov.csv")
+
+```
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+
+```{r include=FALSE}
+
+dfcj2 = dfcj2 %>% 
+  clean_names() 
+
+```
+
+```{r}
+median_complet_t = median(dfcj2$respondent_length_of_interview_seconds) 
+# calculate median completion time in secs
+
+average_complet = mean(dfcj2$respondent_length_of_interview_seconds)
+
+```
+
+
+```{r}
+dfcj2 =dfcj2 %>% 
+  mutate(expected_pension = factor(expected_pension),
+         gender_equality = if_else(gender_equality == "Does not invest in companies with a low proportion of women in executive and director positions", "gender restrictions", "no gender restrictions"),
+         living_wage = if_else(living_wage == "Only invests in companies that ensure their workers earn enough to not fall under poverty", "living wage restrictions", "no living wage restrictions"),
+         salary_equality = if_else(salary_equality=="Does not invest in companies that have the highest pay disparity between their top executives and their median employee", "salary equality restrictions", "no salary equality restrictions"),
+         labor_rights = if_else(labor_rights == "Only invests in companies that meet United Nations global standards for labor rights", "labor rights restrictions", "no labor rights restrictions"),
+         environmental_impact = if_else(environmental_impact == "Excludes companies whose products have negative environmental impacts", "environmental restrictions", "no environmental restrictions"),
+         faith_morality = if_else(faith_morality == "Excludes companies that profit from adult entertainment, alcohol, tobacco, or gambling", "faith/morality restrictions", "no faith/morality restrictions"),
+         firearms = if_else(firearms == "Does not invest in firearms", "firearms restrictions", "no firearms restrictions"))
+```
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(gender_equality = as.factor(gender_equality),
+         living_wage = as.factor(living_wage),
+         salary_equality = as.factor(salary_equality),
+         labor_rights  = as.factor(labor_rights),
+         environmental_impact  = as.factor(environmental_impact),
+         faith_morality  = as.factor(faith_morality),
+         firearms  = as.factor(firearms))
+```
+
+```{r}
+dfcj2$gender_equality <- relevel(dfcj2$gender_equality, ref = "no gender restrictions")
+
+dfcj2$living_wage <- relevel(dfcj2$living_wage, ref = "no living wage restrictions")
+
+dfcj2$salary_equality <- relevel(dfcj2$salary_equality, ref = "no salary equality restrictions")
+
+dfcj2$labor_rights <- relevel(dfcj2$labor_rights, ref = "no labor rights restrictions")
+
+dfcj2$environmental_impact <- relevel(dfcj2$environmental_impact, ref = "no environmental restrictions")
+
+dfcj2$faith_morality <- relevel(dfcj2$faith_morality, ref = "no faith/morality restrictions")
+
+dfcj2$firearms <- relevel(dfcj2$firearms, ref = "no firearms restrictions")
+```
+
+```{r}
+dfcj2 = dfcj2 %>% 
+  mutate(republican = ifelse(q22_party_identification_o1_republican==1 |
+                               q23_political_affiliation_o1_republican ==1, 1, 0))
+
+dfcj2$republican = as.factor(dfcj2$republican)
+```
+
+
+```{r}
+
+dfcj2 = dfcj2 %>% 
+  mutate(age = 2023 - as.numeric(q21_age_write_in))
+
+dfcj2 = dfcj2 %>% 
+  filter(!is.na(age))
+
+
+dfcj2 = dfcj2 %>% 
+  mutate(age.cat = case_when(age > 17 & age <=24 ~ "18-24",
+                                    age >= 25 & age <=39 ~ "25-39",
+                                    age >= 40 & age <=55 ~ "40-55",
+                                    age >=56 ~ "56 and over"))
+
+dfcj2=dfcj2 %>% 
+  mutate(income = case_when(q27_annual_income_us_o1_between_15_000_and_24_999 == 1 ~ "15,000 to 24,999",
+                            q27_annual_income_us_o2_between_25_000_and_34_999 == 1 ~ "25,000 to 34,999",
+                            q27_annual_income_us_o3_between_35_000_and_44_999 == 1 ~  "35,000 to 49,999",
+                            q27_annual_income_us_o4_between_45_000_and_54_999 == 1 ~ "50,000 to $74,999",
+                            q27_annual_income_us_o5_between_55_000_and_64_999 == 1 ~ "50,000 to $74,999",
+                            q27_annual_income_us_o6_between_65_000_and_74_999 == 1 ~ "50,000 to $74,999",
+                            q27_annual_income_us_o7_between_75_000_and_84_999 == 1 ~ "75,000 to $99,999",
+                            q27_annual_income_us_o8_between_85_000_and_94_999 == 1 ~ "75,000 to $99,999",
+                            q27_annual_income_us_o9_95_000_or_more == 1 ~ "100,000 or more"))
+dfcj2 = dfcj2 %>% 
+  mutate(gender = case_when(q24_gender_o1_male == 1 ~ "male",
+                            q24_gender_o2_female == 1 ~ "female",
+                            q24_gender_o3_other == 1 ~ "other"))
+
+dfcj2 = dfcj2 %>% 
+  mutate(education = case_when(q26_degree_o1_high_school == 1 ~ "hs",
+                               q26_degree_o2_college_degree == 1 ~ "college",
+                               q26_degree_o3_graduate_degree == 1 ~ "grad school",
+                               q26_degree_o4_none_of_the_above == 1 ~ "less than hs"))
+
+```
+
+Check if there are NAs in other variables too!
+
+```{r}
+
+# Define the distributions
+gender_dist <- c("male" = 44.5, "female" = 45.5, "other" = 10)
+
+age_dist <- c("18-24" = 0.12, "25-39" = 0.27, "40-55" = 0.26, "56+" = 0.35)
+
+
+income_dist <- c("under 15,000" = 8.3, "15,000 to 24,999" = 7.4, "25,000 to 34,999" = 7.6,
+                 "35,000 to 49,999" = 10.6, "50,000 to 74,999" = 16.2, "75,000 to 99,999" = 12.3,
+                 "100,000 or more" = 37.5)
+
+                 
+education_dist <- c("less than hs" = 9, "hs" = 28, "some college" = 15,
+                    "college" = 33, "grad school" = 14)
+
+# Normalize distributions to sum to 1 (100%)
+gender_dist <- gender_dist / sum(gender_dist)
+age_dist <- age_dist / sum(age_dist)
+income_dist <- income_dist / sum(income_dist)
+education_dist <- education_dist / sum(education_dist)
+```
+
+```{r}
+dfcj2$gender <- factor(dfcj2$gender, levels = c("male", "female", "other"))
+dfcj2$age.cat <- factor(dfcj2$age.cat, levels = c("18-24", "25-39", "40-55", "56+"))
+dfcj2$income <- factor(dfcj2$income, levels = c("15,000 to 24,999", "25,000 to 34,999",
+                                               "35,000 to 49,999", "50,000 to 74,999", "75,000 to 99,999",
+                                               "100,000 or more"))
+dfcj2$education <- factor(dfcj2$education, levels = c("less than hs", "hs", "some college",
+                                                     "college", "grad school"))
+
+# Checking the levels of the income variable
+levels(dfcj2$income)
+
+table(dfcj2$income)
+
+```
+
+For age weights. Do the same I did with the other file! Shorter!
+
+```{r}
+n20_24 = 21035
+n25_29 = 21747
+n30_34 = 22836
+n35_39 = 21992
+n40_44 = 21198
+n45_49 = 19430
+n50_54 = 20700
+n55_59 = 21004
+n60_64 = 21174
+n65_69 = 18533
+n70_74 = 15171
+n75_79 = 10304
+n80_84 = 6389
+n85_n =	5796
+```
+
+```{r}
+n20_29 = n20_24 + n25_29
+n30_39 = n30_34 + n35_39
+n40_49 = n40_44 + n45_49
+n50_59 = n50_54 + n55_59
+n60_69 = n60_64 + n65_69
+n70_n = n70_74 +n75_79 + n80_84 + n85_n
+```
+
+```{r}
+n18_24 = n20_24
+n25_39 = n25_29 + n30_34 + n35_39
+n40_55 = n40_44 + n45_49 + n50_54
+n56_over = n55_59 + n60_64 + n65_69 + n70_74 + n75_79 + n80_84 + n85_n
+
+```
+
+```{r}
+
+# This is to make the sample representative of the population that participates in a retirement fund
+
+```
+
+
+```{r}
+# This is for the US population in general
+dfcj2 = dfcj2 %>% 
+  mutate(age_groups = case_when(age >17 & age <=29 ~"18-29",
+                                age >=30 & age <=39 ~ "30-39",
+                                age >=40 & age<=49 ~"40-49",
+                                age>=50 & age<=59 ~ "50-59",
+                                age >=60 & age<=69 ~ "60-69",
+                                age >=70 ~ "70 and over"))
+
+```
+
+
+```{r}
+rows18_24 =length(which(dfcj$age_groups_rep == "18-24"))
+
+rows25_39 =length(which(dfcj$age_groups_rep == "25-39"))
+
+rows40_55 =length(which(dfcj$age_groups_rep == "40-55"))
+
+rows56_over =length(which(dfcj$age_groups_rep == "56 and over"))
+```
+
+```{r}
+rows18_29 =length(which(dfcj$age_groups == "18-29"))
+
+rows30_39 =length(which(dfcj$age_groups == "30-39"))
+
+rows40_49 =length(which(dfcj$age_groups == "40-49"))
+
+rows50_59 =length(which(dfcj$age_groups == "50-59"))
+
+rows60_69 =length(which(dfcj$age_groups == "60-69"))
+
+rows70_n =length(which(dfcj$age_groups == "70 and over"))
+```
+
+```{r}
+temp_total = nrow(dfcj)
+
+s18_24 = rows18_24/temp_total
+
+s25_39 = rows25_39/temp_total
+
+s40_55 = rows40_55/temp_total
+
+s56_over = rows56_over/temp_total
+```
+
+```{r}
+# Work with weights with a mean of 1
+
+
+s18_29 = rows18_29/temp_total
+
+s30_39 = rows30_39/temp_total
+
+s40_49 = rows40_49/temp_total
+
+s50_59 = rows50_59/temp_total
+
+s60_69 = rows60_69/temp_total
+
+s70_n = rows70_n/temp_total
+
+```
+
+I will have to recalculate the weights if I filter the data
+
+```{r}
+ptotal = n20_29 + n30_39 + n40_49 + n50_59 + n60_69 + n70_n
+
+```
+
+```{r}
+ptotal_rep = n18_24 + n25_39 + n40_55 + n56_over # this is just to have a comparison, because now I'll have to include the proportions of participants
+
+# participation by age
+part15_23 = 0.077
+
+part24_39 = 0.495
+
+part40_55 = 0.561
+
+part56_over = 0.581
+
+# participation by gender
+
+part_men = 0.478
+
+part_women = 0.435
+
+# participation by race
+
+part_white = 0.536
+
+part_asian = 0.468
+
+part_black = 0.368
+
+part_other = 0.361
+
+part_hispanic = 0.283
+
+
+
+```
+
+```{r}
+# estimate population retirement fund owners
+
+ptotal_rep = (n18_24 * part15_23) + (n25_39 * part24_39) + (n40_55 * part40_55) + (n56_over * part56_over)
+
+```
+
+```{r}
+pop_18_24 = n18_24 * part15_23
+
+pop_25_39 = n25_39 * part24_39
+
+pop_40_55 = n40_55 * part40_55
+
+pop_56_over = n56_over * part56_over
+
+# sanity check
+
+san.check = pop_18_24 + pop_25_39 + pop_40_55 + pop_56_over
+```
+
+```{r}
+ptotal_rep == san.check
+
+```
+
+```{r}
+
+# This looks fine (sum =100)
+p18_24 = pop_18_24/ptotal_rep
+
+p25_39 = pop_25_39/ptotal_rep
+
+p40_55 = pop_40_55/ptotal_rep
+
+p56_over = pop_56_over/ptotal_rep
+```
+
+```{r}
+p18_29 = n20_29/ptotal 
+
+p30_39 =n30_39/ptotal 
+
+p40_49 = n40_49/ptotal 
+
+p50_59 = n50_59/ptotal 
+
+p60_69 = n60_69/ptotal 
+
+p70_n = n70_n/ptotal 
+```
+
+```{r}
+
+#Looks good!
+
+w18_24 = p18_24/s18_24
+
+w25_39 = p25_39/s25_39
+
+w40_55 = p40_55/s40_55
+
+w56_over = p56_over/s56_over
+```
+
+
+```{r}
+w18_29 = (p18_29/s18_29)
+
+w30_39 = (p30_39/s30_39)
+
+w40_49 = (p40_49/s40_49)
+
+w50_59 = (p50_59/s50_59)
+
+w60_69 = (p60_69/s60_69)
+
+w70_n = (p70_n/s70_n)
+
+```
+
+```{r}
+dfcj = dfcj %>% 
+  mutate(w_age_rep = case_when(age_groups_rep == "18-24"~ w18_24,
+                               age_groups_rep == "25-39" ~ w25_39,
+                               age_groups_rep == "40-55" ~ w40_55,
+                               age_groups_rep == "56 and over" ~ w56_over))
+```
+
+
+```{r}
+dfcj = dfcj %>% 
+  mutate(w_age = case_when(age_groups == "18-29" ~ w18_29,
+                           age_groups == "30-39" ~ w30_39,
+                           age_groups == "40-49" ~ w40_49,
+                           age_groups == "50-59" ~ w50_59,
+                           age_groups == "60-69" ~ w60_69,
+                           age_groups == "70 and over" ~ w70_n))
+
+```
+
+
+Do weights for gender too
+
+```{r}
+
+```
+
+
+```{r}
+smale =length(which(dfcj$q24_gender_o1_male == 1))/nrow(dfcj)
+
+sfemale=length(which(dfcj$q24_gender_o2_female==1))/nrow(dfcj)
+
+sother = length(which(dfcj$q24_gender_o3_other==1))/nrow(dfcj)
+
+pmale = .45
+
+pfemale = .45
+
+pother = .1
+
+wmale = pmale/smale
+
+wfemale = pfemale/sfemale
+
+wother = pother/sother
+```
+
+```{r}
+pop_male = pmale * ptotal * part_men
+
+pop_female = pfemale * ptotal * part_women
+
+part_other = (ptotal_rep - (pop_male + pop_female))/(pother*ptotal_rep) # ok, so gay people were not coded in a separate category
+```
+
+```{r}
+dfcj = dfcj %>% 
+  mutate(w_gender = case_when(q24_gender_o1_male ==1 ~ wmale,
+                              q24_gender_o2_female ==1 ~ wfemale,
+                              q24_gender_o3_other ==1 ~ wother))
+```
+
+
+```{r}
+dfcj = dfcj %>% 
+  mutate(weight = w_age * w_gender)
+```
+
+```{r}
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds) 
+dfcj2 = dfcj %>% 
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t & respondent_length_of_interview_seconds <= 1.5 * median_complet_t)
+```
+
+
+```{r}
+amceusw <- cj(dfcj, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ weight)
+
+
+plot(amceusw, vline = 0) 
+```
+```{r}
+amceusw2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ weight)
+
+
+plot(amceusw2, vline = 0) 
+```
+
+
+```{r}
+amceusw_age <- cj(dfcj, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ w_age_rep)
+
+
+plot(amceusw_age, vline = 0) 
+```
+```{r}
+amceusw_age2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~ w_age_rep)
+
+amceusw_age2
+
+plot(amceusw_age2, vline = 0, feature_headers = FALSE) +
+      theme(text = element_text(family = "CMU Serif")) +
+  ggplot2::facet_wrap(~feature, ncol = 1L,
+                      scales = "free_y", strip.position = "bottom")
+
+amce2ndcjmain
+
+ggsave(amce2ndcjmain, device = "png", path = NULL, name = "amce2ndcjmain.png")
+
+# With Cairo
+ggsave(amce2ndcjmain, filename = "amce2ndcjmain.png", 
+       device = png, type = "cairo", dpi = "retina", width = 9, height = 6)
+```
+
+
+```{r}
+amceusw.r <- cj(dfcj, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~weight,
+            by = ~republican)
+
+
+plot(amceusw.r, group = "republican", vline = 0) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) 
+```
+
+```{r}
+amceusw.r2 <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~weight,
+            by = ~republican)
+
+
+plot(amceusw.r2, group = "republican", vline = 0) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) 
+```
+
+
+```{r}
+amceusw.r.age <- cj(dfcj, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,
+            estimate = "amce",
+            weights = ~w_age_rep,
+            by = ~republican)
+
+
+plot(amceusw.r.age, 
+     group = "republican", 
+     vline = 0) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3")) 
+```
+
+
+# WTP Analysis
+
+```{r}
+dfcj = dfcj %>% 
+  mutate(expected_pension = as.character(expected_pension))
+
+dfcj = dfcj %>%
+  mutate(pension = parse_number(expected_pension))
+```
+
+```{r}
+library(logitr)
+```
+
+```{r}
+dfcjlogitr = dfcj %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id()) %>% 
+  ungroup() # I had forgotten to do this!
+```
+
+
+```{r}
+dfcjlogitr = dfcjlogitr %>% 
+  select(survey_id,
+         choice_indicator,
+         obs_id, 
+         label,
+         choice_set, 
+         pension,
+         gender_equality,
+         living_wage,
+         salary_equality,
+         labor_rights,
+         environmental_impact,
+         faith_morality,
+         firearms,
+         republican,
+         weight,
+         w_age_rep) %>% 
+  mutate(pension = -1 * pension,
+         pension_num =as.numeric(pension))
+```
+
+```{r}
+write_csv(dfcjlogitr, file = "conjoint2.csv")
+
+mnl_pref <- logitr(
+    data    = dfcjlogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension",
+                "gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    panelID = "survey_id",
+    weights = "w_age_rep",
+)
+
+summary(mnl_pref)
+```
+
+```{r}
+
+mxl_pref <- logitr(
+    data    = dfcjlogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    panelID = "survey_id",
+    pars    = c("pension",
+                "gender_equality",
+                "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    randPars = c("pension" = "n", "gender_equality" = "n", "salary_equality" = "n",
+                 "environmental_impact" = "n", "firearms" = "n", "living_wage" = "n",
+                 "labor_rights" = "n", "faith_morality" = "n"),
+   # weights = "w_age_rep",
+    drawType = "sobol",
+     numMultiStarts = 10,
+  correlation = TRUE,
+)
+
+summary(mnl_pref_mix)
+
+wtp_mxl_pref <- wtp(mxl_pref, scalePar =  "pension")
+wtp_mxl_pref
+
+```
+
+
+```{r}
+library(gtsummary)
+
+tbl_regression(mnl_pref)
+```
+
+```{r}
+library(xtable)
+
+wtp(mnl_pref, scalePar = "pension")
+
+tab1 = wtp(mnl_pref, scalePar = "pension")
+
+
+tab1 = xtable(tab1)
+
+print(tab1, type = "html", file = "tab1.html")
+```
+
+
+```{r}
+mnl_pref_w <- logitr(
+    data    = dfcjlogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension",
+                "gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    weights = "weight",
+    panelID = "survey_id"
+)
+
+summary(mnl_pref_w)
+
+wtp(mnl_pref_w, scalePar = "pension")
+```
+```{r}
+tab2 = wtp(mnl_pref_w, scalePar = "pension")
+
+
+tab2 = tbl_regression(tab2)
+
+
+
+print(tab1, tab2, type = "html", file = "tabs.html")
+
+library(gtsummary)
+
+tbl_merge(
+  tbls = list(tab2, tab2),
+  tab_spanner = c("**Baseline**", "**Weighted**")
+)
+
+```
+
+```{r}
+mnl_wtp <- logitr(
+    data     = dfcjlogitr,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    scalePar = "pension"
+)
+
+summary(mnl_wtp)
+
+
+dfcjlogitr2 = dfcjlogitr %>% 
+  top_n(3984, wt = survey_id)
+
+
+
+mnl_wtp <- logitr(
+    data     = dfcjlogitr2,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("gender_equality",
+                 "living_wage",
+                "salary_equality",
+                "labor_rights",
+                "environmental_impact",
+                "faith_morality",
+                "firearms"),
+    scalePar = "pension"
+)
+
+summary(mnl_wtp)
+```
+
+Check with package data. Maybe different coding for variables? Size didn;t matter. Factors?

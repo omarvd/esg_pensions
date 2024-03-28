@@ -1,0 +1,6 @@
+"0",""
+"0","# plot(mm_income, vline = 0.5, group = ""income_groups"") +  ggtitle(""Marginal Means, U.S. by Income"")"
+"0",""
+"0","amce_income <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity_mgmt + gender_equal_pay, id = ~survey_id, estimate = ""amce"", by = ~income)"
+"0",""
+"0","plot(amce_income, group = ""income"", vline = 0) + ggtitle(""U.S. by Income (AMCE)"")"

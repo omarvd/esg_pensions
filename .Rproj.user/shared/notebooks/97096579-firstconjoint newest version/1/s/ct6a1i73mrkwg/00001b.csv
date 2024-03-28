@@ -1,0 +1,71 @@
+"0",""
+"0","#Ask author why NAs"
+"0","mnl_wtp <- logitr("
+"0","    data     = dflogitr,"
+"0","    outcome  = ""choice_indicator"","
+"0","    obsID    = ""obs_id"","
+"0","    pars     = c(""firearms"","
+"0","                 ""fossil_fuels"","
+"0","                 ""may_employ_children"","
+"0","                 ""no_racial_diversity"","
+"0","                 ""no_gender_equal_pay""),"
+"0","    scalePar = ""std.pension"","
+"0","    weights = ""weights"","
+"0","    numMultiStarts = 10"
+"0",")"
+"2","Setting clusterID to 'obs_id' since weights are being used and no clusterID was provided
+"
+"2","Setting robust to TRUE since clusters are being used
+"
+"2","Running multistart...
+  Random starting point iterations: 10
+  Number of cores: 7
+"
+"2","Done!
+"
+"0","summary(mnl_wtp)"
+"1","================================================="
+"1",""
+"1","
+"
+"1","
+Model estimated on:"
+"1"," "
+"1","Fri Dec 29 18:47:46 2023"
+"1"," "
+"1","
+"
+"1","
+Using logitr version:"
+"1"," "
+"1","1.0.1"
+"1"," "
+"1","
+
+"
+"1","Call:
+"
+"1","logitr(data = dflogitr, outcome = ""choice_indicator"", obsID = ""obs_id"", 
+"
+"1","    pars = c(""firearms"", ""fossil_fuels"", ""may_employ_children"", 
+"
+"1","        ""no_racial_diversity"", ""no_gender_equal_pay""), scalePar = ""std.pension"", 
+"
+"1","    weights = ""weights"", numMultiStarts = 10)
+"
+"1","
+"
+"1","Frequencies of alternatives:
+"
+"1","    1 "
+"1","    2 "
+"1","
+"
+"1","0.497 "
+"1","0.503 "
+"1","
+"
+"1","
+"
+"1","Summary Of Multistart Runs:
+"

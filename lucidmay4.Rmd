@@ -1,0 +1,46 @@
+---
+title: "Lucid May4"
+author: "Omar Vasquez Duque"
+date: "2023-05-04"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+dat1 = rds_prod_experiment_420656_stacked_2_
+```
+
+
+```{r}
+
+dffl = dat1 %>% 
+  filter(Q15_STATE_US_O1_FLORIDA==1)
+
+dfcl = dat1 %>% 
+  filter(Q15_STATE_US_O2_CALIFORNIA==1)
+
+```
+
+```{r}
+table(dffl$Q13_GENDER_O1_MALE, dffl$Q13_GENDER_O2_FEMALE)
+```
+
+```{r}
+flmen = 2952/24
+
+flwomen = 5808/24
+```
+
+```{r}
+table(dfcl$Q13_GENDER_O1_MALE, dfcl$Q13_GENDER_O2_FEMALE)
+```
+
+```{r}
+calmen = 4656/24
+
+calwomen = 4872/24
+```
+

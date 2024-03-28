@@ -1,0 +1,6 @@
+"0","#This code below worked!"
+"0",""
+"0","dflogitr = dfcj %>%"
+"0"," group_by(survey_id, choice_set) %>%"
+"0"," mutate(obs_id = cur_group_id()) %>% "
+"0","  ungroup() # I had forgotten to do this!"

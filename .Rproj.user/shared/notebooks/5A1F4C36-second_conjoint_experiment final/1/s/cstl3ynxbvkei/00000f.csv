@@ -1,0 +1,4 @@
+"0","dfcj = dfcj %>% "
+"0","  mutate(w_gender = case_when(q24_gender_o1_male ==1 ~ wmale,"
+"0","                              q24_gender_o2_female ==1 ~ wfemale,"
+"0","                              q24_gender_o3_other ==1 ~ wother))"

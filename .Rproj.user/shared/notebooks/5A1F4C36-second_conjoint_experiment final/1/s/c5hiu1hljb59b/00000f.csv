@@ -1,0 +1,8 @@
+"0",""
+"0","# This is to make the sample representative of the population that participates in a retirement fund"
+"0",""
+"0","dfcj = dfcj %>% "
+"0","  mutate(age_groups_rep = case_when(age > 17 & age <=24 ~ ""18-24"","
+"0","                                    age >= 25 & age <=39 ~ ""25-39"","
+"0","                                    age >= 40 & age <=55 ~ ""40-55"","
+"0","                                    age >=56 ~ ""56 and over""))"

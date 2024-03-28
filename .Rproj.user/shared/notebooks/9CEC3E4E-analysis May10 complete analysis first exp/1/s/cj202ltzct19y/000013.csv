@@ -1,0 +1,11 @@
+"0","# Florida"
+"0","amce_byfl <- cj(dfcjw, choice_indicator ~ expected_pension + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id, "
+"0","              estimate = ""amce"", "
+"0","              weights = ~weight,"
+"0","              by = ~florida)"
+"0",""
+"0","plot(amce_byfl, group = ""florida"", vline = 0) +"
+"0","  scale_colour_manual(na.translate = F, values = c(""royalblue"", ""red3"")) "
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"

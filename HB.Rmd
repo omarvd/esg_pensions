@@ -1,0 +1,465 @@
+---
+title: "HB_Analysis"
+author: "OVD"
+date: "2023-05-24"
+output: pdf_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+
+#setwd("/Users/ovd/Documents/GitHub/esg_pensions")
+
+data1 = read_csv("dflogitr.csv")
+
+data1 = as.data.frame(data1)
+
+data1$pension = data1$pension/1000
+```
+
+```{r}
+cbc.tab = data1 %>% 
+  select(pension,firearms, fossil_fuels, may_employ_children, no_racial_diversity, no_gender_equal_pay)
+
+table(cbc.tab$pension)
+
+table(cbc.tab$firearms)
+
+table(cbc.tab$fossil_fuels)
+
+table(cbc.tab$may_employ_children)
+
+table(cbc.tab$no_racial_diversity)
+
+table(cbc.tab$no_gender_equal_pay)
+```
+```{r eval=FALSE, include=FALSE}
+
+#'*Following choicetools vignette* Now Trying to get just one coefficient
+
+
+cbc.tab = cbc.tab %>% 
+  mutate(
+    pension = case_when(pension == 20 ~ 0,
+                             pension == 25 ~1,
+                             pension == 30 ~2,
+                             pension == 35 ~3,
+                             pension == 40 ~4,
+                             pension ==45 ~5,
+                             pension ==50 ~6,
+                             pension == 55 ~7,
+                             pension ==60 ~8),
+         firearms = case_when(firearms == 1 ~ 0,
+                              firearms == 0 ~ 1),
+         fossil_fuels = case_when(fossil_fuels == 1 ~ 0,
+                                  fossil_fuels == 0 ~ 1),
+         may_employ_children = case_when(may_employ_children == 1 ~0,
+                                         may_employ_children == 0 ~1),
+         no_racial_diversity = case_when(no_racial_diversity == 1 ~0,
+                                      no_racial_diversity == 0 ~1),
+         no_gender_equal_pay = case_when(no_gender_equal_pay == 1 ~0,
+                                      no_gender_equal_pay== 0 ~ 1))
+
+cbc.win = data1$choice_indicator
+
+cbc.tasks = 12
+
+cbc.concepts = 2
+
+N = nrow(data1)/24
+
+# Specify attributes, excluding 'pension' since it's continuous
+cbc.attrs <- c(
+  pension = 9,
+  firearms=2, fossil_fuels=2, may_employ_children=2, racial_diversity=2, gender_equal_pay=2)
+
+library(choicetools)
+
+# Estimate the model
+cbc.hb <- estimateMNLfromDesignHB(tmp.des=cbc.tab, tmp.win=cbc.win, 
+                                  kCards=cbc.concepts, kTrials=cbc.tasks,
+                                  kResp=N, mcmcIters=30000)
+
+```
+
+
+```{r}
+set.seed(123)
+
+#'*Following choicetools vignette*
+
+
+cbc.tab = cbc.tab %>% 
+  mutate(
+    pension = case_when(pension == 20 ~ 1,
+                             pension == 25 ~2,
+                             pension == 30 ~3,
+                             pension == 35 ~4,
+                             pension == 40 ~5,
+                             pension ==45 ~6,
+                             pension ==50 ~7,
+                             pension == 55 ~8,
+                             pension ==60 ~9),
+         firearms = case_when(firearms == 1 ~ 1,
+                              firearms == 0 ~ 2),
+         fossil_fuels = case_when(fossil_fuels == 1 ~ 1,
+                                  fossil_fuels == 0 ~ 2),
+         may_employ_children = case_when(may_employ_children == 1 ~1,
+                                         may_employ_children == 0 ~2),
+         no_racial_diversity = case_when(no_racial_diversity == 1 ~1,
+                                      no_racial_diversity == 0 ~2),
+         no_gender_equal_pay = case_when(no_gender_equal_pay == 1 ~1,
+                                      no_gender_equal_pay== 0 ~ 2))
+
+cbc.win = data1$choice_indicator
+
+cbc.tasks = 12
+
+cbc.concepts = 2
+
+N = nrow(data1)/24
+
+# Specify attributes, excluding 'pension' since it's continuous
+cbc.attrs <- c(
+  pension = 9,
+  firearms=2, fossil_fuels=2, may_employ_children=2, racial_diversity=2, gender_equal_pay=2)
+
+library(choicetools)
+
+# Estimate the model
+cbc.hb <- estimateMNLfromDesignHB(tmp.des=cbc.tab, tmp.win=cbc.win, 
+                                  kCards=cbc.concepts, kTrials=cbc.tasks,
+                                  kResp=N, mcmcIters=30000)
+
+
+```
+
+```{r}
+options(scipen=999)
+
+RBetas <- read_csv("RBetas.csv")
+
+diffs <- RBetas %>%
+  mutate(
+    # Calculate differences between successive coefficients
+    diff1 = A1B2 - A1B1,
+    diff2 = A1B3 - A1B2,
+    # Continue calculating differences for all coefficient pairs
+    diff3 = A1B4 - A1B3,
+    diff4 = A1B5 - A1B4,
+    diff5 = A1B6 - A1B5,
+    diff6 = A1B7 - A1B6,
+    diff7 = A1B8 - A1B7,
+    diff8 = A1B9 - A1B8,
+
+    # Compute the average difference
+    avg_diff = (diff1 + diff2 + diff3 + diff4 + diff5 + diff6 + diff7 + diff8) / 8
+  )
+
+# Create a new data frame with just the average difference
+df_avg_diff <- diffs %>%
+  select(avg_diff)
+
+# View the resulting data frame
+View(df_avg_diff)
+
+
+
+# Calculate the average difference per $1 change
+
+
+df_avg_diff = df_avg_diff %>% 
+  mutate(average_change_per_dollar = avg_diff/5000)
+
+```
+
+```{r}
+#This seems to be consistent with logitr!
+
+(median(RBetas$A4B1) - median(RBetas$A4B2))/median(df_avg_diff$average_change_per_dollar)
+
+```
+
+
+```{r}
+#But this is consistent with Conjointly
+
+RBetas$ut_per_dollar = df_avg_diff$average_change_per_dollar
+
+RBetas$wtp_child_labor = (RBetas$A4B2-RBetas$A4B1)/RBetas$ut_per_dollar
+
+median(RBetas$wtp_child_labor) #Very close to conjointly!!!!
+
+mean(RBetas$wtp_child_labor)
+
+```
+
+```{r}
+
+cbc.attrs <- c(pension=9, firearms=2, fossil_fuels=2, may_employ_children=2, racial_diversity=2, gender_equal_pay=2)
+
+attr.list=cbc.attrs
+
+cbc.levels    <- c("$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000", "$55,000", "$60,000",    # pension
+                   "Invests in firearms", "Does not invests in firearms",  # firearms
+                   "Invests in fossil fuels",  "Does not invest in fossil fuels",  # fossil fuels
+                   "Invests in firms that may employ children",  "Invests in firms that ensure no children are employed",                          # child labor
+                   "Does not advocate for racial diversity in management", "Advocates for racial diversity in management", # racial diversity
+                   "Does not advocate for equal pay for men and women", "Advocates for equal pay for men and women")           # equal pay 
+
+```
+
+
+
+```{r}
+cbc.est        <- data.frame(extractHBbetas(cbc.hb, cbc.attrs))
+names(cbc.est) <- cbc.levels
+cbc.est$ID     <- 1:nrow(cbc.est)
+
+library(ggplot2)
+library(reshape2)
+cbc.m <- melt(cbc.est, id.vars = "ID")
+
+library(ggridges)
+ggplot(data=cbc.m, aes(x=value, y=variable, group=variable)) +
+      geom_density_ridges(scale=0.9, alpha=0, jittered_points=TRUE,
+                          rel_min_height=0.005,
+                          position="points_sina",
+                          point_color = "blue", point_alpha=1/sqrt(N),
+                          point_size=2.5) +
+        ylab("Item") + 
+        xlab("Relative preference (blue circles=individuals)") +
+        ggtitle("Preference estimates: Distribution of individuals")
+```
+
+
+
+```{r}
+#Trying to show everything but pension
+cbc.hb.short = cbc.hb
+
+cbc.attrs.short <- c(firearms=1, fossil_fuels=1, may_employ_children=1, racial_diversity=1, gender_equal_pay=1)
+
+attr.list.short=cbc.attrs.short
+
+cbc.levels.short    <- c( # pension
+                  "Does not invests in firearms",  # firearms
+                   "Does not invest in fossil fuels",  # fossil fuels
+                   "Invests in firms that ensure no children are employed",                          # child labor
+                   "Advocates for racial diversity in management", # racial diversity
+                   "Advocates for equal pay for men and women")           # equal pay 
+
+```
+
+
+
+```{r}
+RBetas$firearms = (RBetas$A2B1 - RBetas$A2B2)
+RBetas$fossil_fuels = (RBetas$A3B1 - RBetas$A3B2)
+RBetas$child_labor = (RBetas$A4B1 - RBetas$A4B2)
+RBetas$racial_diversity_mgmt = (RBetas$A5B1 - RBetas$A5B2)
+RBetas$gender_pay_gap = (RBetas$A6B1 - RBetas$A6B2)
+
+```
+
+```{r}
+
+
+RBetas$wtp_firearms = RBetas$firearms/RBetas$ut_per_dollar
+
+RBetas$wtp_fossil_fuels = RBetas$fossil_fuels/RBetas$ut_per_dollar
+
+RBetas$wtp_child_labor = RBetas$child_labor/RBetas$ut_per_dollar
+
+RBetas$wtp_racial_diversity_mgmt = RBetas$racial_diversity_mgmt/RBetas$ut_per_dollar
+
+RBetas$wtp_gender_pay_gap = RBetas$gender_pay_gap/RBetas$ut_per_dollar
+```
+
+```{r}
+#Negative coefficients make sense. This is the lost in utility from switching to the preferred level (AnB2) to the least preferred level (AnB1), so each person gets AnB2 and loses AnB1
+
+median(RBetas$wtp_firearms)
+
+median(RBetas$wtp_fossil_fuels)
+
+median(RBetas$wtp_child_labor)
+
+median(RBetas$wtp_gender_pay_gap)
+
+median(RBetas$wtp_racial_diversity_mgmt)
+```
+
+```{r}
+dfwtp = RBetas %>% 
+  select(starts_with("wtp"))
+```
+
+```{r}
+write_csv(dfwtp, "dfwtp.csv")
+```
+
+```{r}
+#Transform wtp into positive values (from utility loses)
+
+dfwtp = dfwtp * -1
+```
+
+```{r}
+calculate_ci <- function(data, n_resample = 10000) {
+  ci_results <- list()
+
+  for (col in names(data)) {
+    # Initialize vector for resampled statistics
+    statistics_resampled <- numeric(n_resample)
+
+    # Resampling loop
+    for (i in 1:n_resample) {
+      # Resample the data and calculate the median
+      resampled_data <- sample(data[[col]], size = nrow(data), replace = TRUE)
+      statistics_resampled[i] <- median(resampled_data)
+    }
+
+    # Calculate the 95% confidence interval
+    ci_lower <- quantile(statistics_resampled, probs = 0.025)
+    ci_upper <- quantile(statistics_resampled, probs = 0.975)
+
+    # Store the results
+    ci_results[[col]] <- c(ci_lower, ci_upper)
+  }
+
+  return(ci_results)
+}
+
+# Example usage
+# ci_results <- calculate_ci(df)
+
+```
+
+
+```{r}
+#apply function
+
+calculate_ci(dfwtp)
+```
+```{r}
+#Try to plot WTP
+
+dfwtplong = pivot_longer(dfwtp, names_to = "attribute", values_to = "wtp", cols = everything())
+
+ggplot(dfwtplong, aes(x = wtp, fill = attribute, color = attribute)) +
+  geom_histogram(alpha=.1) +
+  xlim(-25000, 25000) +
+  facet_wrap(~attribute) +
+  theme_bw()
+```
+
+
+```{r}
+
+cbc.est.short        <- cbc.est %>% 
+  mutate(`Invests in firearms`: `Advocates for equal pay for men and women`)
+
+names(cbc.est.short) <- cbc.levels.short
+
+
+cbc.est.short$ID     <- 1:nrow(cbc.est.short)
+
+
+library(ggplot2)
+library(reshape2)
+cbc.m.short <- melt(cbc.est.short, id.vars = "ID")
+
+library(ggridges)
+ggplot(data=cbc.m.short, aes(x=value, y=variable, group=variable)) +
+  geom_density_ridges(scale=0.9, alpha=0, jittered_points=TRUE,
+                      rel_min_height=0.005,
+                      position="points_sina",
+                      point_color = "blue", point_alpha=1/sqrt(N),
+                      point_size=2.5) +
+  ylab("Item") + 
+  xlab("Relative preference (blue circles=individuals)") +
+  ggtitle("Preference estimates: Distribution of individuals") +
+  theme_bw() +
+  theme(text = element_text(family = "CMU Serif")) +
+  geom_vline(xintercept = 0, linetype="dotted", 
+                color = "darkgrey", size=0.5)
+```
+
+
+# Simulations
+```{r}
+# Assuming RBetas contains a distribution of model's coefficients
+
+# Number of resampling iterations
+n_resample <- 10000
+
+# Initialize a vector to store the statistics for each resample
+statistics_resampled <- numeric(n_resample)
+
+# Resampling loop
+for(i in 1:n_resample) {
+  # Resample a subset of the rows (parameter sets) from RBetas
+  sampled_rows <- sample(nrow(RBetas), size = nrow(RBetas), replace = TRUE)
+  resampled_params <- RBetas[sampled_rows, ]
+  
+  # Calculate the statistic of interest for the resampled set
+  # Example: Median WTP for avoiding child labor
+  wtp_resampled <- (resampled_params$A5B2 - resampled_params$A5B1) / resampled_params$ut_per_dollar
+  statistics_resampled[i] <- median(wtp_resampled)
+}
+
+# Calculate the 95% confidence interval for the statistic
+ci_lower <- quantile(statistics_resampled, probs = 0.025)
+ci_upper <- quantile(statistics_resampled, probs = 0.975)
+
+# Print the 95% confidence interval
+print(paste("95% confidence interval for the median WTP (child labor avoidance):", 
+            ci_lower, "to", ci_upper))
+
+```
+
+
+```{r}
+
+# cbc.levels    <- c("$20,000" (1), "$25,000" (2), "$30,000" (3), "$35,000" (4), "$40,000" (5), "$45,000" (6), "$50,000" (7), "$55,000" (8), "$60,000" (9),    # pension (x9)
+#                    "Invests in firearms", (10) 
+#"Does not invests in firearms" (11),  # firearms
+#                    "Invests in fossil fuels" (12),  "Does not invest in fossil fuels",  # fossil fuels (13)
+#                    "Invests in firms that may employ children" (14),  "Invests in firms that ensure no children are employed" (15),                          # child labor
+#                    "Does not advocate for racial diversity in management" (16), "Advocates for racial diversity in management" (17), # racial diversity
+#                    "Does not advocate for equal pay for men and women" (18), "Advocates for equal pay for men and women" (19))           # equal pay 
+
+prod1 <- c(5, 10, 12,  14, 16, 18)     # $40,000 pension with no sustainable features
+prod2 <- c(5, 11, 13, 15, 17, 19)     # $40,000 pension with only sustainable features
+usb.pref  <- marketSim(
+  cbc.est,                    # matrix of individual-level utilities
+  list(prod1, prod2),         # list of products to compare
+  use.none=FALSE,             # we have no "none" column
+  style="first")              # estimate share by first-choice approach
+
+# see the overall preference share for the two products
+colMeans(usb.pref)
+```
+
+
+Multinomial Logit Model. Replicate with ChoiceModelR too! Follow vignettes.
+
+ TBD
+
+```{r}
+#Compare no-ESG $45,000 vs ESG $40,000
+
+prod3 <- c(6, 10, 12,  14, 16, 18)     # $40,000 pension with no sustainable features
+#Defined above    # $40,000 pension with only sustainable features
+usb.pref2  <- marketSim(
+  cbc.est,                    # matrix of individual-level utilities
+  list(prod3, prod2),         # list of products to compare
+  use.none=FALSE,             # we have no "none" column
+  style="first")              # estimate share by first-choice approach
+
+# see the overall preference share for the two products
+colMeans(usb.pref2)
+```
+

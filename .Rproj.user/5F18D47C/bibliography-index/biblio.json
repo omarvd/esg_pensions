@@ -1,0 +1,460 @@
+{
+    "sources": [
+        {
+            "URL": "http://econpapers.repec.org/article/kapjrisku/v_3a1_3ay_3a1988_3ai_3a1_3ap_3a7-59.htm",
+            "author": [
+                {
+                    "family": "Samuelson",
+                    "given": "William"
+                },
+                {
+                    "family": "Zeckhauser",
+                    "given": "Richard"
+                }
+            ],
+            "container-title": "Journal of Risk and Uncertainty",
+            "id": "samuelson1988",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "page": "7-59",
+            "title": "Status quo bias in decision making",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "DOI": "10.1515/9781400845347",
+            "author": [
+                {
+                    "family": "Johnson",
+                    "given": "Eric J."
+                },
+                {
+                    "family": "Goldstein",
+                    "given": "Daniel G."
+                }
+            ],
+            "id": "johnson2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1515/9781400845347",
+            "page": "417-427",
+            "publisher": "Princeton University Press",
+            "publisher-place": "Princeton, NJ, US",
+            "title": "Decisions by default",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.1007/BF01065313",
+            "URL": "https://doi.org/10.1007/BF01065313",
+            "author": [
+                {
+                    "family": "Johnson",
+                    "given": "Eric J."
+                },
+                {
+                    "family": "Hershey",
+                    "given": "John"
+                },
+                {
+                    "family": "Meszaros",
+                    "given": "Jacqueline"
+                },
+                {
+                    "family": "Kunreuther",
+                    "given": "Howard"
+                }
+            ],
+            "container-title": "Journal of Risk and Uncertainty",
+            "id": "johnson1993",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993,
+                        8,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "35-51",
+            "title": "Framing, probability distortions, and insurance decisions",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "URL": "https://hbr.org/2008/12/nudge-your-customers-toward-better-choices",
+            "author": [
+                {
+                    "family": "Goldstein",
+                    "given": "Daniel G."
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Eric J."
+                },
+                {
+                    "family": "Herrmann",
+                    "given": "Andreas"
+                },
+                {
+                    "family": "Heitmann",
+                    "given": "Mark"
+                }
+            ],
+            "container-title": "Harvard Business Review",
+            "id": "goldstein2008",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "note": "Section: Decision making and problem solving",
+            "title": "Nudge your customers toward better choices",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1017/bpp.2018.43",
+            "URL": "https://www.cambridge.org/core/journals/behavioural-public-policy/article/when-and-why-defaults-influence-decisions-a-metaanalysis-of-default-effects/67AF6972CFB52698A60B6BD94B70C2C0",
+            "author": [
+                {
+                    "family": "Jachimowicz",
+                    "given": "Jon M."
+                },
+                {
+                    "family": "Duncan",
+                    "given": "Shannon"
+                },
+                {
+                    "family": "Weber",
+                    "given": "Elke U."
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Eric J."
+                }
+            ],
+            "container-title": "Behavioural Public Policy",
+            "id": "jachimowicz2019",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        11
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Publisher: Cambridge University Press",
+            "page": "159-186",
+            "title": "When and why defaults influence decisions: a meta-analysis of default effects",
+            "title-short": "When and why defaults influence decisions",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zamir",
+                    "given": "Eyal"
+                },
+                {
+                    "family": "Teichman",
+                    "given": "Doron"
+                }
+            ],
+            "id": "zamir2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        7,
+                        3
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "publisher": "Oxford University Press",
+            "publisher-place": "New York",
+            "title": "Behavioral law and economics",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1257/jel.20191450",
+            "URL": "https://pubs.aeaweb.org/doi/10.1257/jel.20191450",
+            "author": [
+                {
+                    "family": "Abadie",
+                    "given": "Alberto"
+                }
+            ],
+            "container-title": "Journal of Economic Literature",
+            "id": "abadie2021",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        6,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "391-425",
+            "title": "Using Synthetic Controls: Feasibility, Data Requirements, and Methodological Aspects",
+            "title-short": "Using Synthetic Controls",
+            "type": "article-journal",
+            "volume": "59"
+        },
+        {
+            "author": [
+                {
+                    "family": "Athey",
+                    "given": "Susan"
+                },
+                {
+                    "family": "Imbens",
+                    "given": "Guido W."
+                }
+            ],
+            "container-title": "Journal of Economic perspectives",
+            "id": "athey2017",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "note": "ISBN: 0895-3309 Publisher: American Economic Association 2014 Broadway, Suite 305, Nashville, TN 37203-2418",
+            "page": "3-32",
+            "title": "The state of applied econometrics: Causality and policy evaluation",
+            "title-short": "The state of applied econometrics",
+            "type": "article-journal",
+            "volume": "31"
+        },
+        {
+            "URL": "https://research.chicagobooth.edu/-/media/research/stigler/pdfs/market-structure---report-as-of-15-may-2019.pdf?la=en&hash=B2F11FB118904F2AD701B78FA24F08CFF1C0F58F",
+            "author": [
+                {
+                    "family": "Scott Morton",
+                    "given": "Fiona"
+                },
+                {
+                    "family": "Bouvier",
+                    "given": "Pascal"
+                },
+                {
+                    "family": "Ezrachi",
+                    "given": "Ariel"
+                },
+                {
+                    "family": "Jullien",
+                    "given": "Bruno"
+                },
+                {
+                    "family": "Katz",
+                    "given": "Roberta"
+                },
+                {
+                    "family": "Kimmelman",
+                    "given": "Gene"
+                },
+                {
+                    "family": "Melamed",
+                    "given": "A. Douglas"
+                },
+                {
+                    "family": "Morgenstern",
+                    "given": "Jamie"
+                }
+            ],
+            "id": "scottmorton2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        5
+                    ]
+                ]
+            },
+            "title": "George j. Stigler center for the study of the economy and the state. The university of chicago booth school of business. Committee for the study of digital platforms. Market structure and antitrust subcommittee",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://omidyar.com/wp-content/uploads/2020/09/Roadmap-for-a-Monopolization-Case-Against-Google-Regarding-the-Search-Market.pdf",
+            "author": [
+                {
+                    "family": "Scott Morton",
+                    "given": "Fiona M"
+                },
+                {
+                    "family": "Dinielli",
+                    "given": "David C"
+                }
+            ],
+            "id": "morton2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        6
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Roadmap for a Monopolization Case Against Google Regarding the Search Market",
+            "type": "report"
+        },
+        {
+            "URL": "https://www.promarket.org/2023/12/19/antitrust-regulation-of-big-tech-needs-a-better-understanding-of-behavioral-economics/",
+            "author": [
+                {
+                    "family": "Vasquez Duque",
+                    "given": "Omar"
+                }
+            ],
+            "id": "duque2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        12,
+                        19
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "title": "Antitrust regulation of big tech needs a better understanding of behavioral economics",
+            "type": ""
+        },
+        {
+            "URL": "http://www.jstor.org/stable/41552884",
+            "author": [
+                {
+                    "family": "Sunstein",
+                    "given": "Cass R."
+                }
+            ],
+            "container-title": "The University of Chicago Law Review",
+            "id": "sunstein2011",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        10,
+                        1
+                    ]
+                ]
+            },
+            "page": "1349-1429",
+            "title": "Empirically informed regulation",
+            "type": "article-journal",
+            "volume": "78"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sunstein",
+                    "given": "Cass R."
+                }
+            ],
+            "container-title": "University of Pennsylvania Law Review",
+            "id": "sunstein2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "language": "eng",
+            "page": "1-58",
+            "title": "Deciding by Default",
+            "type": "article-journal",
+            "volume": "162"
+        },
+        {
+            "DOI": "10.1007/s10865-012-9397-1",
+            "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3392417/",
+            "author": [
+                {
+                    "family": "Reiter",
+                    "given": "Paul L."
+                },
+                {
+                    "family": "McRee",
+                    "given": "Annie-Laurie"
+                },
+                {
+                    "family": "Pepper",
+                    "given": "Jessica K."
+                },
+                {
+                    "family": "Brewer",
+                    "given": "Noel T."
+                }
+            ],
+            "container-title": "Journal of behavioral medicine",
+            "id": "reiter2012",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        12
+                    ]
+                ]
+            },
+            "note": "PMID: 22271328 PMCID: PMC3392417",
+            "page": "651-657",
+            "title": "Default policies and parents’ consent for school-located HPV vaccination",
+            "type": "article-journal",
+            "volume": "35"
+        },
+        {
+            "DOI": "10.1002/9780470479216.corpsy0200",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9780470479216.corpsy0200",
+            "author": [
+                {
+                    "family": "Diener",
+                    "given": "Marc J."
+                }
+            ],
+            "id": "diener2010",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/9780470479216.corpsy0200 DOI: 10.1002/9780470479216.corpsy0200",
+            "page": "1-1",
+            "publisher": "John Wiley & Sons, Ltd",
+            "title": "Cohen’s d",
+            "type": "chapter"
+        }
+    ],
+    "project_biblios": []
+}

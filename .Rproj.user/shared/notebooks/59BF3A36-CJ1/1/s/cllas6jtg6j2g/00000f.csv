@@ -1,0 +1,18 @@
+"0",""
+"0","#'*Check whether it makes sense to filter speeders (if any).*"
+"0",""
+"0","median_complet_t = median(dfcj$respondent_length_of_interview_seconds) "
+"0","# calculate median completion time in secs"
+"0",""
+"0","dfcj$income_num = readr::parse_number(dfcj$q17_annual_income)"
+"2","Warning: 336 parsing failures.
+ row col expected actual
+6649  -- a number  Nanan
+6650  -- a number  Nanan
+6651  -- a number  Nanan
+6652  -- a number  Nanan
+6653  -- a number  Nanan
+.... ... ........ ......
+See problems(...) for more details.
+"
+"0","hist(dfcj$respondent_length_of_interview_seconds)"

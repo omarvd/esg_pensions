@@ -1,0 +1,8 @@
+"0",""
+"0","dfcj=dfcj %>% "
+"0","  mutate(income = case_when(income_num <=24999 ~ ""15,000 to 24,999"","
+"0","                            income_num >=25000 & income_num <=34999 ~ ""25,000 to 34,999"","
+"0","                            income_num >= 35000 & income_num <=49999 ~  ""35,000 to 49,999"","
+"0","                            income_num >= 50000 & income_num <=74999 ~ ""50,000 to 74,999"","
+"0","                            income_num >= 75000 & income_num <=99999 ~ ""75,000 to 99,999"","
+"0","                            income_num >= 100000 ~ ""100,000 or more""))"

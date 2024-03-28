@@ -1,0 +1,7 @@
+"0","rows18_24 =length(which(dfcj$age_groups_rep == ""18-24""))"
+"0",""
+"0","rows25_39 =length(which(dfcj$age_groups_rep == ""25-39""))"
+"0",""
+"0","rows40_55 =length(which(dfcj$age_groups_rep == ""40-55""))"
+"0",""
+"0","rows56_over =length(which(dfcj$age_groups_rep == ""56 and over""))"

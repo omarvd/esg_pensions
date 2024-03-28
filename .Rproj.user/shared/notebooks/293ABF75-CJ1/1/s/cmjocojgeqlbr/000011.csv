@@ -1,0 +1,11 @@
+"0","amce_byr_plot = plot(amceusw_by_r, group = ""republican"", vline = 0, feature_headers = F) +"
+"0","  scale_colour_manual(na.translate = F, values = c(""royalblue"", ""red3""), labels=c('no', 'yes')) +"
+"0","    theme(text = element_text(family = ""LM Roman 10""))"
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing scale.[39m"
+"0","ggsave(amce_byr_plot, path = NULL, "
+"0","       filename = ""amcecj1j_byr.png"","
+"0","       device = ""png"","
+"0","       type = ""cairo"", "
+"0","       dpi = ""retina"")"
+"2","[38;5;250mSaving 7.29 x 4.51 in image[39m"

@@ -1,0 +1,20 @@
+"0","mnl_prefam <- logitr(
+    data    = dfcjlogitr,
+    outcome = ""choice_indicator"",
+    obsID   = ""obs_id"",
+     panelID = ""survey_id"",
+    pars    = c(""pension"",
+                ""firearms.num"", 
+                ""fossil_fuels.num"",
+                ""may_employ_children.num"",
+                ""no_racial_diversity.num"",
+                ""no_gender_equal_pay.num""),
+    randPars = c(firearms.num = 'n', fossil_fuels.num = 'n', may_employ_children.num = 'n', no_racial_diversity.num = 'n',
+                 no_gender_equal_pay.num = 'n'),
+  numMultiStarts = 10
+)
+"
+"2","Error in missingInData(names(inputs$randPars), ""randPars"", dataColumnNames) : 
+  The following specified names for ""randPars"" are missing in the data:
+firearms.num, fossil_fuels.num, may_employ_children.num, no_racial_diversity.num, no_gender_equal_pay.num
+"

@@ -1,0 +1,589 @@
+---
+title: "Pensions ESG Pilot"
+author: "OVD"
+date: "2023-03-16"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+setwd(dir = "/Users/ovd/Documents/GitHub/esg_pensions")
+
+options(scipen=999)
+```
+
+```{r}
+library(readr)
+
+dfcj <- read_csv("rds_prod.experiment.392385.stacked.csv")
+```
+
+
+```{r}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+```{r}
+
+dfcj = dfcj %>% 
+  clean_names() 
+
+dfcj %>% 
+  filter(q3_screen_out == "NULL" & q6_screen_out == "NULL" & q8_screen_out == "NULL") # filter screen-outs (zero)
+
+
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds) # calculate median completion time in secs
+
+ dfcj = dfcj %>% 
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t,
+         respondent_length_of_interview_seconds <= 1.5 * median_complet_t) # filter responded too quickly or slowly
+
+table(dfcj$invests_in_firearms)
+```
+```{r}
+table(dfcj$invests_in_firms_that_may_employ_children)
+
+table(dfcj$advocates_for_racial_diversity_in_management)
+```
+
+
+```{r}
+# create vars for AMCE
+
+typeof(dfcj$expected_pension)
+
+
+# levels(dfcj1$expected_pension_num) = c("$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000")
+
+dfcj1 = dfcj %>% 
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms),
+         fossil_fuels =  factor(invests_in_fossil_fuels),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women))
+                                   
+
+dfcj7 = dfcj %>%
+  mutate(expected_pension_num = factor(expected_pension,
+                                       levels = c("$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000")),
+         firearms = factor(invests_in_firearms,
+                           levels = c("yes", "no")),
+         fossil_fuels =  factor(invests_in_fossil_fuels,
+                                levels = c("yes", "no")),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children,
+                                      levels = c("yes", "no")),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management,
+                                   levels = c("no", "yes")),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women,
+                                   levels = c("no", "yes")))
+
+
+```
+
+```{r}
+# Something went wrong here
+# 
+# labels(dfcj1$expected_pension_num) <- list("$20,000" = "Expected pension: $20,000 a year", 
+#                                         "$25,000" = "Expected pension: $25,000 a year", 
+#                                         "30,000"= "Expected pension: $30,000 a year", 
+#                                        "$35,000" = "Expected pension: $35,000 a year", 
+#                                         "$40,000" = "Expected pension: $40,000 a year", 
+#                                         "$45,000" = "Expected pension: $45,000 a year", 
+#                                          "$50,000" = "Expected pension: $50,000 a year")
+# 
+# labels(dfcj1$firearms) <- list("yes" = "Invests in firearms",
+#                                "no" = "Does not invest in firearms")
+# 
+# labels(dfcj1$fossil_fuels) <- list("yes" = "Invests in fossil fuels",
+#                                 "no" = "Does not invest in fossil fuels")
+# 
+# labels(dfcj1$may_employ_children) <- list("yes" = "Invests in firms that may employ children",
+#                                        "no" = "Invests in firms that ensure no children are employed")
+# 
+# labels(dfcj1$racial_diversity) <- list("yes" = "Advocates for racial diversity in management",
+#                                     "no" = "Does not advocate for racial diversity in management")
+# 
+# labels(dfcj1$gender_equal_pay) <- list("yes" = "Advocates for equal pay for men and women",
+#                                     "no" = "Does not advocate for equal pay for men and women")
+
+```
+
+Try with case_when instead
+
+```{r}
+
+
+dfcj7 = dfcj %>%
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms),                           
+         fossil_fuels =  factor(invests_in_fossil_fuels),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management),
+        gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women))
+
+
+dfcj7$expected_pension_num <- recode(dfcj7$expected_pension_num,
+                                     "Expected pension: $20,000 a year" = "20000", 
+                                        "Expected pension: $25,000 a year" = "25000", 
+                                        "Expected pension: $30,000 a year" = "30000", 
+                                       "Expected pension: $35,000 a year" = "35000", 
+                                        "Expected pension: $40,000 a year" = "40000", 
+                                        "Expected pension: $45,000 a year" = "45000", 
+                                        "Expected pension: $50,000 a year" = "50000")
+
+dfcj7$firearms <- recode(dfcj7$firearms,
+                         "Invests in firearms" = "yes",
+                         "Does not invest in firearms" = "no")
+
+dfcj7$fossil_fuels <- recode(dfcj7$fossil_fuels,
+                             "Invests in fossil fuels" = "yes",
+                              "Does not invest in fossil fuels" = "no")
+
+dfcj7$may_employ_children <- recode(dfcj7$may_employ_children,
+                                    "Invests in firms that may employ children" = "yes",
+                                    "Invests in firms that ensure no children are employed" = "no")
+
+dfcj7$racial_diversity <- recode(dfcj7$racial_diversity,
+                                "Advocates for racial diversity in management" = "yes",
+                                "Does not advocate for racial diversity in management" = "no")
+
+dfcj7$gender_equal_pay <- recode(dfcj7$gender_equal_pay,
+                                 "Advocates for equal pay for men and women" = "yes",
+                                 "Does not advocate for equal pay for men and women" = "no")
+
+```
+
+
+```{r}
+
+dfcj1$expected_pension_num <- recode(dfcj1$expected_pension_num,
+                                     "Expected pension: $20,000 a year" = "20000", 
+                                        "Expected pension: $25,000 a year" = "25000", 
+                                        "Expected pension: $30,000 a year" = "30000", 
+                                       "Expected pension: $35,000 a year" = "35000", 
+                                        "Expected pension: $40,000 a year" = "40000", 
+                                        "Expected pension: $45,000 a year" = "45000", 
+                                        "Expected pension: $50,000 a year" = "50000")
+
+
+dfcj1$firearms <- recode(dfcj1$firearms,
+                         "Invests in firearms" = "yes",
+                         "Does not invest in firearms" = "no")
+
+dfcj1$fossil_fuels <- recode(dfcj1$fossil_fuels,
+                             "Invests in fossil fuels" = "yes",
+                              "Does not invest in fossil fuels" = "no")
+
+dfcj1$may_employ_children <- recode(dfcj1$may_employ_children,
+                                    "Invests in firms that may employ children" = "yes",
+                                    "Invests in firms that ensure no children are employed" = "no")
+
+dfcj1$racial_diversity <- recode(dfcj1$racial_diversity,
+                                "Advocates for racial diversity in management" = "yes",
+                                "Does not advocate for racial diversity in management" = "no")
+
+dfcj1$gender_equal_pay <- recode(dfcj1$gender_equal_pay,
+                                 "Advocates for equal pay for men and women" = "yes",
+                                 "Does not advocate for equal pay for men and women" = "no")
+
+
+```
+
+```{r}
+                                    
+# change var type      
+dfcj1 = dfcj1 %>% 
+  mutate(choice_indicator = as.numeric(choice_indicator)) 
+
+dfcj7 = dfcj7 %>% 
+  mutate(choice_indicator = as.numeric(choice_indicator)) 
+
+#relevel factors
+# dfcj1$racial_diversity <- relevel(dfcj1$racial_diversity, "no")
+# 
+# dfcj1$gender_equal_pay <- relevel(dfcj1$gender_equal_pay, "no")
+```
+
+
+```{r}
+
+#check sample size
+
+dfcj1 %>% 
+  distinct(respondent_id, .keep_all = T) %>% 
+  count()
+```
+
+
+```{r}
+
+#trying to debug
+dfcj = dfcj %>% 
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms),                              
+         fossil_fuels =  factor(invests_in_fossil_fuels),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children), 
+         racial_diversity = factor(advocates_for_racial_diversity_in_management),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women),
+        choice_indicator = as.numeric(choice_indicator))
+
+# This worked in AMCE. What did I do wrong when re-leveling the factors???
+```
+
+
+
+```{r}
+dfcj2 = dfcj1 %>% 
+  select(survey_id, choice_indicator, expected_pension_num, firearms, fossil_fuels, may_employ_children, racial_diversity, gender_equal_pay)
+
+f1 <- choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay
+
+
+
+
+# This does not work because there is an issue with the factor levels. I should check this later
+#amce2 = amce(dfcj7, f1, id = ~ survey_id)
+                        
+table(dfcj1$firearms)
+
+# plot(amce)
+
+```
+
+
+
+```{r}
+#Did not work... wtf is going on with factors.... ask in github or stackexchange
+
+dfcjlab = dfcj 
+
+
+dfcjlab$firearms  = relevel(dfcjlab$firearms, "Invests in firearms")
+
+dfcjlab$fossil_fuels = relevel(dfcjlab$fossil_fuels, "Invests in fossil fuels")
+
+dfcjlab$may_employ_children = relevel(dfcjlab$may_employ_children, "Invests in firms that may employ children")
+
+dfcjlab$racial_diversity = relevel(dfcjlab$racial_diversity, "Does not advocate for racial diversity in management")
+
+dfcjlab$gender_equal_pay = relevel(dfcjlab$gender_equal_pay, "Does not advocate for equal pay for men and women")
+```
+
+
+
+```{r}
+levels(dfcj$gender_equal_pay)
+```
+
+
+```{r}
+
+#with factors re leveled
+
+dfcjlab = dfcjlab %>% 
+  mutate(republican = if_else(q11_what_party_do_you_identify_yourself_with_o1_republican %in% "1" |
+                          q12_if_you_don_t_identify_with_any_party_do_you_lean_towards_one_of_them_o1_republican %in% "1",1, 0))
+    
+          
+dfcjlab$republican.ftr = as.factor(dfcjmod$republican)
+
+amce1 = amce(dfcjlab, f1, id = ~ survey_id)
+
+plot(amce1, facet.levels = "republican") #not working
+
+
+dfcjmod = dfcjlab %>% 
+  select(choice_indicator,
+         expected_pension_num,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         republican,
+         survey_id,
+         republican.ftr)
+
+```
+
+
+```{r}
+
+library(skimr)
+
+skim(dfcjmod)
+
+skim(dfcjmod$republican)
+
+f2 <- choice_indicator ~ expected_pension_num + firearms:republican.ftr + fossil_fuels:republican.ftr + may_employ_children:republican.ftr + racial_diversity:republican.ftr + gender_equal_pay:republican.ftr
+
+d1 = amce(dfcjmod, 
+        f2, 
+        id = ~ survey_id)
+
+length(dfcjlab$republican)
+
+immigration$contest_no <- factor(immigration$contest_no)
+
+# This worked. But I don;t know what I did differently
+mm_by <- cj(dfcjmod, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", 
+            by = ~republican.ftr)
+
+amce_by <- cj(dfcjmod, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", 
+            by = ~republican.ftr)
+
+plot(mm_by, group = "republican.ftr", vline = 0.5)
+
+plot(amce_by, group = "republican.ftr")
+
+
+length(dfcjlab$gender_equal_pay)
+
+plot(d1)
+
+		    # design = immigrationdesign, cluster = FALSE,
+		    respondent.varying = "republican")
+
+ggsave("amce1.pdf", width = 10)
+```
+
+```{r}
+
+library(cregg)
+
+dfnoesg = dfcjlab %>% 
+  filter(q9_would_you_prefer_to_restrict_your_investments_to_funds_that_take_environmental_social_and_governance_o2_no ==1)
+
+dfrep = dfcjlab %>% 
+  filter(q11_what_party_do_you_identify_yourself_with_o1_republican == 1 | q12_if_you_don_t_identify_with_any_party_do_you_lean_towards_one_of_them_o1_republican==1)
+
+#not working
+# amce2 = amce(dfrep, f1, 
+#              id = ~ survey_id, 
+#              by = ~ republican)
+
+
+
+```
+
+```{r}
+
+```
+
+
+WTP analysis
+
+```{r}
+library(logitr)
+```
+
+```{r}
+
+dfcjtest = dfcj %>% 
+  mutate(pension = expected_pension)
+
+# dfcjtest = dfcjtest %>% 
+#   mutate(pension = factor(expected_pension,
+#                           levels = c("20,000",
+#                                      "25,000",
+#                                      "30,000",
+#                                      "35,000",
+#                                      "40,000",
+#                                      "45,000",
+#                                      "50,000")))
+
+dfcjtest$pension <- recode(dfcjtest$pension,
+                                     "Expected pension: $20,000 a year" = "20,000", 
+                                        "Expected pension: $25,000 a year" = "25,000", 
+                                        "Expected pension: $30,000 a year" = "30,000", 
+                                       "Expected pension: $35,000 a year" = "35,000", 
+                                        "Expected pension: $40,000 a year" = "40,000", 
+                                        "Expected pension: $45,000 a year" = "45,000", 
+                                        "Expected pension: $50,000 a year" = "50,000")
+```
+
+
+
+```{r}
+ table(dfcjtest$pension) 
+ 
+typeof(dfcjtest$pension)
+
+
+# 
+# 
+# dfcjtest2 = dfcjtest %>%
+#   mutate(pension_num2 = as.numeric(pension))
+# 
+# table(dfcjtest2$pension_num2)
+# 
+# dfcjtest2$pension
+# 
+# dfcjtest$pension_num = as.numeric(dfcjtest$pension_num)
+
+# ,
+#            id = as.integer(survey_id))
+
+dfcjtest = dfcjtest %>%
+   mutate(pension_num = readr::parse_number(pension)) 
+
+```
+
+
+```{r}
+library(readxl)
+nochoice <- read_excel("~/Documents/GitHub/esg_pensions/nochoice.xlsx")
+```
+
+```{r}
+ncl = pivot_longer(nochoice, cols = q1:q12, names_to = "choice")
+
+ncl = ncl %>% 
+  mutate(nc = ifelse(value == 3, 1, 0),
+         choice_set = parse_number(choice),
+         survey_id = ID) %>% 
+  select(nc, choice_set, survey_id)
+```
+
+```{r}
+#ok, now I need to create new var with the option not chosen
+```
+
+
+```{r}
+dfnc = merge(dfcj, ncl, by = "survey_id", "choice_set")
+```
+
+
+```{r}
+
+
+dfcjtest = dfcjtest %>% 
+  arrange(survey_id, desc(choice_set)) %>% 
+  mutate(obsID = as.integer(gl(2508, 2, labels = c(1: 2508))))
+
+
+dfcjtest = dfcjtest %>% 
+  select(survey_id, 
+         obsID, 
+         choice_set, 
+         pension_num,
+         choice_indicator, 
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay)
+
+dfcjtest2 = dfcjtest %>% 
+  group_by(obsID) %>% # Create ID by group
+  dplyr::mutate(ID = cur_group_id())
+```
+
+
+This ran, but there is something wrong. I get weird estimates with no statistics to report
+```{r}
+
+#removing none
+dfcjtest3 = dfcjtest2 %>% 
+  group_by(ID) %>% 
+  filter(sum(choice_indicator) == 1)
+
+#changing price to negative
+
+dfcjtest3 = dfcjtest3 %>% 
+  mutate(price = -1 * pension_num,
+         firearms.num = ifelse(firearms == "Invests in firearms", 1, 0),
+         fossil_fuels.num = ifelse(fossil_fuels == "Invests in fossil fuels", 1, 0),
+         may_employ_children.num = ifelse(may_employ_children == "Invests in firms that may employ children", 1, 0),
+         racial_diversity.num = ifelse(racial_diversity == "Does not advocate for racial diversity in management", 1, 0),
+         gender_equal_pay.num = ifelse(gender_equal_pay == "Does not advocate for equal pay for men and women", 1, 0))
+
+yogurt= yogurt
+
+class(yogurt$feat)
+#Rerun after reseting R
+
+mnl_pref <- logitr(
+    data    = dfcjtest3,
+    outcome = "choice_indicator",
+    obsID   = "ID",
+    pars    = c("pension_num",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "racial_diversity.num",
+                "gender_equal_pay.num")
+)
+
+
+
+mnl_wtp <- logitr(
+    data     = dfcjtest3,
+    outcome  = "choice_indicator",
+    obsID    = "ID",
+    pars     = c("firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "racial_diversity.num",
+                "gender_equal_pay.num"),
+    scalePar = "pension_num"
+)
+
+summary(mnl_pref)
+
+summary(mnl_wtp)
+
+
+```
+
+```{r}
+yogurt = yogurt
+
+class(yogurt$obsID)
+
+class(dfcjtest$survey_id)
+
+dfcjtest %>% 
+  select(survey_id, obsID, choice_indicator)
+```
+
+
+```{r}
+yogurt %>% 
+  select(id, obsID, choice)
+```
+
+```{r}
+mnl_pref <- logitr(
+    data    = yogurt,
+    outcome = "choice",
+    obsID   = "obsID",
+    pars    = c("price", "feat", "brand")
+)
+
+summary(mnl_pref)
+```
+
+```{r}
+mnl_wtp <- logitr(
+    data     = yogurt,
+    outcome  = "choice",
+    obsID    = "obsID",
+    pars     = c("feat", 
+                "brand"),
+    scalePar = "price"
+)
+```
+
+```{r}
+summary(mnl_wtp)
+```
+

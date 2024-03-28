@@ -1,0 +1,12 @@
+"0","# Shorter plot easier to understand"
+"0",""
+"0","amceusw_fl <- cj(dfcj, choice_indicator ~ firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,"
+"0","            estimate = ""amce"", #weights = ~ weights,"
+"0","            by = ~florida)"
+"2","Warning: svyglm not fitted by maximum likelihood."
+"2","Warning: svyglm not fitted by maximum likelihood."
+"0","plot(amceusw_fl, group = ""florida"",vline=0) +"
+"0","   scale_colour_manual(na.translate = F, values = c(""royalblue"", ""orange3"")) "
+"2","[38;5;250mScale for [32mcolour[38;5;250m is already present.
+Adding another scale for [32mcolour[38;5;250m, which will replace the existing
+scale.[39m"

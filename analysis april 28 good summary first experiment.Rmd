@@ -1,0 +1,310 @@
+---
+title: "Pensions ESG Pilot"
+author: "OVD"
+date: "2023-03-16"
+output:
+  bookdown::pdf_book:
+    dev: cairo_pdf
+---
+
+```{r}
+
+options(scipen=999)
+
+options(digits = 3)
+```
+
+```{r}
+library(readr)
+
+dfcj <- read_csv("rds_prod.experiment.420656.stacked(7).csv")
+```
+
+
+```{r message=FALSE, warning=FALSE}
+library(cregg)
+library(janitor)
+library(tidyverse)
+```
+
+Import data and filter responses 0.5 or 1.5 * median completion time
+
+```{r}
+
+dfcj = dfcj %>% 
+  clean_names() 
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+
+median_complet_t = median(dfcj$respondent_length_of_interview_seconds) 
+# calculate median completion time in secs
+
+ dfcj = dfcj %>% 
+  filter(respondent_length_of_interview_seconds >= 0.5 * median_complet_t,
+         respondent_length_of_interview_seconds <= 1.5 * median_complet_t)
+ 
+ # filter responded too quickly or slowly
+```
+
+
+```{r}
+#Transform variables to factors
+dfcj = dfcj %>% 
+  mutate(expected_pension_num = factor(expected_pension),
+         firearms = factor(invests_in_firearms,
+                           levels = c("Invests in firearms", "Does not invest in firearms")),           
+         fossil_fuels =  factor(invests_in_fossil_fuels,
+                                levels = c("Invests in fossil fuels", "Does not invest in fossil fuels")),
+         may_employ_children = factor(invests_in_firms_that_may_employ_children,
+                                      levels = c("Invests in firms that may employ children", "Invests in firms that ensure no children are employed")),
+         racial_diversity = factor(advocates_for_racial_diversity_in_management,
+                                   levels = c("Does not advocate for racial diversity in management",
+                                              "Advocates for racial diversity in management")),
+         gender_equal_pay = factor(advocates_for_equal_pay_for_men_and_women,
+                                   levels = c("Does not advocate for equal pay for men and women",
+                                              "Advocates for equal pay for men and women")),
+        choice_indicator = as.numeric(choice_indicator),
+        choice = as.factor(choice_indicator),
+        prior = factor(ifelse(q9_taking_into_account_esg_factors_o1_yes ==1, "anti-esg", "pro=esg")),
+        republican = factor(ifelse(q11_party_id_o1_republican==1 |
+          q12_party_leanings_o1_republican ==1, 1,0)),
+        florida = factor(ifelse(q15_state_us_o1_florida==1, 1,0)),
+        california = factor(ifelse(q15_state_us_o2_california==1,1,0)))
+
+
+
+```
+
+```{r}
+dfcjshort = dfcj %>% 
+  select(survey_id, 
+         choice_set, 
+         expected_pension,
+         expected_pension_num,
+         choice_indicator, 
+         choice,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         republican,
+         prior,
+         q22_openended_feedback)
+
+```
+
+Vector for AMCE model and plot:
+
+Now trying with larger df
+```{r}
+mm_by <- cj(dfcj, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "mm", 
+            by = ~republican)
+
+amce_by <- cj(dfcj, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce", 
+            by = ~republican)
+
+amce <- cj(dfcj, choice_indicator ~ expected_pension_num + firearms + fossil_fuels + may_employ_children + racial_diversity + gender_equal_pay, id = ~ survey_id,
+            estimate = "amce")
+
+plot(mm_by, group = "republican", vline = 0.5) +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3"))
+
+plot(amce_by, group = "republican") +
+  scale_colour_manual(na.translate = F, values = c("royalblue", "red3"))
+
+plot(amce)
+```
+
+
+WTP analysis. The logitr package uses a Hierarchical Bayesian model to estimate WTP and utilities from each attribute.
+
+```{r}
+library(logitr)
+
+```
+
+```{r}
+
+dfcjtest = dfcj %>% 
+  mutate(pension = expected_pension)
+
+
+dfcjtest$pension <- recode(dfcjtest$pension,
+                           "Expected pension: $20,000 a year" = "20,000", 
+                           "Expected pension: $25,000 a year" = "25,000", 
+                           "Expected pension: $30,000 a year" = "30,000", 
+                           "Expected pension: $35,000 a year" = "35,000", 
+                           "Expected pension: $40,000 a year" = "40,000", 
+                           "Expected pension: $45,000 a year" = "45,000", 
+                           "Expected pension: $50,000 a year" = "50,000",
+                           "Expected pension: $55,000 a year" = "55,000",
+                           "Expected pension: $60,000 a year" = "60,000"
+                           )
+
+```
+
+
+
+```{r}
+#transform to numeric
+
+dfcjtest = dfcjtest %>%
+   mutate(pension_num = readr::parse_number(pension)) 
+
+```
+
+Not creating var to test MLogit
+
+Careful with grouping!!! Didn't ungroup before
+
+```{r}
+#This code below worked!
+
+dfcjtest2 = dfcjtest %>%
+ group_by(survey_id, choice_set) %>%
+ mutate(obs_id = cur_group_id()) %>% 
+  ungroup() # I had forgotten to do this!
+```
+
+```{r}
+mean(dfcjtest2$pension_num)
+```
+
+```{r}
+
+dflogitr = dfcjtest2 %>% 
+  select(survey_id, 
+         obs_id, 
+         choice_set, 
+         pension_num,
+         choice_indicator, 
+         choice,
+         firearms,
+         fossil_fuels,
+         may_employ_children,
+         racial_diversity,
+         gender_equal_pay,
+         republican)
+
+```
+
+
+I will filter the data in republican/democrats to calculate the differences in WTP per group
+
+```{r}
+
+# Same for merged df
+dflogitr = dflogitr %>% 
+  mutate(price = -1 * pension_num,
+         firearms.num = ifelse(firearms == "Invests in firearms", 1, 0),
+         fossil_fuels.num = ifelse(fossil_fuels == "Invests in fossil fuels", 1, 0),
+         may_employ_children.num = ifelse(may_employ_children == "Invests in firms that may employ children", 1, 0),
+         racial_diversity.num = ifelse(racial_diversity == "Does not advocate for racial diversity in management", 1, 0),
+         gender_equal_pay.num = ifelse(gender_equal_pay == "Does not advocate for equal pay for men and women", 1, 0))
+
+dflogitr = dflogitr %>% 
+  rename(no_racial_diversity.num = racial_diversity.num,
+         no_gender_equal_pay.num = gender_equal_pay.num)
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+
+mnl_pref2 <- logitr(
+    data    = dflogitr,
+    outcome = "choice_indicator",
+    obsID   = "obs_id",
+    pars    = c("pension_num",
+                "firearms.num", 
+                "fossil_fuels.num",
+                "may_employ_children.num",
+                "no_racial_diversity.num",
+                "no_gender_equal_pay.num"),
+    panelID = "survey_id"
+)
+
+#Ask author why NAs
+mnl_wtp <- logitr(
+    data     = dflogitr,
+    outcome  = "choice_indicator",
+    obsID    = "obs_id",
+    pars     = c("firearms.num",
+                 "fossil_fuels.num",
+                 "may_employ_children.num",
+                 "no_racial_diversity.num",
+                 "no_gender_equal_pay.num"),
+    scalePar = "pension_num",
+    numMultiStarts = 10
+)
+
+dflogitr$pension_num = as.numeric(dflogitr$pension_num)
+
+summary(mnl_pref2)
+
+summary(mnl_wtp)
+
+library(xtable)
+
+wtp(mnl_pref2, scalePar = "pension_num")
+
+xtable(wtp(mnl_pref2, scalePar = "pension_num"))
+
+write_excel_csv(dflogitr, file = "cj.csv")
+```
+
+
+```{r}
+#Word cloud with reliable data
+
+#Create a vector containing only the text
+txt = as.character(dfcj$q22_openended_feedback)
+
+
+## Loading packages for word clouds
+library(wordcloud)
+library(RColorBrewer)
+library(wordcloud2)
+library(tm)
+
+# Create a corpus  
+docs <- Corpus(VectorSource(txt))
+```
+
+
+```{r}
+# clean text data
+docs <- docs %>%
+  tm_map(removeNumbers) %>%
+  tm_map(removePunctuation) %>%
+  tm_map(stripWhitespace)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("english"))
+```
+
+```{r}
+#Document term matrix
+
+dtm <- TermDocumentMatrix(docs) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df <- data.frame(word = names(words),freq=words)
+```
+
+```{r}
+# Create word cloud
+set.seed(1234) # for reproducibility 
+
+wordcloud(words = df$word, freq = df$freq, min.freq = 1,           
+          max.words=10, random.order=FALSE, rot.per=0.35,            
+          colors=brewer.pal(8, "Dark2"))
+```
+
+
+

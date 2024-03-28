@@ -1,0 +1,6 @@
+"0","amceusw.r.age <- cj(dfcj2, choice_indicator ~ expected_pension + gender_equality + living_wage + salary_equality + labor_rights + environmental_impact + faith_morality + firearms, id = ~ survey_id,"
+"0","            estimate = ""amce"","
+"0","            weights = ~w_age_rep,"
+"0","            by = ~republican)"
+"2","Error in eval(predvars, data, env) : object 'w_age_rep' not found
+"

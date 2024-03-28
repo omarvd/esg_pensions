@@ -1,0 +1,142 @@
+---
+title: "HB Analysis"
+author: "OVD"
+date: "2023-05-24"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+
+setwd("/Users/ovd/Documents/GitHub/esg_pensions")
+
+data1 = read_csv("dflogitr.csv")
+
+data1 = as.data.frame(data1)
+```
+
+```{r}
+cbc.tab = data1 %>% 
+  select(pension,firearms, fossil_fuels, may_employ_children, racial_diversity, gender_equal_pay)
+
+table(cbc.tab$pension)
+
+table(cbc.tab$firearms)
+
+table(cbc.tab$fossil_fuels)
+
+table(cbc.tab$may_employ_children)
+
+table(cbc.tab$racial_diversity)
+
+table(cbc.tab$gender_equal_pay)
+```
+
+```{r}
+
+#'*Following choicetools vignette*
+
+cbc.tab = cbc.tab %>% 
+  mutate(pension = case_when(pension == 20000 ~ 1,
+                             pension == 25000 ~2,
+                             pension == 30000 ~3,
+                             pension == 35000 ~4,
+                             pension == 40000 ~5,
+                             pension ==45000 ~6,
+                             pension ==50000 ~7,
+                             pension == 55000 ~8,
+                             pension ==60000 ~9),
+         firearms = case_when(firearms == "Invests in firearms" ~ 1,
+                              firearms == "Does not invest in firearms" ~ 2),
+         fossil_fuels = case_when(fossil_fuels == "Invests in fossil fuels" ~ 1,
+                                  fossil_fuels == "Does not invest in fossil fuels" ~ 2),
+         may_employ_children = case_when(may_employ_children == "Invests in firms that may employ children" ~1,
+                                         may_employ_children == "Invests in firms that ensure no children are employed" ~2),
+         racial_diversity = case_when(racial_diversity == "Does not advocate for racial diversity in management" ~1,
+                                      racial_diversity == "Advocates for racial diversity in management" ~2),
+         gender_equal_pay = case_when(gender_equal_pay == "Does not advocate for equal pay for men and women" ~1,
+                                      gender_equal_pay=="Advocates for equal pay for men and women"~2))
+
+cbc.win = data1$choice_indicator
+
+cbc.tasks = 12
+
+cbc.concepts = 2
+
+N = nrow(data1)/24
+```
+
+```{r}
+
+cbc.attrs <- c(pension=9, firearms=2, fossil_fuels=2, may_employ_children=2, racial_diversity=2, gender_equal_pay=2)
+
+attr.list=cbc.attrs
+
+cbc.levels    <- c("$20,000", "$25,000", "$30,000", "$35,000", "$40,000", "$45,000", "$50,000", "$55,000", "$60,000",    # pension
+                   "Invests in firearms", "Does not invests in firearms",  # firearms
+                   "Invests in fossil fuels",  "Does not invest in fossil fuels",  # fossil fuels
+                   "Invests in firms that may employ children",  "Invests in firms that ensure no children are employed",                          # child labor
+                   "Does not advocate for racial diversity in management", "Advocates for racial diversity in management", # racial diversity
+                   "Does not advocate for equal pay for men and women", "Advocates for equal pay for men and women")           # equal pay 
+
+```
+
+
+```{r}
+library(choicetools)
+
+cbc.hb <- estimateMNLfromDesignHB(tmp.des=cbc.tab, tmp.win=cbc.win, 
+                                  kCards=cbc.concepts, kTrials=cbc.tasks,
+                                  kResp=N , mcmcIters=20000)
+```
+
+```{r}
+cbc.est        <- data.frame(extractHBbetas(cbc.hb, cbc.attrs))
+names(cbc.est) <- cbc.levels
+cbc.est$ID     <- 1:nrow(cbc.est)
+
+library(ggplot2)
+library(reshape2)
+cbc.m <- melt(cbc.est, id.vars = "ID")
+
+library(ggridges)
+ggplot(data=cbc.m, aes(x=value, y=variable, group=variable)) +
+      geom_density_ridges(scale=0.9, alpha=0, jittered_points=TRUE,
+                          rel_min_height=0.005,
+                          position="points_sina",
+                          point_color = "blue", point_alpha=1/sqrt(N),
+                          point_size=2.5) +
+        ylab("Item") + 
+        xlab("Relative preference (blue circles=individuals)") +
+        ggtitle("Preference estimates: Distribution of individuals")
+```
+
+```{r}
+
+# cbc.levels    <- c("$20,000" (1), "$25,000" (2), "$30,000" (3), "$35,000" (4), "$40,000" (5), "$45,000" (6), "$50,000" (7), "$55,000" (8), "$60,000" (9),    # pension (x9)
+#                    "Invests in firearms", (10) 
+#"Does not invests in firearms" (11),  # firearms
+#                    "Invests in fossil fuels" (12),  "Does not invest in fossil fuels",  # fossil fuels (13)
+#                    "Invests in firms that may employ children" (14),  "Invests in firms that ensure no children are employed" (15),                          # child labor
+#                    "Does not advocate for racial diversity in management" (16), "Advocates for racial diversity in management" (17), # racial diversity
+#                    "Does not advocate for equal pay for men and women" (18), "Advocates for equal pay for men and women" (19))           # equal pay 
+
+prod1 <- c(5, 10, 12,  14, 16, 18)     # $40,000 pension with no sustainable features
+prod2 <- c(5, 11, 13, 15, 17, 19)     # $40,000 pension with only sustainable features
+usb.pref  <- marketSim(
+  cbc.est,                    # matrix of individual-level utilities
+  list(prod1, prod2),         # list of products to compare
+  use.none=FALSE,             # we have no "none" column
+  style="first")              # estimate share by first-choice approach
+
+# see the overall preference share for the two products
+colMeans(usb.pref)
+```
+
+
+Multinomial Logit Model. Replicate with ChoiceModelR too! Follow vignettes.
+
+ TBD
+
+
